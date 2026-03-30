@@ -1,0 +1,7015 @@
+[
+  {
+    "id": "voc-0001",
+    "english_word": "I",
+    "spanish_translation": "yo",
+    "example_sentence_en": "I want to improve my English every day.",
+    "example_sentence_es": "Quiero mejorar mi inglés cada día.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0002",
+    "english_word": "you",
+    "spanish_translation": "tú / usted / vosotros",
+    "example_sentence_en": "You can learn faster if you practice a little every day.",
+    "example_sentence_es": "Puedes aprender más rápido si practicas un poco cada día.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0003",
+    "english_word": "he",
+    "spanish_translation": "él",
+    "example_sentence_en": "He works in an office near the station.",
+    "example_sentence_es": "Él trabaja en una oficina cerca de la estación.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0004",
+    "english_word": "she",
+    "spanish_translation": "ella",
+    "example_sentence_en": "She speaks very clearly and confidently.",
+    "example_sentence_es": "Ella habla con mucha claridad y confianza.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0005",
+    "english_word": "it",
+    "spanish_translation": "eso / ello",
+    "example_sentence_en": "It looks easier when you do it step by step.",
+    "example_sentence_es": "Parece más fácil cuando lo haces paso a paso.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0006",
+    "english_word": "we",
+    "spanish_translation": "nosotros",
+    "example_sentence_en": "We usually study together in the evening.",
+    "example_sentence_es": "Solemos estudiar juntos por la tarde.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0007",
+    "english_word": "they",
+    "spanish_translation": "ellos / ellas",
+    "example_sentence_en": "They live in another neighborhood.",
+    "example_sentence_es": "Ellos viven en otro barrio.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0008",
+    "english_word": "this",
+    "spanish_translation": "este / esta / esto",
+    "example_sentence_en": "This lesson is more useful than I expected.",
+    "example_sentence_es": "Esta lección es más útil de lo que esperaba.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0009",
+    "english_word": "that",
+    "spanish_translation": "ese / esa / aquello",
+    "example_sentence_en": "That idea sounds simple but effective.",
+    "example_sentence_es": "Esa idea suena simple pero efectiva.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0010",
+    "english_word": "these",
+    "spanish_translation": "estos / estas",
+    "example_sentence_en": "These examples are easy to remember.",
+    "example_sentence_es": "Estos ejemplos son fáciles de recordar.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0011",
+    "english_word": "those",
+    "spanish_translation": "esos / esas / aquellos",
+    "example_sentence_en": "Those people are waiting outside.",
+    "example_sentence_es": "Esas personas están esperando fuera.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0012",
+    "english_word": "some",
+    "spanish_translation": "algo de / algunos",
+    "example_sentence_en": "I need some time to think about it.",
+    "example_sentence_es": "Necesito algo de tiempo para pensarlo.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0013",
+    "english_word": "any",
+    "spanish_translation": "algún / ningún / cualquiera",
+    "example_sentence_en": "Do you have any questions so far?",
+    "example_sentence_es": "¿Tienes alguna pregunta hasta ahora?",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0014",
+    "english_word": "each",
+    "spanish_translation": "cada",
+    "example_sentence_en": "Each student has a different learning style.",
+    "example_sentence_es": "Cada estudiante tiene un estilo de aprendizaje diferente.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0015",
+    "english_word": "every",
+    "spanish_translation": "cada / todos",
+    "example_sentence_en": "I review vocabulary every morning.",
+    "example_sentence_es": "Repaso vocabulario cada mañana.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0016",
+    "english_word": "both",
+    "spanish_translation": "ambos / los dos",
+    "example_sentence_en": "Both options sound good to me.",
+    "example_sentence_es": "Ambas opciones me parecen bien.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0017",
+    "english_word": "another",
+    "spanish_translation": "otro / otra",
+    "example_sentence_en": "Can you give me another example?",
+    "example_sentence_es": "¿Puedes darme otro ejemplo?",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0018",
+    "english_word": "enough",
+    "spanish_translation": "suficiente",
+    "example_sentence_en": "I don't have enough energy today.",
+    "example_sentence_es": "Hoy no tengo suficiente energía.",
+    "category": "expressions",
+    "difficulty": "easy",
+    "tags": [
+      "core",
+      "pronouns",
+      "determiners"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0019",
+    "english_word": "today",
+    "spanish_translation": "hoy",
+    "example_sentence_en": "I have an online class today.",
+    "example_sentence_es": "Hoy tengo una clase online.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0020",
+    "english_word": "tomorrow",
+    "spanish_translation": "mañana",
+    "example_sentence_en": "We can talk about it tomorrow.",
+    "example_sentence_es": "Podemos hablar de eso mañana.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0021",
+    "english_word": "yesterday",
+    "spanish_translation": "ayer",
+    "example_sentence_en": "I felt very tired yesterday.",
+    "example_sentence_es": "Ayer me sentí muy cansado.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0022",
+    "english_word": "now",
+    "spanish_translation": "ahora",
+    "example_sentence_en": "I need to focus right now.",
+    "example_sentence_es": "Necesito concentrarme ahora mismo.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0023",
+    "english_word": "later",
+    "spanish_translation": "más tarde",
+    "example_sentence_en": "I'll call you later.",
+    "example_sentence_es": "Te llamaré después.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0024",
+    "english_word": "early",
+    "spanish_translation": "temprano",
+    "example_sentence_en": "She arrived early for the interview.",
+    "example_sentence_es": "Ella llegó temprano a la entrevista.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0025",
+    "english_word": "late",
+    "spanish_translation": "tarde",
+    "example_sentence_en": "He was late again this morning.",
+    "example_sentence_es": "Esta mañana llegó tarde otra vez.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0026",
+    "english_word": "soon",
+    "spanish_translation": "pronto",
+    "example_sentence_en": "I hope things get better soon.",
+    "example_sentence_es": "Espero que las cosas mejoren pronto.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0027",
+    "english_word": "always",
+    "spanish_translation": "siempre",
+    "example_sentence_en": "She always checks the details.",
+    "example_sentence_es": "Ella siempre revisa los detalles.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0028",
+    "english_word": "usually",
+    "spanish_translation": "normalmente",
+    "example_sentence_en": "I usually study after dinner.",
+    "example_sentence_es": "Suelo estudiar después de cenar.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0029",
+    "english_word": "often",
+    "spanish_translation": "a menudo",
+    "example_sentence_en": "We often talk in English at work.",
+    "example_sentence_es": "A menudo hablamos en inglés en el trabajo.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0030",
+    "english_word": "sometimes",
+    "spanish_translation": "a veces",
+    "example_sentence_en": "Sometimes I overthink simple things.",
+    "example_sentence_es": "A veces le doy demasiadas vueltas a cosas sencillas.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0031",
+    "english_word": "rarely",
+    "spanish_translation": "rara vez",
+    "example_sentence_en": "I rarely drink coffee at night.",
+    "example_sentence_es": "Rara vez bebo café por la noche.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0032",
+    "english_word": "never",
+    "spanish_translation": "nunca",
+    "example_sentence_en": "He never gives up easily.",
+    "example_sentence_es": "Él nunca se rinde fácilmente.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0033",
+    "english_word": "already",
+    "spanish_translation": "ya",
+    "example_sentence_en": "I have already finished the task.",
+    "example_sentence_es": "Ya he terminado la tarea.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0034",
+    "english_word": "yet",
+    "spanish_translation": "todavía / aún",
+    "example_sentence_en": "I haven't decided yet.",
+    "example_sentence_es": "Aún no me he decidido.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0035",
+    "english_word": "still",
+    "spanish_translation": "todavía / aún",
+    "example_sentence_en": "I still need more practice.",
+    "example_sentence_es": "Todavía necesito más práctica.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0036",
+    "english_word": "before",
+    "spanish_translation": "antes",
+    "example_sentence_en": "Think before you answer.",
+    "example_sentence_es": "Piensa antes de responder.",
+    "category": "time",
+    "difficulty": "easy",
+    "tags": [
+      "time",
+      "frequency",
+      "order"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0037",
+    "english_word": "be",
+    "spanish_translation": "ser / estar",
+    "example_sentence_en": "I want to be more consistent with my practice.",
+    "example_sentence_es": "Quiero ser más constante con mi práctica.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0038",
+    "english_word": "have",
+    "spanish_translation": "tener",
+    "example_sentence_en": "We have a meeting at ten.",
+    "example_sentence_es": "Tenemos una reunión a las diez.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0039",
+    "english_word": "do",
+    "spanish_translation": "hacer",
+    "example_sentence_en": "I need to do my homework tonight.",
+    "example_sentence_es": "Tengo que hacer mis deberes esta noche.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0040",
+    "english_word": "make",
+    "spanish_translation": "hacer / crear",
+    "example_sentence_en": "Let's make a simple plan first.",
+    "example_sentence_es": "Hagamos primero un plan sencillo.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0041",
+    "english_word": "take",
+    "spanish_translation": "tomar / coger / llevar",
+    "example_sentence_en": "Take your time and answer calmly.",
+    "example_sentence_es": "Tómate tu tiempo y responde con calma.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0042",
+    "english_word": "get",
+    "spanish_translation": "conseguir / ponerse / llegar",
+    "example_sentence_en": "I want to get better at speaking.",
+    "example_sentence_es": "Quiero mejorar al hablar.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0043",
+    "english_word": "go",
+    "spanish_translation": "ir",
+    "example_sentence_en": "We go to the gym after work.",
+    "example_sentence_es": "Vamos al gimnasio después del trabajo.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0044",
+    "english_word": "come",
+    "spanish_translation": "venir",
+    "example_sentence_en": "Can you come a little earlier tomorrow?",
+    "example_sentence_es": "¿Puedes venir un poco antes mañana?",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0045",
+    "english_word": "give",
+    "spanish_translation": "dar",
+    "example_sentence_en": "She gave me useful advice.",
+    "example_sentence_es": "Ella me dio un consejo muy útil.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0046",
+    "english_word": "put",
+    "spanish_translation": "poner",
+    "example_sentence_en": "Put the book on the table.",
+    "example_sentence_es": "Pon el libro sobre la mesa.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0047",
+    "english_word": "keep",
+    "spanish_translation": "mantener / seguir",
+    "example_sentence_en": "Keep practicing even on busy days.",
+    "example_sentence_es": "Sigue practicando incluso en los días ocupados.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0048",
+    "english_word": "leave",
+    "spanish_translation": "dejar / salir",
+    "example_sentence_en": "I usually leave home at eight.",
+    "example_sentence_es": "Suelo salir de casa a las ocho.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0049",
+    "english_word": "bring",
+    "spanish_translation": "traer",
+    "example_sentence_en": "Please bring your notebook to class.",
+    "example_sentence_es": "Por favor, trae tu cuaderno a clase.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0050",
+    "english_word": "start",
+    "spanish_translation": "empezar",
+    "example_sentence_en": "Let's start with the easiest part.",
+    "example_sentence_es": "Empecemos con la parte más fácil.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0051",
+    "english_word": "finish",
+    "spanish_translation": "terminar",
+    "example_sentence_en": "I want to finish this chapter today.",
+    "example_sentence_es": "Quiero terminar este capítulo hoy.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0052",
+    "english_word": "need",
+    "spanish_translation": "necesitar",
+    "example_sentence_en": "We need more time for this exercise.",
+    "example_sentence_es": "Necesitamos más tiempo para este ejercicio.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0053",
+    "english_word": "want",
+    "spanish_translation": "querer",
+    "example_sentence_en": "I want to sound more natural in English.",
+    "example_sentence_es": "Quiero sonar más natural en inglés.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0054",
+    "english_word": "use",
+    "spanish_translation": "usar",
+    "example_sentence_en": "Try to use new words in real sentences.",
+    "example_sentence_es": "Intenta usar palabras nuevas en frases reales.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0055",
+    "english_word": "know",
+    "spanish_translation": "saber / conocer",
+    "example_sentence_en": "Do you know the answer?",
+    "example_sentence_es": "¿Sabes la respuesta?",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0056",
+    "english_word": "think",
+    "spanish_translation": "pensar",
+    "example_sentence_en": "I think this method works well.",
+    "example_sentence_es": "Creo que este método funciona bien.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0057",
+    "english_word": "believe",
+    "spanish_translation": "creer",
+    "example_sentence_en": "I believe you can improve a lot.",
+    "example_sentence_es": "Creo que puedes mejorar mucho.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0058",
+    "english_word": "understand",
+    "spanish_translation": "entender",
+    "example_sentence_en": "I understand the idea now.",
+    "example_sentence_es": "Ahora entiendo la idea.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0059",
+    "english_word": "remember",
+    "spanish_translation": "recordar",
+    "example_sentence_en": "Remember to review the new words.",
+    "example_sentence_es": "Recuerda repasar las palabras nuevas.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0060",
+    "english_word": "forget",
+    "spanish_translation": "olvidar",
+    "example_sentence_en": "I always forget names under pressure.",
+    "example_sentence_es": "Siempre olvido los nombres bajo presión.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0061",
+    "english_word": "learn",
+    "spanish_translation": "aprender",
+    "example_sentence_en": "We learn faster when we repeat out loud.",
+    "example_sentence_es": "Aprendemos más rápido cuando repetimos en voz alta.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0062",
+    "english_word": "teach",
+    "spanish_translation": "enseñar",
+    "example_sentence_en": "Good teachers teach with patience.",
+    "example_sentence_es": "Los buenos profesores enseñan con paciencia.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0063",
+    "english_word": "speak",
+    "spanish_translation": "hablar",
+    "example_sentence_en": "She speaks English at work every day.",
+    "example_sentence_es": "Ella habla inglés en el trabajo todos los días.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0064",
+    "english_word": "say",
+    "spanish_translation": "decir",
+    "example_sentence_en": "What did he say exactly?",
+    "example_sentence_es": "¿Qué dijo exactamente?",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0065",
+    "english_word": "tell",
+    "spanish_translation": "decir / contar",
+    "example_sentence_en": "Tell me the truth.",
+    "example_sentence_es": "Dime la verdad.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0066",
+    "english_word": "ask",
+    "spanish_translation": "preguntar",
+    "example_sentence_en": "Don't be afraid to ask questions.",
+    "example_sentence_es": "No tengas miedo a hacer preguntas.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0067",
+    "english_word": "answer",
+    "spanish_translation": "responder",
+    "example_sentence_en": "Try to answer in full sentences.",
+    "example_sentence_es": "Intenta responder con frases completas.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0068",
+    "english_word": "call",
+    "spanish_translation": "llamar",
+    "example_sentence_en": "I'll call you after lunch.",
+    "example_sentence_es": "Te llamaré después de comer.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0069",
+    "english_word": "meet",
+    "spanish_translation": "conocer / reunirse",
+    "example_sentence_en": "We met at a language exchange.",
+    "example_sentence_es": "Nos conocimos en un intercambio de idiomas.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0070",
+    "english_word": "find",
+    "spanish_translation": "encontrar",
+    "example_sentence_en": "I can't find my headphones.",
+    "example_sentence_es": "No encuentro mis auriculares.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0071",
+    "english_word": "show",
+    "spanish_translation": "mostrar",
+    "example_sentence_en": "Can you show me another example?",
+    "example_sentence_es": "¿Puedes mostrarme otro ejemplo?",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0072",
+    "english_word": "change",
+    "spanish_translation": "cambiar",
+    "example_sentence_en": "Small habits can change everything.",
+    "example_sentence_es": "Los pequeños hábitos pueden cambiarlo todo.",
+    "category": "verbs",
+    "difficulty": "easy",
+    "tags": [
+      "verbs",
+      "essential"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0073",
+    "english_word": "house",
+    "spanish_translation": "casa",
+    "example_sentence_en": "Their house is outside the city.",
+    "example_sentence_es": "Su casa está fuera de la ciudad.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0074",
+    "english_word": "flat",
+    "spanish_translation": "piso / apartamento",
+    "example_sentence_en": "I live in a small flat near the center.",
+    "example_sentence_es": "Vivo en un piso pequeño cerca del centro.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0075",
+    "english_word": "room",
+    "spanish_translation": "habitación / cuarto",
+    "example_sentence_en": "My room is usually very quiet.",
+    "example_sentence_es": "Mi habitación suele ser muy tranquila.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0076",
+    "english_word": "kitchen",
+    "spanish_translation": "cocina",
+    "example_sentence_en": "The kitchen is next to the living room.",
+    "example_sentence_es": "La cocina está al lado del salón.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0077",
+    "english_word": "bathroom",
+    "spanish_translation": "baño",
+    "example_sentence_en": "The bathroom is at the end of the hall.",
+    "example_sentence_es": "El baño está al final del pasillo.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0078",
+    "english_word": "bedroom",
+    "spanish_translation": "dormitorio",
+    "example_sentence_en": "My bedroom gets a lot of sunlight.",
+    "example_sentence_es": "Mi dormitorio recibe mucha luz del sol.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0079",
+    "english_word": "living room",
+    "spanish_translation": "salón / sala de estar",
+    "example_sentence_en": "We watch films in the living room.",
+    "example_sentence_es": "Vemos películas en el salón.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0080",
+    "english_word": "balcony",
+    "spanish_translation": "balcón",
+    "example_sentence_en": "She drinks coffee on the balcony every morning.",
+    "example_sentence_es": "Ella toma un café en el balcón todas las mañanas.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0081",
+    "english_word": "wall",
+    "spanish_translation": "pared",
+    "example_sentence_en": "There is a clock on the wall.",
+    "example_sentence_es": "Hay un reloj en la pared.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0082",
+    "english_word": "door",
+    "spanish_translation": "puerta",
+    "example_sentence_en": "Please close the door quietly.",
+    "example_sentence_es": "Por favor, cierra la puerta despacio.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0083",
+    "english_word": "window",
+    "spanish_translation": "ventana",
+    "example_sentence_en": "Open the window for a minute.",
+    "example_sentence_es": "Abre la ventana un minuto.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0084",
+    "english_word": "key",
+    "spanish_translation": "llave",
+    "example_sentence_en": "I can't find my house key.",
+    "example_sentence_es": "No encuentro la llave de casa.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0085",
+    "english_word": "table",
+    "spanish_translation": "mesa",
+    "example_sentence_en": "Your phone is on the table.",
+    "example_sentence_es": "Tu teléfono está sobre la mesa.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0086",
+    "english_word": "chair",
+    "spanish_translation": "silla",
+    "example_sentence_en": "Take a chair and sit down.",
+    "example_sentence_es": "Coge una silla y siéntate.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0087",
+    "english_word": "bed",
+    "spanish_translation": "cama",
+    "example_sentence_en": "I went to bed too late yesterday.",
+    "example_sentence_es": "Ayer me acosté demasiado tarde.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0088",
+    "english_word": "sofa",
+    "spanish_translation": "sofá",
+    "example_sentence_en": "He fell asleep on the sofa.",
+    "example_sentence_es": "Se quedó dormido en el sofá.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0089",
+    "english_word": "lamp",
+    "spanish_translation": "lámpara",
+    "example_sentence_en": "This lamp gives a warm light.",
+    "example_sentence_es": "Esta lámpara da una luz cálida.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0090",
+    "english_word": "shelf",
+    "spanish_translation": "estantería / balda",
+    "example_sentence_en": "The books are on the top shelf.",
+    "example_sentence_es": "Los libros están en la estantería superior.",
+    "category": "home",
+    "difficulty": "easy",
+    "tags": [
+      "home",
+      "objects",
+      "rooms"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0091",
+    "english_word": "get dressed",
+    "spanish_translation": "vestirse",
+    "example_sentence_en": "She got dressed in five minutes.",
+    "example_sentence_es": "Se vistió en cinco minutos.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0092",
+    "english_word": "brush",
+    "spanish_translation": "cepillarse / cepillar",
+    "example_sentence_en": "I brush my teeth after breakfast.",
+    "example_sentence_es": "Me lavo los dientes después de desayunar.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0093",
+    "english_word": "shower",
+    "spanish_translation": "ducharse / ducha",
+    "example_sentence_en": "I need a quick shower before work.",
+    "example_sentence_es": "Necesito una ducha rápida antes de trabajar.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0094",
+    "english_word": "have breakfast",
+    "spanish_translation": "desayunar",
+    "example_sentence_en": "We have breakfast together on Sundays.",
+    "example_sentence_es": "Desayunamos juntos los domingos.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0095",
+    "english_word": "leave home",
+    "spanish_translation": "salir de casa",
+    "example_sentence_en": "I leave home at eight every day.",
+    "example_sentence_es": "Salgo de casa a las ocho todos los días.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0096",
+    "english_word": "arrive",
+    "spanish_translation": "llegar",
+    "example_sentence_en": "They arrived on time.",
+    "example_sentence_es": "Llegaron a tiempo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0097",
+    "english_word": "work",
+    "spanish_translation": "trabajar",
+    "example_sentence_en": "I work better in the morning.",
+    "example_sentence_es": "Trabajo mejor por la mañana.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0098",
+    "english_word": "study",
+    "spanish_translation": "estudiar",
+    "example_sentence_en": "She studies English every evening.",
+    "example_sentence_es": "Ella estudia inglés todas las tardes.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0099",
+    "english_word": "cook",
+    "spanish_translation": "cocinar",
+    "example_sentence_en": "I don't feel like cooking tonight.",
+    "example_sentence_es": "Esta noche no me apetece cocinar.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0100",
+    "english_word": "clean",
+    "spanish_translation": "limpiar",
+    "example_sentence_en": "We clean the flat every Saturday.",
+    "example_sentence_es": "Limpiamos el piso todos los sábados.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0101",
+    "english_word": "rest",
+    "spanish_translation": "descansar",
+    "example_sentence_en": "You should rest for a while.",
+    "example_sentence_es": "Deberías descansar un rato.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0102",
+    "english_word": "walk",
+    "spanish_translation": "caminar",
+    "example_sentence_en": "I like to walk after dinner.",
+    "example_sentence_es": "Me gusta caminar después de cenar.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0103",
+    "english_word": "exercise",
+    "spanish_translation": "hacer ejercicio",
+    "example_sentence_en": "He exercises four times a week.",
+    "example_sentence_es": "Él hace ejercicio cuatro veces a la semana.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0104",
+    "english_word": "shop",
+    "spanish_translation": "comprar",
+    "example_sentence_en": "We need to shop for food later.",
+    "example_sentence_es": "Tenemos que comprar comida más tarde.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0105",
+    "english_word": "relax",
+    "spanish_translation": "relajarse",
+    "example_sentence_en": "I relax by listening to music.",
+    "example_sentence_es": "Me relajo escuchando música.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0106",
+    "english_word": "sleep",
+    "spanish_translation": "dormir",
+    "example_sentence_en": "I slept badly last night.",
+    "example_sentence_es": "Anoche dormí mal.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0107",
+    "english_word": "wake up",
+    "spanish_translation": "despertarse",
+    "example_sentence_en": "I usually wake up before seven.",
+    "example_sentence_es": "Normalmente me despierto antes de las siete.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions",
+      "multi-word"
+    ],
+    "note": "También aparece en el bloque de phrasal verbs"
+  },
+  {
+    "id": "voc-0108",
+    "english_word": "get up",
+    "spanish_translation": "levantarse",
+    "example_sentence_en": "He got up quickly because he was late.",
+    "example_sentence_es": "Se levantó rápidamente porque llegaba tarde.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "daily-life",
+      "routine",
+      "actions",
+      "multi-word"
+    ],
+    "note": "También aparece en el bloque de phrasal verbs"
+  },
+  {
+    "id": "voc-0109",
+    "english_word": "bread",
+    "spanish_translation": "pan",
+    "example_sentence_en": "I buy fresh bread every morning.",
+    "example_sentence_es": "Compro pan fresco cada mañana.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0110",
+    "english_word": "rice",
+    "spanish_translation": "arroz",
+    "example_sentence_en": "We had rice with chicken for lunch.",
+    "example_sentence_es": "Comimos arroz con pollo.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0111",
+    "english_word": "pasta",
+    "spanish_translation": "pasta",
+    "example_sentence_en": "Pasta is easy to cook.",
+    "example_sentence_es": "La pasta es fácil de cocinar.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0112",
+    "english_word": "meat",
+    "spanish_translation": "carne",
+    "example_sentence_en": "He doesn't eat much meat.",
+    "example_sentence_es": "Él no come mucha carne.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0113",
+    "english_word": "fish",
+    "spanish_translation": "pescado",
+    "example_sentence_en": "This fish tastes very fresh.",
+    "example_sentence_es": "Este pescado sabe muy fresco.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0114",
+    "english_word": "chicken",
+    "spanish_translation": "pollo",
+    "example_sentence_en": "I made chicken with vegetables.",
+    "example_sentence_es": "Hice pollo con verduras.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0115",
+    "english_word": "egg",
+    "spanish_translation": "huevo",
+    "example_sentence_en": "I usually eat two eggs for breakfast.",
+    "example_sentence_es": "Suelo comer dos huevos para desayunar.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0116",
+    "english_word": "milk",
+    "spanish_translation": "leche",
+    "example_sentence_en": "There isn't any milk left.",
+    "example_sentence_es": "No queda nada de leche.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0117",
+    "english_word": "water",
+    "spanish_translation": "agua",
+    "example_sentence_en": "Drink more water during the day.",
+    "example_sentence_es": "Bebe más agua durante el día.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0118",
+    "english_word": "coffee",
+    "spanish_translation": "café",
+    "example_sentence_en": "I need coffee to wake up.",
+    "example_sentence_es": "Necesito café para despertarme.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0119",
+    "english_word": "tea",
+    "spanish_translation": "té",
+    "example_sentence_en": "She prefers tea in the evening.",
+    "example_sentence_es": "Ella prefiere el té por la noche.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0120",
+    "english_word": "fruit",
+    "spanish_translation": "fruta",
+    "example_sentence_en": "Fruit is a good snack.",
+    "example_sentence_es": "La fruta es una buena merienda.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0121",
+    "english_word": "vegetable",
+    "spanish_translation": "verdura / vegetal",
+    "example_sentence_en": "Try to eat more vegetables.",
+    "example_sentence_es": "Intenta comer más verduras.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0122",
+    "english_word": "oil",
+    "spanish_translation": "aceite",
+    "example_sentence_en": "Add a little oil to the pan.",
+    "example_sentence_es": "Añade un poco de aceite a la sartén.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0123",
+    "english_word": "salt",
+    "spanish_translation": "sal",
+    "example_sentence_en": "Don't put too much salt in it.",
+    "example_sentence_es": "No le eches demasiada sal.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0124",
+    "english_word": "sugar",
+    "spanish_translation": "azúcar",
+    "example_sentence_en": "I take my coffee without sugar.",
+    "example_sentence_es": "Tomo mi café sin azúcar.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0125",
+    "english_word": "lunch",
+    "spanish_translation": "almuerzo / comida",
+    "example_sentence_en": "Let's have lunch outside today.",
+    "example_sentence_es": "Vamos a almorzar fuera hoy.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0126",
+    "english_word": "dinner",
+    "spanish_translation": "cena",
+    "example_sentence_en": "Dinner will be ready in ten minutes.",
+    "example_sentence_es": "La cena estará lista en diez minutos.",
+    "category": "food",
+    "difficulty": "easy",
+    "tags": [
+      "food",
+      "drink",
+      "cooking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0127",
+    "english_word": "buy",
+    "spanish_translation": "comprar",
+    "example_sentence_en": "I need to buy a new charger.",
+    "example_sentence_es": "Necesito comprar un cargador nuevo.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0128",
+    "english_word": "pay",
+    "spanish_translation": "pagar",
+    "example_sentence_en": "Can I pay by card here?",
+    "example_sentence_es": "¿Puedo pagar con tarjeta aquí?",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0129",
+    "english_word": "price",
+    "spanish_translation": "precio",
+    "example_sentence_en": "The price is higher than I expected.",
+    "example_sentence_es": "El precio es más alto de lo que esperaba.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0130",
+    "english_word": "cheap",
+    "spanish_translation": "barato",
+    "example_sentence_en": "This shirt was really cheap.",
+    "example_sentence_es": "Esta camisa era muy barata.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0131",
+    "english_word": "expensive",
+    "spanish_translation": "caro",
+    "example_sentence_en": "That jacket looks good but it's too expensive.",
+    "example_sentence_es": "Esa chaqueta se ve bien pero es demasiado cara.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0132",
+    "english_word": "store",
+    "spanish_translation": "tienda",
+    "example_sentence_en": "There is a small store near my house.",
+    "example_sentence_es": "Hay una pequeña tienda cerca de mi casa.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0133",
+    "english_word": "market",
+    "spanish_translation": "mercado",
+    "example_sentence_en": "We buy fruit at the local market.",
+    "example_sentence_es": "Compramos fruta en el mercado local.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0134",
+    "english_word": "size",
+    "spanish_translation": "talla / tamaño",
+    "example_sentence_en": "Do you have this in a bigger size?",
+    "example_sentence_es": "¿Tienes esto en una talla más grande?",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0135",
+    "english_word": "receipt",
+    "spanish_translation": "recibo / ticket",
+    "example_sentence_en": "Keep the receipt just in case.",
+    "example_sentence_es": "Guarda el recibo por si acaso.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0136",
+    "english_word": "wallet",
+    "spanish_translation": "cartera",
+    "example_sentence_en": "I left my wallet at home.",
+    "example_sentence_es": "Me dejé la cartera en casa.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0137",
+    "english_word": "cash",
+    "spanish_translation": "efectivo",
+    "example_sentence_en": "I don't usually carry cash.",
+    "example_sentence_es": "No suelo llevar dinero en efectivo.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0138",
+    "english_word": "card",
+    "spanish_translation": "tarjeta",
+    "example_sentence_en": "My card didn't work the first time.",
+    "example_sentence_es": "Mi tarjeta no funcionó la primera vez.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0139",
+    "english_word": "shirt",
+    "spanish_translation": "camisa / camiseta",
+    "example_sentence_en": "He wore a white shirt.",
+    "example_sentence_es": "Llevaba puesta una camisa blanca.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0140",
+    "english_word": "trousers",
+    "spanish_translation": "pantalones",
+    "example_sentence_en": "These trousers are too long.",
+    "example_sentence_es": "Estos pantalones son demasiado largos.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0141",
+    "english_word": "shoes",
+    "spanish_translation": "zapatos",
+    "example_sentence_en": "I need comfortable shoes for walking.",
+    "example_sentence_es": "Necesito unos zapatos cómodos para caminar.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0142",
+    "english_word": "jacket",
+    "spanish_translation": "chaqueta",
+    "example_sentence_en": "Take a jacket because it's cold outside.",
+    "example_sentence_es": "Coge una chaqueta porque hace frío fuera.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0143",
+    "english_word": "bag",
+    "spanish_translation": "bolsa / bolso",
+    "example_sentence_en": "My bag is under the chair.",
+    "example_sentence_es": "Mi bolso está debajo de la silla.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0144",
+    "english_word": "gift",
+    "spanish_translation": "regalo",
+    "example_sentence_en": "We bought her a small gift.",
+    "example_sentence_es": "Le compramos un pequeño regalo.",
+    "category": "shopping",
+    "difficulty": "easy",
+    "tags": [
+      "shopping",
+      "clothes",
+      "money"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0145",
+    "english_word": "street",
+    "spanish_translation": "calle",
+    "example_sentence_en": "The hotel is on the next street.",
+    "example_sentence_es": "El hotel está en la siguiente calle.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0146",
+    "english_word": "square",
+    "spanish_translation": "plaza",
+    "example_sentence_en": "Let's meet in the main square.",
+    "example_sentence_es": "Quedemos en la plaza principal.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0147",
+    "english_word": "neighborhood",
+    "spanish_translation": "barrio",
+    "example_sentence_en": "It's a quiet neighborhood.",
+    "example_sentence_es": "Es un barrio tranquilo.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0148",
+    "english_word": "park",
+    "spanish_translation": "parque",
+    "example_sentence_en": "Children are playing in the park.",
+    "example_sentence_es": "Los niños están jugando en el parque.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0149",
+    "english_word": "station",
+    "spanish_translation": "estación",
+    "example_sentence_en": "The station is ten minutes away.",
+    "example_sentence_es": "La estación está a diez minutos.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0150",
+    "english_word": "airport",
+    "spanish_translation": "aeropuerto",
+    "example_sentence_en": "We got to the airport early.",
+    "example_sentence_es": "Llegamos pronto al aeropuerto.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0151",
+    "english_word": "hospital",
+    "spanish_translation": "hospital",
+    "example_sentence_en": "The hospital is open all night.",
+    "example_sentence_es": "El hospital está abierto toda la noche.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0152",
+    "english_word": "school",
+    "spanish_translation": "colegio / escuela",
+    "example_sentence_en": "The school is near the park.",
+    "example_sentence_es": "La escuela está cerca del parque.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0153",
+    "english_word": "university",
+    "spanish_translation": "universidad",
+    "example_sentence_en": "She studies at the university.",
+    "example_sentence_es": "Ella estudia en la universidad.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0154",
+    "english_word": "office",
+    "spanish_translation": "oficina",
+    "example_sentence_en": "His office is in the city center.",
+    "example_sentence_es": "Su oficina está en el centro de la ciudad.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0155",
+    "english_word": "bank",
+    "spanish_translation": "banco",
+    "example_sentence_en": "I need to go to the bank later.",
+    "example_sentence_es": "Tengo que ir al banco más tarde.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0156",
+    "english_word": "pharmacy",
+    "spanish_translation": "farmacia",
+    "example_sentence_en": "There's a pharmacy on the corner.",
+    "example_sentence_es": "Hay una farmacia en la esquina.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0157",
+    "english_word": "supermarket",
+    "spanish_translation": "supermercado",
+    "example_sentence_en": "The supermarket closes at ten.",
+    "example_sentence_es": "El supermercado cierra a las diez.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0158",
+    "english_word": "restaurant",
+    "spanish_translation": "restaurante",
+    "example_sentence_en": "We found a nice restaurant nearby.",
+    "example_sentence_es": "Encontramos un buen restaurante cerca.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0159",
+    "english_word": "bus",
+    "spanish_translation": "autobús",
+    "example_sentence_en": "I usually take the bus to work.",
+    "example_sentence_es": "Suelo coger el autobús para ir a trabajar.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0160",
+    "english_word": "train",
+    "spanish_translation": "tren",
+    "example_sentence_en": "The train was delayed again.",
+    "example_sentence_es": "El tren se volvió a retrasar.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0161",
+    "english_word": "taxi",
+    "spanish_translation": "taxi",
+    "example_sentence_en": "Let's take a taxi because we're late.",
+    "example_sentence_es": "Cojamos un taxi porque llegamos tarde.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0162",
+    "english_word": "ticket",
+    "spanish_translation": "billete / entrada",
+    "example_sentence_en": "I bought the ticket online.",
+    "example_sentence_es": "Compré el billete por internet.",
+    "category": "travel",
+    "difficulty": "easy",
+    "tags": [
+      "city",
+      "places",
+      "transport"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0163",
+    "english_word": "job",
+    "spanish_translation": "trabajo / empleo",
+    "example_sentence_en": "I'm looking for a better job.",
+    "example_sentence_es": "Estoy buscando un trabajo mejor.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0164",
+    "english_word": "task",
+    "spanish_translation": "tarea",
+    "example_sentence_en": "This task should take ten minutes.",
+    "example_sentence_es": "Esta tarea debería durar diez minutos.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0165",
+    "english_word": "project",
+    "spanish_translation": "proyecto",
+    "example_sentence_en": "We're working on a new project.",
+    "example_sentence_es": "Estamos trabajando en un nuevo proyecto.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0166",
+    "english_word": "meeting",
+    "spanish_translation": "reunión",
+    "example_sentence_en": "The meeting starts at nine.",
+    "example_sentence_es": "La reunión empieza a las nueve.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0167",
+    "english_word": "deadline",
+    "spanish_translation": "fecha límite",
+    "example_sentence_en": "We need to meet the deadline.",
+    "example_sentence_es": "Tenemos que cumplir con el plazo.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0168",
+    "english_word": "manager",
+    "spanish_translation": "jefe / gerente",
+    "example_sentence_en": "My manager is very organized.",
+    "example_sentence_es": "Mi jefe está muy bien organizado.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0169",
+    "english_word": "colleague",
+    "spanish_translation": "compañero de trabajo",
+    "example_sentence_en": "I had lunch with a colleague.",
+    "example_sentence_es": "Comí con un compañero.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0170",
+    "english_word": "customer",
+    "spanish_translation": "cliente",
+    "example_sentence_en": "The customer asked for a quick update.",
+    "example_sentence_es": "El cliente pidió una actualización rápida.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0171",
+    "english_word": "salary",
+    "spanish_translation": "salario",
+    "example_sentence_en": "The salary is paid at the end of the month.",
+    "example_sentence_es": "El sueldo se paga a final de mes.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0172",
+    "english_word": "shift",
+    "spanish_translation": "turno",
+    "example_sentence_en": "She works the morning shift.",
+    "example_sentence_es": "Ella trabaja en el turno de mañana.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0173",
+    "english_word": "contract",
+    "spanish_translation": "contrato",
+    "example_sentence_en": "I signed the contract yesterday.",
+    "example_sentence_es": "Firmé el contrato ayer.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0174",
+    "english_word": "report",
+    "spanish_translation": "informe",
+    "example_sentence_en": "I finished the report before lunch.",
+    "example_sentence_es": "Terminé el informe antes de comer.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0175",
+    "english_word": "file",
+    "spanish_translation": "archivo",
+    "example_sentence_en": "Please send me the file again.",
+    "example_sentence_es": "Por favor, envíame el archivo de nuevo.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0176",
+    "english_word": "email",
+    "spanish_translation": "correo electrónico",
+    "example_sentence_en": "I answered all my emails.",
+    "example_sentence_es": "Respondí todos mis correos electrónicos.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0177",
+    "english_word": "schedule",
+    "spanish_translation": "horario",
+    "example_sentence_en": "My schedule is full this week.",
+    "example_sentence_es": "Mi horario está lleno esta semana.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0178",
+    "english_word": "break",
+    "spanish_translation": "descanso",
+    "example_sentence_en": "Let's take a short break.",
+    "example_sentence_es": "Hagamos un pequeño descanso.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0179",
+    "english_word": "interview",
+    "spanish_translation": "entrevista",
+    "example_sentence_en": "The interview went well.",
+    "example_sentence_es": "La entrevista fue bien.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0180",
+    "english_word": "skill",
+    "spanish_translation": "habilidad / competencia",
+    "example_sentence_en": "Communication is an important skill.",
+    "example_sentence_es": "La comunicación es una habilidad importante.",
+    "category": "work",
+    "difficulty": "medium",
+    "tags": [
+      "work",
+      "office"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0181",
+    "english_word": "lesson",
+    "spanish_translation": "lección",
+    "example_sentence_en": "Today's lesson is about past tense.",
+    "example_sentence_es": "La lección de hoy va sobre el tiempo pasado.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0182",
+    "english_word": "course",
+    "spanish_translation": "curso",
+    "example_sentence_en": "I'm taking an online course.",
+    "example_sentence_es": "Estoy haciendo un curso por internet.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0183",
+    "english_word": "class",
+    "spanish_translation": "clase",
+    "example_sentence_en": "Our class starts at six.",
+    "example_sentence_es": "Nuestra clase empieza a las seis.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0184",
+    "english_word": "subject",
+    "spanish_translation": "asignatura / tema",
+    "example_sentence_en": "Math was never my favorite subject.",
+    "example_sentence_es": "Las matemáticas nunca fueron mi asignatura favorita.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0185",
+    "english_word": "exam",
+    "spanish_translation": "examen",
+    "example_sentence_en": "He passed the exam last week.",
+    "example_sentence_es": "Él aprobó el examen la semana pasada.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0186",
+    "english_word": "grade",
+    "spanish_translation": "nota / calificación",
+    "example_sentence_en": "She got a very good grade.",
+    "example_sentence_es": "Ella sacó muy buena nota.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0187",
+    "english_word": "notebook",
+    "spanish_translation": "cuaderno",
+    "example_sentence_en": "Write the new words in your notebook.",
+    "example_sentence_es": "Apunta las palabras nuevas en tu libreta.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0188",
+    "english_word": "homework",
+    "spanish_translation": "deberes / tarea",
+    "example_sentence_en": "I haven't done my homework yet.",
+    "example_sentence_es": "Todavía no he hecho mis deberes.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0189",
+    "english_word": "exercise",
+    "spanish_translation": "ejercicio",
+    "example_sentence_en": "This exercise is more difficult.",
+    "example_sentence_es": "Este ejercicio es más difícil.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": "También aparece en el bloque 6 con contexto similar."
+  },
+  {
+    "id": "voc-0190",
+    "english_word": "question",
+    "spanish_translation": "pregunta",
+    "example_sentence_en": "I have a question about this word.",
+    "example_sentence_es": "Tengo una duda sobre esta palabra.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0191",
+    "english_word": "answer",
+    "spanish_translation": "respuesta / responder",
+    "example_sentence_en": "Your answer is almost correct.",
+    "example_sentence_es": "Tu respuesta es casi correcta.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": "También aparece en el bloque 4 con contexto similar."
+  },
+  {
+    "id": "voc-0192",
+    "english_word": "mistake",
+    "spanish_translation": "error",
+    "example_sentence_en": "Mistakes are part of learning.",
+    "example_sentence_es": "Los errores son parte de aprender.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0193",
+    "english_word": "practice",
+    "spanish_translation": "práctica / practicar",
+    "example_sentence_en": "Speaking practice is very important.",
+    "example_sentence_es": "La práctica oral es muy importante.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0194",
+    "english_word": "level",
+    "spanish_translation": "nivel",
+    "example_sentence_en": "My listening level is improving.",
+    "example_sentence_es": "Mi nivel de comprensión auditiva está mejorando.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0195",
+    "english_word": "dictionary",
+    "spanish_translation": "diccionario",
+    "example_sentence_en": "Use a dictionary when needed.",
+    "example_sentence_es": "Usa un diccionario cuando sea necesario.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0196",
+    "english_word": "example",
+    "spanish_translation": "ejemplo",
+    "example_sentence_en": "Can you give me an example?",
+    "example_sentence_es": "¿Puedes darme un ejemplo?",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0197",
+    "english_word": "rule",
+    "spanish_translation": "regla",
+    "example_sentence_en": "This grammar rule is simple.",
+    "example_sentence_es": "Esta norma de gramática es simple.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0198",
+    "english_word": "pronunciation",
+    "spanish_translation": "pronunciación",
+    "example_sentence_en": "His pronunciation is getting better.",
+    "example_sentence_es": "Su pronunciación está mejorando.",
+    "category": "study",
+    "difficulty": "medium",
+    "tags": [
+      "study",
+      "learning"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0199",
+    "english_word": "computer",
+    "spanish_translation": "ordenador / computadora",
+    "example_sentence_en": "My computer is running slowly today.",
+    "example_sentence_es": "Hoy mi ordenador va lento.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0200",
+    "english_word": "laptop",
+    "spanish_translation": "portátil",
+    "example_sentence_en": "I always carry my laptop in this bag.",
+    "example_sentence_es": "Siempre llevo mi portátil en este bolso.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0201",
+    "english_word": "phone",
+    "spanish_translation": "teléfono / móvil",
+    "example_sentence_en": "My phone battery is almost dead.",
+    "example_sentence_es": "La batería de mi móvil está casi agotada.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0202",
+    "english_word": "screen",
+    "spanish_translation": "pantalla",
+    "example_sentence_en": "The text on the screen is too small.",
+    "example_sentence_es": "El texto en la pantalla es demasiado pequeño.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0203",
+    "english_word": "keyboard",
+    "spanish_translation": "teclado",
+    "example_sentence_en": "I need a better keyboard for work.",
+    "example_sentence_es": "Necesito un teclado mejor para trabajar.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0204",
+    "english_word": "mouse",
+    "spanish_translation": "ratón",
+    "example_sentence_en": "The mouse stopped working.",
+    "example_sentence_es": "El ratón dejó de funcionar.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0205",
+    "english_word": "folder",
+    "spanish_translation": "carpeta",
+    "example_sentence_en": "The files are in the main folder.",
+    "example_sentence_es": "Los archivos están en la carpeta principal.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0206",
+    "english_word": "app",
+    "spanish_translation": "aplicación",
+    "example_sentence_en": "This app is very useful for practice.",
+    "example_sentence_es": "Esta aplicación es muy útil para practicar.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0207",
+    "english_word": "website",
+    "spanish_translation": "sitio web",
+    "example_sentence_en": "I found the answer on a website.",
+    "example_sentence_es": "Encontré la respuesta en una página web.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0208",
+    "english_word": "password",
+    "spanish_translation": "contraseña",
+    "example_sentence_en": "Don't share your password with anyone.",
+    "example_sentence_es": "No compartas tu contraseña con nadie.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0209",
+    "english_word": "account",
+    "spanish_translation": "cuenta",
+    "example_sentence_en": "I can't access my account.",
+    "example_sentence_es": "No puedo acceder a mi cuenta.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0210",
+    "english_word": "message",
+    "spanish_translation": "mensaje",
+    "example_sentence_en": "I sent you a message this morning.",
+    "example_sentence_es": "Te he mandado un mensaje esta mañana.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0211",
+    "english_word": "update",
+    "spanish_translation": "actualización / actualizar",
+    "example_sentence_en": "The app needs an update.",
+    "example_sentence_es": "La aplicación requiere una actualización.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0212",
+    "english_word": "download",
+    "spanish_translation": "descargar / descarga",
+    "example_sentence_en": "The download took a long time.",
+    "example_sentence_es": "La descarga ha tardado mucho tiempo.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0213",
+    "english_word": "upload",
+    "spanish_translation": "subir / carga",
+    "example_sentence_en": "Please upload the document today.",
+    "example_sentence_es": "Por favor, sube el documento hoy.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0214",
+    "english_word": "link",
+    "spanish_translation": "enlace",
+    "example_sentence_en": "Send me the link when you can.",
+    "example_sentence_es": "Mándame el enlace cuando puedas.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0215",
+    "english_word": "code",
+    "spanish_translation": "código",
+    "example_sentence_en": "I wrote the code last night.",
+    "example_sentence_es": "Anoche escribí el código.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0216",
+    "english_word": "bug",
+    "spanish_translation": "fallo / bug",
+    "example_sentence_en": "There's still a bug in the system.",
+    "example_sentence_es": "Aún hay un fallo en el sistema.",
+    "category": "technology",
+    "difficulty": "medium",
+    "tags": [
+      "technology",
+      "internet"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0217",
+    "english_word": "talk",
+    "spanish_translation": "hablar / charla",
+    "example_sentence_en": "Can we talk for a minute?",
+    "example_sentence_es": "¿Podemos hablar un momento?",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0218",
+    "english_word": "chat",
+    "spanish_translation": "charlar",
+    "example_sentence_en": "We chatted for hours after dinner.",
+    "example_sentence_es": "Charlamos durante horas después de cenar.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0219",
+    "english_word": "discuss",
+    "spanish_translation": "discutir / debatir",
+    "example_sentence_en": "Let's discuss the plan calmly.",
+    "example_sentence_es": "Vamos a discutir el plan tranquilamente.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0220",
+    "english_word": "explain",
+    "spanish_translation": "explicar",
+    "example_sentence_en": "Can you explain that again?",
+    "example_sentence_es": "¿Puedes explicar eso otra vez?",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0221",
+    "english_word": "describe",
+    "spanish_translation": "describir",
+    "example_sentence_en": "She described the problem clearly.",
+    "example_sentence_es": "Ella describió el problema con claridad.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0222",
+    "english_word": "mention",
+    "spanish_translation": "mencionar",
+    "example_sentence_en": "He mentioned your name yesterday.",
+    "example_sentence_es": "Ayer mencionó tu nombre.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0223",
+    "english_word": "repeat",
+    "spanish_translation": "repetir",
+    "example_sentence_en": "Could you repeat the last part?",
+    "example_sentence_es": "¿Podrías repetir la última parte?",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0224",
+    "english_word": "listen",
+    "spanish_translation": "escuchar",
+    "example_sentence_en": "You need to listen carefully.",
+    "example_sentence_es": "Tienes que escuchar con atención.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0225",
+    "english_word": "hear",
+    "spanish_translation": "oír",
+    "example_sentence_en": "I can't hear you very well.",
+    "example_sentence_es": "No te oigo muy bien.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0226",
+    "english_word": "understand",
+    "spanish_translation": "entender",
+    "example_sentence_en": "I understand what you mean now.",
+    "example_sentence_es": "Ahora entiendo lo que quieres decir.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": "También aparece en el bloque 4 con contexto similar."
+  },
+  {
+    "id": "voc-0227",
+    "english_word": "agree",
+    "spanish_translation": "estar de acuerdo",
+    "example_sentence_en": "I agree with your idea.",
+    "example_sentence_es": "Estoy de acuerdo con tu idea.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0228",
+    "english_word": "disagree",
+    "spanish_translation": "no estar de acuerdo",
+    "example_sentence_en": "I disagree, but I respect your point.",
+    "example_sentence_es": "No estoy de acuerdo, pero respeto tu punto de vista.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0229",
+    "english_word": "promise",
+    "spanish_translation": "prometer",
+    "example_sentence_en": "I promise I'll be on time.",
+    "example_sentence_es": "Prometo que llegaré a tiempo.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0230",
+    "english_word": "warn",
+    "spanish_translation": "advertir",
+    "example_sentence_en": "They warned us about the traffic.",
+    "example_sentence_es": "Nos avisaron de que había tráfico.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0231",
+    "english_word": "advise",
+    "spanish_translation": "aconsejar",
+    "example_sentence_en": "I advise you to practice daily.",
+    "example_sentence_es": "Te aconsejo que practiques todos los días.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0232",
+    "english_word": "suggest",
+    "spanish_translation": "sugerir",
+    "example_sentence_en": "She suggested a better option.",
+    "example_sentence_es": "Ella sugirió una opción mejor.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0233",
+    "english_word": "invite",
+    "spanish_translation": "invitar",
+    "example_sentence_en": "They invited us to dinner.",
+    "example_sentence_es": "Nos invitaron a cenar.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0234",
+    "english_word": "reply",
+    "spanish_translation": "responder / respuesta",
+    "example_sentence_en": "He didn't reply to my message.",
+    "example_sentence_es": "Él no respondió a mi mensaje.",
+    "category": "communication",
+    "difficulty": "medium",
+    "tags": [
+      "communication",
+      "conversation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0235",
+    "english_word": "mother",
+    "spanish_translation": "madre",
+    "example_sentence_en": "My mother calls me every Sunday.",
+    "example_sentence_es": "Mi madre me llama cada domingo.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0236",
+    "english_word": "father",
+    "spanish_translation": "padre",
+    "example_sentence_en": "His father works abroad.",
+    "example_sentence_es": "Su padre trabaja en el extranjero.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0237",
+    "english_word": "son",
+    "spanish_translation": "hijo",
+    "example_sentence_en": "Their son is learning English too.",
+    "example_sentence_es": "Su hijo también está aprendiendo inglés.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0238",
+    "english_word": "daughter",
+    "spanish_translation": "hija",
+    "example_sentence_en": "Her daughter is very curious.",
+    "example_sentence_es": "Su hija es muy curiosa.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0239",
+    "english_word": "brother",
+    "spanish_translation": "hermano",
+    "example_sentence_en": "My brother lives in another city.",
+    "example_sentence_es": "Mi hermano vive en otra ciudad.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0240",
+    "english_word": "sister",
+    "spanish_translation": "hermana",
+    "example_sentence_en": "My sister is younger than me.",
+    "example_sentence_es": "Mi hermana es menor que yo.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0241",
+    "english_word": "husband",
+    "spanish_translation": "marido / esposo",
+    "example_sentence_en": "Her husband works from home.",
+    "example_sentence_es": "Su marido trabaja desde casa.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0242",
+    "english_word": "wife",
+    "spanish_translation": "mujer / esposa",
+    "example_sentence_en": "His wife is a doctor.",
+    "example_sentence_es": "Su esposa es médica.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0243",
+    "english_word": "friend",
+    "spanish_translation": "amigo",
+    "example_sentence_en": "A good friend helped me a lot.",
+    "example_sentence_es": "Un buen amigo me ayudó mucho.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0244",
+    "english_word": "partner",
+    "spanish_translation": "pareja / socio",
+    "example_sentence_en": "My partner is very supportive.",
+    "example_sentence_es": "Mi pareja me apoya mucho.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0245",
+    "english_word": "parents",
+    "spanish_translation": "padres",
+    "example_sentence_en": "My parents are proud of me.",
+    "example_sentence_es": "Mis padres están orgullosos de mí.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0246",
+    "english_word": "relatives",
+    "spanish_translation": "familiares / parientes",
+    "example_sentence_en": "We visit our relatives in summer.",
+    "example_sentence_es": "Visitamos a nuestros parientes en verano.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0247",
+    "english_word": "neighbor",
+    "spanish_translation": "vecino",
+    "example_sentence_en": "Our neighbor is very friendly.",
+    "example_sentence_es": "Nuestro vecino es muy amigable.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0248",
+    "english_word": "child",
+    "spanish_translation": "niño / hijo",
+    "example_sentence_en": "Every child learns at a different pace.",
+    "example_sentence_es": "Cada niño aprende a un ritmo distinto.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0249",
+    "english_word": "family",
+    "spanish_translation": "familia",
+    "example_sentence_en": "Family is important to me.",
+    "example_sentence_es": "La familia es importante para mí.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0250",
+    "english_word": "love",
+    "spanish_translation": "amor / amar",
+    "example_sentence_en": "Love requires trust and patience.",
+    "example_sentence_es": "El amor requiere de confianza y paciencia.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0251",
+    "english_word": "trust",
+    "spanish_translation": "confianza / confiar",
+    "example_sentence_en": "Trust takes time to build.",
+    "example_sentence_es": "La confianza tarda tiempo en construirse.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0252",
+    "english_word": "support",
+    "spanish_translation": "apoyo / apoyar",
+    "example_sentence_en": "Her support means a lot to me.",
+    "example_sentence_es": "Su apoyo significa mucho para mí.",
+    "category": "people",
+    "difficulty": "easy",
+    "tags": [
+      "family",
+      "relationships"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0253",
+    "english_word": "happy",
+    "spanish_translation": "feliz",
+    "example_sentence_en": "I'm happy with my progress.",
+    "example_sentence_es": "Estoy contento con mi progreso.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0254",
+    "english_word": "sad",
+    "spanish_translation": "triste",
+    "example_sentence_en": "He looked sad after the news.",
+    "example_sentence_es": "Se le veía triste tras las noticias.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0255",
+    "english_word": "angry",
+    "spanish_translation": "enfadado",
+    "example_sentence_en": "She was angry for a good reason.",
+    "example_sentence_es": "Ella estaba enfadada por una buena razón.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0256",
+    "english_word": "upset",
+    "spanish_translation": "molesto / afectado",
+    "example_sentence_en": "I was upset, but I stayed calm.",
+    "example_sentence_es": "Estaba molesto, pero mantuve la calma.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0257",
+    "english_word": "worried",
+    "spanish_translation": "preocupado",
+    "example_sentence_en": "They are worried about the result.",
+    "example_sentence_es": "Ellos están preocupados por el resultado.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0258",
+    "english_word": "calm",
+    "spanish_translation": "tranquilo",
+    "example_sentence_en": "Take a deep breath and stay calm.",
+    "example_sentence_es": "Respira hondo y mantén la calma.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0259",
+    "english_word": "tired",
+    "spanish_translation": "cansado",
+    "example_sentence_en": "I'm too tired to go out tonight.",
+    "example_sentence_es": "Estoy demasiado cansado para salir esta noche.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0260",
+    "english_word": "excited",
+    "spanish_translation": "emocionado",
+    "example_sentence_en": "We're excited about the trip.",
+    "example_sentence_es": "Estamos entusiasmados con el viaje.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0261",
+    "english_word": "nervous",
+    "spanish_translation": "nervioso",
+    "example_sentence_en": "I always get nervous before interviews.",
+    "example_sentence_es": "Siempre me pongo nervioso antes de las entrevistas.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0262",
+    "english_word": "proud",
+    "spanish_translation": "orgulloso",
+    "example_sentence_en": "You should be proud of your effort.",
+    "example_sentence_es": "Deberías estar orgulloso de tu esfuerzo.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0263",
+    "english_word": "ashamed",
+    "spanish_translation": "avergonzado",
+    "example_sentence_en": "He felt ashamed of his mistake.",
+    "example_sentence_es": "Se sintió avergonzado de su error.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0264",
+    "english_word": "surprised",
+    "spanish_translation": "sorprendido",
+    "example_sentence_en": "I was surprised by her answer.",
+    "example_sentence_es": "Me sorprendió su respuesta.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0265",
+    "english_word": "disappointed",
+    "spanish_translation": "decepcionado",
+    "example_sentence_en": "They were disappointed by the delay.",
+    "example_sentence_es": "Ellos se sintieron decepcionados por el retraso.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0266",
+    "english_word": "bored",
+    "spanish_translation": "aburrido",
+    "example_sentence_en": "I'm bored with the same routine.",
+    "example_sentence_es": "Estoy aburrido de la misma rutina.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0267",
+    "english_word": "grateful",
+    "spanish_translation": "agradecido",
+    "example_sentence_en": "I'm grateful for your help.",
+    "example_sentence_es": "Agradezco mucho tu ayuda.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0268",
+    "english_word": "afraid",
+    "spanish_translation": "asustado / con miedo",
+    "example_sentence_en": "She was afraid to speak in public.",
+    "example_sentence_es": "Tenía miedo de hablar en público.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0269",
+    "english_word": "relaxed",
+    "spanish_translation": "relajado",
+    "example_sentence_en": "I feel relaxed after a long walk.",
+    "example_sentence_es": "Me siento relajado después de un buen paseo.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0270",
+    "english_word": "stressed",
+    "spanish_translation": "estresado",
+    "example_sentence_en": "He's been stressed all week.",
+    "example_sentence_es": "Él ha estado estresado toda la semana.",
+    "category": "emotions",
+    "difficulty": "medium",
+    "tags": [
+      "emotions",
+      "feelings"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0271",
+    "english_word": "kind",
+    "spanish_translation": "amable",
+    "example_sentence_en": "She's kind to everyone around her.",
+    "example_sentence_es": "Ella es amable con todos los que la rodean.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0272",
+    "english_word": "polite",
+    "spanish_translation": "educado / cortés",
+    "example_sentence_en": "He is always polite with customers.",
+    "example_sentence_es": "Él siempre es educado con los clientes.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0273",
+    "english_word": "honest",
+    "spanish_translation": "honesto",
+    "example_sentence_en": "I prefer honest feedback.",
+    "example_sentence_es": "Prefiero que me den opiniones honestas.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0274",
+    "english_word": "patient",
+    "spanish_translation": "paciente",
+    "example_sentence_en": "You need to be patient with yourself.",
+    "example_sentence_es": "Tienes que tener paciencia contigo mismo.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0275",
+    "english_word": "confident",
+    "spanish_translation": "seguro de sí mismo",
+    "example_sentence_en": "She sounds confident when she speaks.",
+    "example_sentence_es": "Ella suena segura cuando habla.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0276",
+    "english_word": "friendly",
+    "spanish_translation": "amigable",
+    "example_sentence_en": "The staff were very friendly.",
+    "example_sentence_es": "El personal fue muy amable.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0277",
+    "english_word": "shy",
+    "spanish_translation": "tímido",
+    "example_sentence_en": "He is shy at first, but very nice.",
+    "example_sentence_es": "Al principio es tímido, pero muy buena persona.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0278",
+    "english_word": "serious",
+    "spanish_translation": "serio",
+    "example_sentence_en": "This is a serious decision.",
+    "example_sentence_es": "Esta es una decisión seria.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0279",
+    "english_word": "funny",
+    "spanish_translation": "divertido / gracioso",
+    "example_sentence_en": "He's funny without trying too hard.",
+    "example_sentence_es": "Es gracioso sin esforzarse demasiado.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0280",
+    "english_word": "lazy",
+    "spanish_translation": "vago / perezoso",
+    "example_sentence_en": "I feel lazy on rainy days.",
+    "example_sentence_es": "Los días de lluvia me da pereza.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0281",
+    "english_word": "active",
+    "spanish_translation": "activo",
+    "example_sentence_en": "My grandfather is still very active.",
+    "example_sentence_es": "Mi abuelo sigue siendo muy activo.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0282",
+    "english_word": "smart",
+    "spanish_translation": "inteligente",
+    "example_sentence_en": "That was a smart choice.",
+    "example_sentence_es": "Fue una elección inteligente.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0283",
+    "english_word": "brave",
+    "spanish_translation": "valiente",
+    "example_sentence_en": "It was brave of her to speak up.",
+    "example_sentence_es": "Fue valiente de su parte hablar.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0284",
+    "english_word": "careful",
+    "spanish_translation": "cuidadoso",
+    "example_sentence_en": "Be careful with that glass.",
+    "example_sentence_es": "Ten cuidado con ese vaso.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0285",
+    "english_word": "generous",
+    "spanish_translation": "generoso",
+    "example_sentence_en": "They were generous with their time.",
+    "example_sentence_es": "Fueron generosos con su tiempo.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0286",
+    "english_word": "quiet",
+    "spanish_translation": "callado / silencioso",
+    "example_sentence_en": "He's quiet, but he notices everything.",
+    "example_sentence_es": "Es callado, pero se da cuenta de todo.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0287",
+    "english_word": "creative",
+    "spanish_translation": "creativo",
+    "example_sentence_en": "She always finds creative solutions.",
+    "example_sentence_es": "Ella siempre encuentra soluciones creativas.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0288",
+    "english_word": "reliable",
+    "spanish_translation": "fiable / de confianza",
+    "example_sentence_en": "We need reliable people on the team.",
+    "example_sentence_es": "Necesitamos personas fiables en el equipo.",
+    "category": "people",
+    "difficulty": "medium",
+    "tags": [
+      "personality",
+      "character"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0289",
+    "english_word": "head",
+    "spanish_translation": "cabeza",
+    "example_sentence_en": "I have a headache.",
+    "example_sentence_es": "Tengo dolor de cabeza.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0290",
+    "english_word": "hand",
+    "spanish_translation": "mano",
+    "example_sentence_en": "Wash your hands before eating.",
+    "example_sentence_es": "Lávate las manos antes de comer.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0291",
+    "english_word": "arm",
+    "spanish_translation": "brazo",
+    "example_sentence_en": "He hurt his arm at the gym.",
+    "example_sentence_es": "Se hizo daño en el brazo en el gimnasio.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0292",
+    "english_word": "leg",
+    "spanish_translation": "pierna",
+    "example_sentence_en": "My legs are sore after running.",
+    "example_sentence_es": "Me duelen las piernas después de correr.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0293",
+    "english_word": "back",
+    "spanish_translation": "espalda",
+    "example_sentence_en": "My back hurts after sitting too long.",
+    "example_sentence_es": "Me duele la espalda después de estar mucho tiempo sentado.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0294",
+    "english_word": "heart",
+    "spanish_translation": "corazón",
+    "example_sentence_en": "Exercise is good for your heart.",
+    "example_sentence_es": "Hacer ejercicio es bueno para tu corazón.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0295",
+    "english_word": "stomach",
+    "spanish_translation": "estómago",
+    "example_sentence_en": "My stomach feels strange today.",
+    "example_sentence_es": "Hoy mi estómago se siente extraño.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0296",
+    "english_word": "throat",
+    "spanish_translation": "garganta",
+    "example_sentence_en": "I have a sore throat.",
+    "example_sentence_es": "Tengo dolor de garganta.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0297",
+    "english_word": "pain",
+    "spanish_translation": "dolor",
+    "example_sentence_en": "The pain is getting better.",
+    "example_sentence_es": "El dolor está mejorando.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0298",
+    "english_word": "sick",
+    "spanish_translation": "enfermo / mareado",
+    "example_sentence_en": "I feel sick after the trip.",
+    "example_sentence_es": "Me siento enfermo después del viaje.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0299",
+    "english_word": "healthy",
+    "spanish_translation": "saludable / sano",
+    "example_sentence_en": "A healthy diet matters a lot.",
+    "example_sentence_es": "Tener una dieta sana importa mucho.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0300",
+    "english_word": "doctor",
+    "spanish_translation": "médico",
+    "example_sentence_en": "You should see a doctor.",
+    "example_sentence_es": "Deberías ir al médico.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0301",
+    "english_word": "medicine",
+    "spanish_translation": "medicina / medicamento",
+    "example_sentence_en": "Take the medicine after lunch.",
+    "example_sentence_es": "Tómate la medicina después de comer.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0302",
+    "english_word": "fever",
+    "spanish_translation": "fiebre",
+    "example_sentence_en": "He had a fever last night.",
+    "example_sentence_es": "Tuvo fiebre anoche.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0303",
+    "english_word": "cough",
+    "spanish_translation": "tos / toser",
+    "example_sentence_en": "This cough won't go away.",
+    "example_sentence_es": "Esta tos no se va.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0304",
+    "english_word": "rest",
+    "spanish_translation": "descanso / descansar",
+    "example_sentence_en": "You need more rest.",
+    "example_sentence_es": "Necesitas descansar un poco más.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": "También aparece en el bloque 6 con contexto similar."
+  },
+  {
+    "id": "voc-0305",
+    "english_word": "breathe",
+    "spanish_translation": "respirar",
+    "example_sentence_en": "Try to breathe slowly.",
+    "example_sentence_es": "Intenta respirar despacio.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0306",
+    "english_word": "recover",
+    "spanish_translation": "recuperarse",
+    "example_sentence_en": "It took her a week to recover.",
+    "example_sentence_es": "Tardó una semana en recuperarse.",
+    "category": "health",
+    "difficulty": "medium",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0307",
+    "english_word": "money",
+    "spanish_translation": "dinero",
+    "example_sentence_en": "I need to save more money.",
+    "example_sentence_es": "Tengo que ahorrar más dinero.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0308",
+    "english_word": "bank account",
+    "spanish_translation": "cuenta bancaria",
+    "example_sentence_en": "My salary goes into my bank account.",
+    "example_sentence_es": "Mi suelo entra en mi cuenta bancaria.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0309",
+    "english_word": "save",
+    "spanish_translation": "ahorrar",
+    "example_sentence_en": "We're saving for a trip.",
+    "example_sentence_es": "Estamos ahorrando para un viaje.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0310",
+    "english_word": "spend",
+    "spanish_translation": "gastar",
+    "example_sentence_en": "Try not to spend too much.",
+    "example_sentence_es": "Intenta no gastar demasiado.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0311",
+    "english_word": "cost",
+    "spanish_translation": "costar / coste",
+    "example_sentence_en": "How much does it cost?",
+    "example_sentence_es": "¿Cuánto dinero cuesta esto?",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0312",
+    "english_word": "budget",
+    "spanish_translation": "presupuesto",
+    "example_sentence_en": "We need a realistic budget.",
+    "example_sentence_es": "Necesitamos elaborar un presupuesto realista.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0313",
+    "english_word": "rent",
+    "spanish_translation": "alquiler / alquilar",
+    "example_sentence_en": "Rent is expensive in that area.",
+    "example_sentence_es": "El alquiler aquí es caro.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0314",
+    "english_word": "bill",
+    "spanish_translation": "factura",
+    "example_sentence_en": "The electricity bill was higher this month.",
+    "example_sentence_es": "La factura de la luz ha sido más alta este mes.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0315",
+    "english_word": "afford",
+    "spanish_translation": "permitirse",
+    "example_sentence_en": "I can't afford that right now.",
+    "example_sentence_es": "No me lo puedo permitir ahora mismo.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0316",
+    "english_word": "payment",
+    "spanish_translation": "pago",
+    "example_sentence_en": "The payment went through successfully.",
+    "example_sentence_es": "El pago pasó adecuadamente.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0317",
+    "english_word": "hotel",
+    "spanish_translation": "hotel",
+    "example_sentence_en": "We stayed in a small hotel.",
+    "example_sentence_es": "Nos quedamos en un hotel pequeño.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0318",
+    "english_word": "reservation",
+    "spanish_translation": "reserva",
+    "example_sentence_en": "I made the reservation online.",
+    "example_sentence_es": "Hice la reserva en internet.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0319",
+    "english_word": "passport",
+    "spanish_translation": "pasaporte",
+    "example_sentence_en": "Don't forget your passport.",
+    "example_sentence_es": "No te olvides de tu pasaporte.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0320",
+    "english_word": "suitcase",
+    "spanish_translation": "maleta",
+    "example_sentence_en": "My suitcase is too heavy.",
+    "example_sentence_es": "Mi maleta pesa demasiado.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0321",
+    "english_word": "flight",
+    "spanish_translation": "vuelo",
+    "example_sentence_en": "The flight was delayed by two hours.",
+    "example_sentence_es": "El vuelo ha sido retrasado dos horas.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0322",
+    "english_word": "luggage",
+    "spanish_translation": "equipaje",
+    "example_sentence_en": "Our luggage arrived late.",
+    "example_sentence_es": "Nuestro equipaje llegó tarde.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0323",
+    "english_word": "book",
+    "spanish_translation": "reservar",
+    "example_sentence_en": "We should book the room early.",
+    "example_sentence_es": "Deberíamos reservar la habitación con antelación.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0324",
+    "english_word": "cancel",
+    "spanish_translation": "cancelar",
+    "example_sentence_en": "They had to cancel the trip.",
+    "example_sentence_es": "Tuvieron que cancelar el viaje.",
+    "category": "travel",
+    "difficulty": "medium",
+    "tags": [
+      "money",
+      "travel",
+      "accommodation"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0325",
+    "english_word": "sun",
+    "spanish_translation": "sol",
+    "example_sentence_en": "The sun is very strong today.",
+    "example_sentence_es": "El sol es muy fuerte hoy.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0326",
+    "english_word": "rain",
+    "spanish_translation": "lluvia / llover",
+    "example_sentence_en": "I think it's going to rain.",
+    "example_sentence_es": "Creo que va a llover.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0327",
+    "english_word": "cloud",
+    "spanish_translation": "nube",
+    "example_sentence_en": "There isn't a single cloud in the sky.",
+    "example_sentence_es": "No hay ni una sola nube en el cielo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0328",
+    "english_word": "wind",
+    "spanish_translation": "viento",
+    "example_sentence_en": "The wind is cold this morning.",
+    "example_sentence_es": "El viento es frío esta mañana.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0329",
+    "english_word": "storm",
+    "spanish_translation": "tormenta",
+    "example_sentence_en": "A storm is coming tonight.",
+    "example_sentence_es": "Esta noche se acerca una tormenta.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0330",
+    "english_word": "heat",
+    "spanish_translation": "calor",
+    "example_sentence_en": "I can't sleep in this heat.",
+    "example_sentence_es": "No puedo dormir con este calor.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0331",
+    "english_word": "cold",
+    "spanish_translation": "frío",
+    "example_sentence_en": "It's too cold to go out without a coat.",
+    "example_sentence_es": "Hace demasiado frío para salir sin abrigo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0332",
+    "english_word": "snow",
+    "spanish_translation": "nieve / nevar",
+    "example_sentence_en": "It rarely snows here.",
+    "example_sentence_es": "Aquí rara vez nieva.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0333",
+    "english_word": "sky",
+    "spanish_translation": "cielo",
+    "example_sentence_en": "The sky looks beautiful at sunset.",
+    "example_sentence_es": "El cielo está precioso al atardecer.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0334",
+    "english_word": "sea",
+    "spanish_translation": "mar",
+    "example_sentence_en": "We walked along the sea.",
+    "example_sentence_es": "Caminamos a lo largo del mar.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0335",
+    "english_word": "river",
+    "spanish_translation": "río",
+    "example_sentence_en": "There is a river behind the town.",
+    "example_sentence_es": "Hay un río detrás del pueblo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0336",
+    "english_word": "mountain",
+    "spanish_translation": "montaña",
+    "example_sentence_en": "They went hiking in the mountains.",
+    "example_sentence_es": "Fueron de excursión por las montañas.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0337",
+    "english_word": "forest",
+    "spanish_translation": "bosque",
+    "example_sentence_en": "The forest was very quiet.",
+    "example_sentence_es": "El bosque estaba muy tranquilo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0338",
+    "english_word": "tree",
+    "spanish_translation": "árbol",
+    "example_sentence_en": "That tree is older than the house.",
+    "example_sentence_es": "Ese árbol es más antiguo que la casa.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0339",
+    "english_word": "flower",
+    "spanish_translation": "flor",
+    "example_sentence_en": "She bought fresh flowers.",
+    "example_sentence_es": "Ella compró flores frescas.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0340",
+    "english_word": "spring",
+    "spanish_translation": "primavera",
+    "example_sentence_en": "Spring is my favorite season.",
+    "example_sentence_es": "La primavera es mi estación favorita.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0341",
+    "english_word": "summer",
+    "spanish_translation": "verano",
+    "example_sentence_en": "We usually travel in summer.",
+    "example_sentence_es": "Solemos viajar en verano.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0342",
+    "english_word": "winter",
+    "spanish_translation": "invierno",
+    "example_sentence_en": "Winter feels longer this year.",
+    "example_sentence_es": "Este año el invierno se hace más largo.",
+    "category": "daily-life",
+    "difficulty": "easy",
+    "tags": [
+      "weather",
+      "nature"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0343",
+    "english_word": "opinion",
+    "spanish_translation": "opinión",
+    "example_sentence_en": "In my opinion, this is the best option.",
+    "example_sentence_es": "En mi opinión, esta es la mejor opción.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0344",
+    "english_word": "point of view",
+    "spanish_translation": "punto de vista",
+    "example_sentence_en": "I understand your point of view.",
+    "example_sentence_es": "Entiendo tu punto de vista.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0345",
+    "english_word": "idea",
+    "spanish_translation": "idea",
+    "example_sentence_en": "That's an interesting idea.",
+    "example_sentence_es": "Esa es una idea interesante.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0346",
+    "english_word": "reason",
+    "spanish_translation": "razón / motivo",
+    "example_sentence_en": "There must be a reason for that.",
+    "example_sentence_es": "Debe de haber una razón para eso.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0347",
+    "english_word": "fact",
+    "spanish_translation": "hecho",
+    "example_sentence_en": "The fact is that we need more time.",
+    "example_sentence_es": "El hecho es que necesitamos más tiempo.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0348",
+    "english_word": "result",
+    "spanish_translation": "resultado",
+    "example_sentence_en": "The result was better than expected.",
+    "example_sentence_es": "El resultado fue mejor de lo que me esperaba.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0349",
+    "english_word": "advantage",
+    "spanish_translation": "ventaja",
+    "example_sentence_en": "Working from home has one big advantage.",
+    "example_sentence_es": "Trabajar desde casa tiene una gran ventaja.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0350",
+    "english_word": "disadvantage",
+    "spanish_translation": "desventaja",
+    "example_sentence_en": "The main disadvantage is the cost.",
+    "example_sentence_es": "La principal desventaja es su gran coste.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0351",
+    "english_word": "solution",
+    "spanish_translation": "solución",
+    "example_sentence_en": "We need a practical solution.",
+    "example_sentence_es": "Necesitamos una solución práctica.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0352",
+    "english_word": "problem",
+    "spanish_translation": "problema",
+    "example_sentence_en": "That's not the real problem.",
+    "example_sentence_es": "Ese no es el verdadero problema.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0353",
+    "english_word": "cause",
+    "spanish_translation": "causa",
+    "example_sentence_en": "We still don't know the cause.",
+    "example_sentence_es": "Aún desconocemos la causa.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0354",
+    "english_word": "effect",
+    "spanish_translation": "efecto",
+    "example_sentence_en": "Stress can have a bad effect on sleep.",
+    "example_sentence_es": "El estrés puede tener un mal efecto a la hora de dormir.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0355",
+    "english_word": "maybe",
+    "spanish_translation": "quizá / tal vez",
+    "example_sentence_en": "Maybe we should wait a bit longer.",
+    "example_sentence_es": "Quizá deberíamos esperar un poco más.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0356",
+    "english_word": "perhaps",
+    "spanish_translation": "quizá",
+    "example_sentence_en": "Perhaps he's just busy.",
+    "example_sentence_es": "Tal vez él se encuentre ocupado.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0357",
+    "english_word": "definitely",
+    "spanish_translation": "definitivamente",
+    "example_sentence_en": "I will definitely try that.",
+    "example_sentence_es": "Definitivamente intentaré hacer eso.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0358",
+    "english_word": "probably",
+    "spanish_translation": "probablemente",
+    "example_sentence_en": "She will probably arrive late.",
+    "example_sentence_es": "Seguramente ella llegue tarde.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0359",
+    "english_word": "however",
+    "spanish_translation": "sin embargo",
+    "example_sentence_en": "The plan is good; however, it's expensive.",
+    "example_sentence_es": "El plan está bien, sin embargo, es caro.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0360",
+    "english_word": "although",
+    "spanish_translation": "aunque",
+    "example_sentence_en": "Although it was hard, we finished it.",
+    "example_sentence_es": "A pesar de ser difícil lo logramos acabar.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "opinions",
+      "debate",
+      "thinking"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0361",
+    "english_word": "and",
+    "spanish_translation": "y",
+    "example_sentence_en": "I work and study at the same time.",
+    "example_sentence_es": "Trabajo y a la vez estudio.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0362",
+    "english_word": "but",
+    "spanish_translation": "pero",
+    "example_sentence_en": "I wanted to go, but I was tired.",
+    "example_sentence_es": "Tenía ganas de ir pero me sentía cansado.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0363",
+    "english_word": "because",
+    "spanish_translation": "porque",
+    "example_sentence_en": "I stayed home because it was raining.",
+    "example_sentence_es": "Me quedé en mi casa debido a la lluvia.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0364",
+    "english_word": "so",
+    "spanish_translation": "así que / entonces",
+    "example_sentence_en": "I was hungry, so I made dinner.",
+    "example_sentence_es": "Estaba hambriento y preparé la cena.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0365",
+    "english_word": "if",
+    "spanish_translation": "si",
+    "example_sentence_en": "If you practice, you'll improve.",
+    "example_sentence_es": "Mejorarás tras practicar.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0366",
+    "english_word": "when",
+    "spanish_translation": "cuando",
+    "example_sentence_en": "Call me when you arrive.",
+    "example_sentence_es": "Pégame un toque cuando llegues.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0367",
+    "english_word": "while",
+    "spanish_translation": "mientras",
+    "example_sentence_en": "I listened to music while I worked.",
+    "example_sentence_es": "Escuché música mientras trabajaba.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0368",
+    "english_word": "unless",
+    "spanish_translation": "a menos que",
+    "example_sentence_en": "I won't go unless you come too.",
+    "example_sentence_es": "A no ser de que vengas, no voy.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0369",
+    "english_word": "therefore",
+    "spanish_translation": "por lo tanto",
+    "example_sentence_en": "The road was closed; therefore, we took another route.",
+    "example_sentence_es": "La carretera cerró, por lo cual pusimos rumbo a otra ruta.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0370",
+    "english_word": "also",
+    "spanish_translation": "también",
+    "example_sentence_en": "She speaks French and also English.",
+    "example_sentence_es": "Ella sabe hablar en tanto su lengua natal como francés.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0371",
+    "english_word": "besides",
+    "spanish_translation": "además",
+    "example_sentence_en": "Besides, we don't have enough time.",
+    "example_sentence_es": "Además sabemos que apenas tenemos tiempo.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0372",
+    "english_word": "first",
+    "spanish_translation": "primero",
+    "example_sentence_en": "First, let's review the basics.",
+    "example_sentence_es": "Antes de empezar primero revisemos la guía básica.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0373",
+    "english_word": "then",
+    "spanish_translation": "después / entonces",
+    "example_sentence_en": "Then we can move to the next part.",
+    "example_sentence_es": "Entonces iremos progresando a lo siguiente.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0374",
+    "english_word": "finally",
+    "spanish_translation": "finalmente",
+    "example_sentence_en": "Finally, everything made sense.",
+    "example_sentence_es": "Entendimos todo al final.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0375",
+    "english_word": "in fact",
+    "spanish_translation": "de hecho",
+    "example_sentence_en": "In fact, I already knew that.",
+    "example_sentence_es": "De hecho...eso ya lo sé.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0376",
+    "english_word": "for example",
+    "spanish_translation": "por ejemplo",
+    "example_sentence_en": "You need more input, for example, podcasts.",
+    "example_sentence_es": "Requieres de más aprendizaje, como utilizar los podcasts.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0377",
+    "english_word": "at least",
+    "spanish_translation": "al menos",
+    "example_sentence_en": "At least we tried.",
+    "example_sentence_es": "Al menos lo intentamos.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0378",
+    "english_word": "on the other hand",
+    "spanish_translation": "por otro lado",
+    "example_sentence_en": "On the other hand, staying home is cheaper.",
+    "example_sentence_es": "Por otro lado, quedarse en casa es más barato.",
+    "category": "connectors",
+    "difficulty": "medium",
+    "tags": [
+      "connectors",
+      "discourse",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0379",
+    "english_word": "in",
+    "spanish_translation": "en / dentro de",
+    "example_sentence_en": "The keys are in my bag.",
+    "example_sentence_es": "Las llaves están en mi bolso.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0380",
+    "english_word": "on",
+    "spanish_translation": "sobre / en",
+    "example_sentence_en": "The phone is on the desk.",
+    "example_sentence_es": "El teléfono está sobre el escritorio.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0381",
+    "english_word": "at",
+    "spanish_translation": "en",
+    "example_sentence_en": "I'll meet you at the station.",
+    "example_sentence_es": "Te veré en la estación.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0382",
+    "english_word": "under",
+    "spanish_translation": "debajo de",
+    "example_sentence_en": "The shoes are under the bed.",
+    "example_sentence_es": "Los zapatos están debajo de la cama.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0383",
+    "english_word": "over",
+    "spanish_translation": "encima de / sobre",
+    "example_sentence_en": "A lamp was hanging over the table.",
+    "example_sentence_es": "Una lámpara colgaba sobre la mesa.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0384",
+    "english_word": "between",
+    "spanish_translation": "entre",
+    "example_sentence_en": "The bank is between the pharmacy and the bakery.",
+    "example_sentence_es": "El banco está entre la farmacia y la panadería.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0385",
+    "english_word": "behind",
+    "spanish_translation": "detrás de",
+    "example_sentence_en": "There's a garden behind the house.",
+    "example_sentence_es": "Hay un jardín detrás de la casa.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0386",
+    "english_word": "in front of",
+    "spanish_translation": "delante de",
+    "example_sentence_en": "He parked in front of the building.",
+    "example_sentence_es": "Él aparcó delante del edificio.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0387",
+    "english_word": "near",
+    "spanish_translation": "cerca de",
+    "example_sentence_en": "I live near the city center.",
+    "example_sentence_es": "Vivo cerca del centro de la ciudad.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0388",
+    "english_word": "far",
+    "spanish_translation": "lejos",
+    "example_sentence_en": "The airport is far from here.",
+    "example_sentence_es": "El aeropuerto está lejos de aquí.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0389",
+    "english_word": "inside",
+    "spanish_translation": "dentro de",
+    "example_sentence_en": "Your notebook is inside the drawer.",
+    "example_sentence_es": "Tu cuaderno está dentro del cajón.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0390",
+    "english_word": "outside",
+    "spanish_translation": "fuera de",
+    "example_sentence_en": "Let's wait outside for a minute.",
+    "example_sentence_es": "Esperemos fuera un momento.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0391",
+    "english_word": "around",
+    "spanish_translation": "alrededor de",
+    "example_sentence_en": "We walked around the neighborhood.",
+    "example_sentence_es": "Caminamos por todo el barrio.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0392",
+    "english_word": "through",
+    "spanish_translation": "a través de / por",
+    "example_sentence_en": "Sunlight came through the window.",
+    "example_sentence_es": "La luz del sol entró por la ventana.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0393",
+    "english_word": "across",
+    "spanish_translation": "al otro lado de / cruzando",
+    "example_sentence_en": "The bank is across the street.",
+    "example_sentence_es": "El banco está al otro lado de la calle.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0394",
+    "english_word": "along",
+    "spanish_translation": "a lo largo de",
+    "example_sentence_en": "We walked along the river.",
+    "example_sentence_es": "Caminamos a lo largo del río.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0395",
+    "english_word": "toward",
+    "spanish_translation": "hacia",
+    "example_sentence_en": "He moved toward the door.",
+    "example_sentence_es": "Él se acercó hacia la puerta.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0396",
+    "english_word": "opposite",
+    "spanish_translation": "enfrente de",
+    "example_sentence_en": "The cafe is opposite the station.",
+    "example_sentence_es": "La cafetería está enfrente de la estación.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "prepositions",
+      "position"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0397",
+    "english_word": "wake up",
+    "spanish_translation": "despertarse",
+    "example_sentence_en": "I wake up early on weekdays.",
+    "example_sentence_es": "Me despierto temprano entre semana.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0398",
+    "english_word": "get up",
+    "spanish_translation": "levantarse",
+    "example_sentence_en": "He got up and opened the window.",
+    "example_sentence_es": "Él se levantó y abrió la ventana.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0399",
+    "english_word": "sit down",
+    "spanish_translation": "sentarse",
+    "example_sentence_en": "Please sit down and relax.",
+    "example_sentence_es": "Por favor, siéntate y relájate.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0400",
+    "english_word": "stand up",
+    "spanish_translation": "levantarse / ponerse de pie",
+    "example_sentence_en": "Everyone stood up when she entered.",
+    "example_sentence_es": "Todos se pusieron de pie cuando ella entró.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0401",
+    "english_word": "turn on",
+    "spanish_translation": "encender",
+    "example_sentence_en": "Turn on the light, please.",
+    "example_sentence_es": "Enciende la luz, por favor.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0402",
+    "english_word": "turn off",
+    "spanish_translation": "apagar",
+    "example_sentence_en": "Don't forget to turn off your phone.",
+    "example_sentence_es": "Asegúrate de apagar tu móvil.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0403",
+    "english_word": "go out",
+    "spanish_translation": "salir",
+    "example_sentence_en": "We don't go out much during the week.",
+    "example_sentence_es": "No pasamos el rato juntos entresemana.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0404",
+    "english_word": "come back",
+    "spanish_translation": "volver",
+    "example_sentence_en": "She'll come back tomorrow.",
+    "example_sentence_es": "Va a volver mañana.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0405",
+    "english_word": "find out",
+    "spanish_translation": "averiguar / descubrir",
+    "example_sentence_en": "I need to find out what happened.",
+    "example_sentence_es": "Desearía lograr saber qué pasó.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0406",
+    "english_word": "look for",
+    "spanish_translation": "buscar",
+    "example_sentence_en": "I'm looking for my wallet.",
+    "example_sentence_es": "Alguien vió de casualidad mi cartera.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0407",
+    "english_word": "put on",
+    "spanish_translation": "ponerse",
+    "example_sentence_en": "Put on a jacket before you leave.",
+    "example_sentence_es": "No te olvides de la rebeca en tu escapada.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0408",
+    "english_word": "take off",
+    "spanish_translation": "quitarse / despegar",
+    "example_sentence_en": "He took off his shoes at the door.",
+    "example_sentence_es": "Se le dio por quitarse en calzado en la puerta.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0409",
+    "english_word": "pick up",
+    "spanish_translation": "recoger / coger",
+    "example_sentence_en": "I'll pick you up after work.",
+    "example_sentence_es": "Pasaré a por tí después del encargo.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0410",
+    "english_word": "give back",
+    "spanish_translation": "devolver",
+    "example_sentence_en": "Please give back the book next week.",
+    "example_sentence_es": "Por favor, devuelve el libro la próxima semana.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0411",
+    "english_word": "carry on",
+    "spanish_translation": "continuar",
+    "example_sentence_en": "Carry on; you're doing well.",
+    "example_sentence_es": "Sigue; vas a buen ritmo.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0412",
+    "english_word": "slow down",
+    "spanish_translation": "reducir la velocidad / ir más despacio",
+    "example_sentence_en": "Slow down and speak clearly.",
+    "example_sentence_es": "Ve despacio y vocaliza debidamente.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0413",
+    "english_word": "hurry up",
+    "spanish_translation": "darse prisa",
+    "example_sentence_en": "Hurry up or we'll miss the bus.",
+    "example_sentence_es": "Date prisa o nos perderemos el autobús.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0414",
+    "english_word": "write down",
+    "spanish_translation": "apuntar / escribir",
+    "example_sentence_en": "Write down the new expression.",
+    "example_sentence_es": "Ve a escribir dicha citación.",
+    "category": "verbs",
+    "difficulty": "medium",
+    "tags": [
+      "phrasal-verbs",
+      "phrasal-verb"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0415",
+    "english_word": "How are you doing?",
+    "spanish_translation": "¿Cómo te va? / ¿Cómo estás?",
+    "example_sentence_en": "I usually ask, 'How are you doing?' at the start of a conversation.",
+    "example_sentence_es": "Suelo preguntar '¿Qué tal?' al principio de una conversación.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0416",
+    "english_word": "What do you mean?",
+    "spanish_translation": "¿Qué quieres decir?",
+    "example_sentence_en": "If something is unclear, just ask, 'What do you mean?'",
+    "example_sentence_es": "Si tienes dudas simplemente di, '¿A qué te refieres?'",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0417",
+    "english_word": "As far as I know",
+    "spanish_translation": "Que yo sepa / Hasta donde yo sé",
+    "example_sentence_en": "As far as I know, the class starts at six.",
+    "example_sentence_es": "Asumo yo que la asignatura inicia a eso de las seis.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0418",
+    "english_word": "It depends",
+    "spanish_translation": "Depende",
+    "example_sentence_en": "It depends on your schedule and priorities.",
+    "example_sentence_es": "Eso depende de lo apretado de tu propia agenda.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0419",
+    "english_word": "That makes sense",
+    "spanish_translation": "Tiene sentido",
+    "example_sentence_en": "Now I understand it better; that makes sense.",
+    "example_sentence_es": "Ahora lo entiendo mejor; tiene sentido.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0420",
+    "english_word": "I'm not sure",
+    "spanish_translation": "No estoy seguro",
+    "example_sentence_en": "I'm not sure if that's the right answer.",
+    "example_sentence_es": "No estoy seguro de que eso sea correcto.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0421",
+    "english_word": "Let me think",
+    "spanish_translation": "Déjame pensar",
+    "example_sentence_en": "Let me think before I reply.",
+    "example_sentence_es": "Déjame pensar en ello.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0422",
+    "english_word": "To be honest",
+    "spanish_translation": "Para ser sincero",
+    "example_sentence_en": "To be honest, I need more time.",
+    "example_sentence_es": "Para serte sincero, requiero de tiempo.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0423",
+    "english_word": "In my opinion",
+    "spanish_translation": "En mi opinión",
+    "example_sentence_en": "In my opinion, practice matters more than talent.",
+    "example_sentence_es": "Para mi, esto tiene más valor que el talento en sí.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0424",
+    "english_word": "Sounds good",
+    "spanish_translation": "Suena bien",
+    "example_sentence_en": "We can meet at seven. Sounds good.",
+    "example_sentence_es": "Podemos vernos a las 7. Suena guay.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0425",
+    "english_word": "No worries",
+    "spanish_translation": "No pasa nada / No te preocupes",
+    "example_sentence_en": "No worries, we can do it tomorrow.",
+    "example_sentence_es": "No te preocupes que mañana se hará posible.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0426",
+    "english_word": "It's up to you",
+    "spanish_translation": "Depende de ti",
+    "example_sentence_en": "We can stay or leave; it's up to you.",
+    "example_sentence_es": "Tu eres libre de decidir e irte.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0427",
+    "english_word": "I'm used to it",
+    "spanish_translation": "Estoy acostumbrado a ello",
+    "example_sentence_en": "I work under pressure, so I'm used to it.",
+    "example_sentence_es": "Aguanto presión porque ya sé como va el asusto.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0428",
+    "english_word": "I'm looking forward to it",
+    "spanish_translation": "Tengo ganas / Lo espero con ganas",
+    "example_sentence_en": "I'm looking forward to the weekend.",
+    "example_sentence_es": "Tengo muchas ganas de que llegue el fin de semana.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0429",
+    "english_word": "I'm running late",
+    "spanish_translation": "Voy tarde",
+    "example_sentence_en": "Sorry, I'm running late.",
+    "example_sentence_es": "Siento el enorme retrazo...",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0430",
+    "english_word": "That's not my thing",
+    "spanish_translation": "Eso no es lo mío",
+    "example_sentence_en": "Clubs are fun for some people, but that's not my thing.",
+    "example_sentence_es": "Los clubs son divertidos para algunos, pero eso no es lo mío.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0431",
+    "english_word": "I have no idea",
+    "spanish_translation": "No tengo ni idea",
+    "example_sentence_en": "I have no idea where he is.",
+    "example_sentence_es": "No tengo ni idea de dónde está.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0432",
+    "english_word": "Could you repeat that?",
+    "spanish_translation": "¿Podrías repetir eso?",
+    "example_sentence_en": "When I miss a word, I say, 'Could you repeat that?'",
+    "example_sentence_es": "Cuando no entiendo una palabra, digo: «¿Podrías repetir eso?»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "conversation",
+      "expressions",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0433",
+    "english_word": "actually",
+    "spanish_translation": "en realidad / de hecho",
+    "example_sentence_en": "I thought it was hard, but it's actually simple.",
+    "example_sentence_es": "Pensaba que era difícil, pero en realidad es sencillo.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0434",
+    "english_word": "basically",
+    "spanish_translation": "básicamente",
+    "example_sentence_en": "Basically, we need more practice.",
+    "example_sentence_es": "Básicamente, necesitamos más práctica.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0435",
+    "english_word": "somehow",
+    "spanish_translation": "de alguna manera",
+    "example_sentence_en": "Somehow, he always finds a solution.",
+    "example_sentence_es": "De alguna manera, él siempre encuentra una solución.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0436",
+    "english_word": "nearly",
+    "spanish_translation": "casi",
+    "example_sentence_en": "I nearly forgot the meeting.",
+    "example_sentence_es": "Casi olvidé la reunión.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0437",
+    "english_word": "quite",
+    "spanish_translation": "bastante",
+    "example_sentence_en": "The test was quite difficult.",
+    "example_sentence_es": "El examen fue bastante difícil.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0438",
+    "english_word": "rather",
+    "spanish_translation": "bastante / más bien",
+    "example_sentence_en": "I'm rather tired today.",
+    "example_sentence_es": "Hoy estoy bastante cansado.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0439",
+    "english_word": "instead",
+    "spanish_translation": "en lugar de / en vez de",
+    "example_sentence_en": "Let's walk instead of taking a taxi.",
+    "example_sentence_es": "Caminemos en lugar de coger un taxi.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0440",
+    "english_word": "likely",
+    "spanish_translation": "probable / probablemente",
+    "example_sentence_en": "It's likely to rain tonight.",
+    "example_sentence_es": "Es probable que llueva esta noche.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0441",
+    "english_word": "aware",
+    "spanish_translation": "consciente",
+    "example_sentence_en": "Are you aware of the risks?",
+    "example_sentence_es": "¿Eres consciente de los riesgos?",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0442",
+    "english_word": "available",
+    "spanish_translation": "disponible",
+    "example_sentence_en": "The manager isn't available right now.",
+    "example_sentence_es": "El gerente no está disponible ahora mismo.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0443",
+    "english_word": "common",
+    "spanish_translation": "común",
+    "example_sentence_en": "That's a very common mistake.",
+    "example_sentence_es": "Ese es un error muy común.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0444",
+    "english_word": "proper",
+    "spanish_translation": "adecuado / correcto",
+    "example_sentence_en": "You need proper rest.",
+    "example_sentence_es": "Necesitas descanso adecuado.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0445",
+    "english_word": "simple",
+    "spanish_translation": "simple",
+    "example_sentence_en": "The answer is simpler than it seems.",
+    "example_sentence_es": "La respuesta es más simple de lo que parece.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0446",
+    "english_word": "useful",
+    "spanish_translation": "útil",
+    "example_sentence_en": "This phrase is very useful in daily life.",
+    "example_sentence_es": "Esta frase es muy útil en la vida diaria.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0447",
+    "english_word": "average",
+    "spanish_translation": "medio / promedio",
+    "example_sentence_en": "The average result was better this time.",
+    "example_sentence_es": "El resultado promedio fue mejor esta vez.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0448",
+    "english_word": "recent",
+    "spanish_translation": "reciente",
+    "example_sentence_en": "Have you read any recent articles?",
+    "example_sentence_es": "¿Has leído artículos recientes?",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0449",
+    "english_word": "private",
+    "spanish_translation": "privado",
+    "example_sentence_en": "This is a private matter.",
+    "example_sentence_es": "Esto es un asunto privado.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0450",
+    "english_word": "whole",
+    "spanish_translation": "entero / completo",
+    "example_sentence_en": "I spent the whole day studying.",
+    "example_sentence_es": "Pasé el día entero estudiando.",
+    "category": "adjectives",
+    "difficulty": "advanced",
+    "tags": [
+      "advanced",
+      "precision"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0451",
+    "english_word": "I need to focus",
+    "spanish_translation": "Necesito concentrarme",
+    "example_sentence_en": "I say 'I need to focus' when I want to avoid distractions.",
+    "example_sentence_es": "Digo «Necesito concentrarme» cuando quiero evitar distracciones.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0452",
+    "english_word": "Let's do it now",
+    "spanish_translation": "Vamos a hacerlo ahora",
+    "example_sentence_en": "When I stop procrastinating, I tell myself, 'Let's do it now.'",
+    "example_sentence_es": "Cuando dejo de procrastinar, me digo: «Vamos a hacerlo ahora.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0453",
+    "english_word": "One step at a time",
+    "spanish_translation": "Paso a paso",
+    "example_sentence_en": "If a task feels big, think, 'One step at a time.'",
+    "example_sentence_es": "Si una tarea parece grande, piensa: «Paso a paso.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0454",
+    "english_word": "I can handle it",
+    "spanish_translation": "Puedo con ello",
+    "example_sentence_en": "Before a difficult situation, I remind myself, 'I can handle it.'",
+    "example_sentence_es": "Antes de una situación difícil, me recuerdo: «Puedo con ello.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0455",
+    "english_word": "This is enough for today",
+    "spanish_translation": "Esto es suficiente por hoy",
+    "example_sentence_en": "At the end of a study session, I think, 'This is enough for today.'",
+    "example_sentence_es": "Al final de una sesión de estudio, pienso: «Esto es suficiente por hoy.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0456",
+    "english_word": "I'll try again",
+    "spanish_translation": "Lo intentaré otra vez",
+    "example_sentence_en": "If I make a mistake, I say, 'I'll try again.'",
+    "example_sentence_es": "Si cometo un error, me digo: «Lo intentaré otra vez.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0457",
+    "english_word": "I almost forgot",
+    "spanish_translation": "Casi se me olvida",
+    "example_sentence_en": "I almost forgot to send that email.",
+    "example_sentence_es": "Casi olvido enviar ese correo.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0458",
+    "english_word": "What should I say?",
+    "spanish_translation": "¿Qué debería decir?",
+    "example_sentence_en": "Before answering, I sometimes think, 'What should I say?'",
+    "example_sentence_es": "Antes de responder, a veces pienso: «¿Qué debería decir?»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0459",
+    "english_word": "I don't know this word",
+    "spanish_translation": "No conozco esta palabra",
+    "example_sentence_en": "When reading, I note, 'I don't know this word.'",
+    "example_sentence_es": "Cuando leo, anoto: «No conozco esta palabra.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0460",
+    "english_word": "I understand the idea",
+    "spanish_translation": "Entiendo la idea",
+    "example_sentence_en": "Even if I miss some details, I may think, 'I understand the idea.'",
+    "example_sentence_es": "Aunque pierda algunos detalles, puedo pensar: «Entiendo la idea.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0461",
+    "english_word": "I need more practice",
+    "spanish_translation": "Necesito más práctica",
+    "example_sentence_en": "After speaking, I often think, 'I need more practice.'",
+    "example_sentence_es": "Después de hablar, a menudo pienso: «Necesito más práctica.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0462",
+    "english_word": "That sounds better",
+    "spanish_translation": "Eso suena mejor",
+    "example_sentence_en": "When I correct a sentence, I say, 'That sounds better.'",
+    "example_sentence_es": "Cuando corrijo una frase, digo: «Eso suena mejor.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0463",
+    "english_word": "I'm getting better",
+    "spanish_translation": "Estoy mejorando",
+    "example_sentence_en": "To stay motivated, tell yourself, 'I'm getting better.'",
+    "example_sentence_es": "Para mantenerte motivado, dite: «Estoy mejorando.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0464",
+    "english_word": "I can explain it",
+    "spanish_translation": "Puedo explicarlo",
+    "example_sentence_en": "Before speaking, think, 'I can explain it clearly.'",
+    "example_sentence_es": "Antes de hablar, piensa: «Puedo explicarlo con claridad.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0465",
+    "english_word": "Let's keep going",
+    "spanish_translation": "Sigamos",
+    "example_sentence_en": "When you feel tired, tell yourself, 'Let's keep going.'",
+    "example_sentence_es": "Cuando te sientes cansado, dite: «Sigamos.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0466",
+    "english_word": "I'll review it later",
+    "spanish_translation": "Lo repasaré más tarde",
+    "example_sentence_en": "I can't do everything now, so I'll review it later.",
+    "example_sentence_es": "No puedo hacer todo ahora, así que lo repasaré más tarde.",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0467",
+    "english_word": "This is not a big problem",
+    "spanish_translation": "Esto no es un gran problema",
+    "example_sentence_en": "To stay calm, think, 'This is not a big problem.'",
+    "example_sentence_es": "Para mantener la calma, piensa: «Esto no es un gran problema.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0468",
+    "english_word": "I'm ready",
+    "spanish_translation": "Estoy listo",
+    "example_sentence_en": "Before the meeting, I take a breath and think, 'I'm ready.'",
+    "example_sentence_es": "Antes de la reunión, respiro hondo y pienso: «Estoy listo.»",
+    "category": "expressions",
+    "difficulty": "medium",
+    "tags": [
+      "inner-dialogue",
+      "self-talk"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0469",
+    "english_word": "make a decision",
+    "spanish_translation": "tomar una decisión",
+    "example_sentence_en": "We need to make a decision today.",
+    "example_sentence_es": "Hoy tenemos que tomar una decisión.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0470",
+    "english_word": "take a break",
+    "spanish_translation": "tomarse un descanso",
+    "example_sentence_en": "Let's take a break after this task.",
+    "example_sentence_es": "Tomemos un descanso después de esta tarea.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0471",
+    "english_word": "have a look",
+    "spanish_translation": "echar un vistazo",
+    "example_sentence_en": "Can you have a look at this file?",
+    "example_sentence_es": "¿Puedes echar un vistazo a este archivo?",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0472",
+    "english_word": "pay attention",
+    "spanish_translation": "prestar atención",
+    "example_sentence_en": "Pay attention to the pronunciation.",
+    "example_sentence_es": "Presta atención a la pronunciación.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0473",
+    "english_word": "get ready",
+    "spanish_translation": "prepararse",
+    "example_sentence_en": "I need to get ready for work.",
+    "example_sentence_es": "Tengo que prepararme para el trabajo.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0474",
+    "english_word": "come true",
+    "spanish_translation": "hacerse realidad",
+    "example_sentence_en": "I hope your plans come true.",
+    "example_sentence_es": "Espero que tus planes se hagan realidad.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0475",
+    "english_word": "go wrong",
+    "spanish_translation": "salir mal",
+    "example_sentence_en": "Everything went wrong this morning.",
+    "example_sentence_es": "Esta mañana todo salió mal.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0476",
+    "english_word": "keep in touch",
+    "spanish_translation": "mantener el contacto",
+    "example_sentence_en": "Let's keep in touch after the course.",
+    "example_sentence_es": "Mantengamos el contacto después del curso.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0477",
+    "english_word": "make progress",
+    "spanish_translation": "progresar / hacer progresos",
+    "example_sentence_en": "You're making real progress.",
+    "example_sentence_es": "Estás haciendo un progreso real.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0478",
+    "english_word": "take responsibility",
+    "spanish_translation": "asumir responsabilidad",
+    "example_sentence_en": "He took responsibility for the mistake.",
+    "example_sentence_es": "Él asumió la responsabilidad del error.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0479",
+    "english_word": "have a chance",
+    "spanish_translation": "tener una oportunidad",
+    "example_sentence_en": "Do I have a chance to improve quickly?",
+    "example_sentence_es": "¿Tengo una oportunidad de mejorar rápido?",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0480",
+    "english_word": "do your best",
+    "spanish_translation": "hacer lo mejor posible",
+    "example_sentence_en": "Just do your best and stay calm.",
+    "example_sentence_es": "Haz lo mejor que puedas y mantén la calma.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0481",
+    "english_word": "tell the truth",
+    "spanish_translation": "decir la verdad",
+    "example_sentence_en": "Please tell the truth.",
+    "example_sentence_es": "Por favor, di la verdad.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0482",
+    "english_word": "catch a bus",
+    "spanish_translation": "coger un autobús",
+    "example_sentence_en": "We need to catch a bus in five minutes.",
+    "example_sentence_es": "Tenemos que coger el autobús en cinco minutos.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0483",
+    "english_word": "miss a chance",
+    "spanish_translation": "perder una oportunidad",
+    "example_sentence_en": "Don't miss a chance to practice.",
+    "example_sentence_es": "No pierdas una oportunidad de practicar.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0484",
+    "english_word": "save time",
+    "spanish_translation": "ahorrar tiempo",
+    "example_sentence_en": "This shortcut can save time.",
+    "example_sentence_es": "Este atajo puede ahorrar tiempo.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0485",
+    "english_word": "waste time",
+    "spanish_translation": "perder el tiempo",
+    "example_sentence_en": "I don't want to waste time on that.",
+    "example_sentence_es": "No quiero perder el tiempo en eso.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english"
+    ],
+    "note": ""
+  },
+  {
+    "id": "voc-0486",
+    "english_word": "set a goal",
+    "spanish_translation": "marcarse una meta",
+    "example_sentence_en": "Set a goal and work toward it.",
+    "example_sentence_es": "Márcate un meta y trabaja para conseguirla.",
+    "category": "expressions",
+    "difficulty": "advanced",
+    "tags": [
+      "collocations",
+      "natural-english",
+      "multi-word"
+    ],
+    "note": ""
+  }
+]

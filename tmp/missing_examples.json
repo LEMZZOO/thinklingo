@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "voc-0026",
+    "english_word": "soon",
+    "example_sentence_en": "I hope things get better soon."
+  },
+  {
+    "id": "voc-0027",
+    "english_word": "always",
+    "example_sentence_en": "She always checks the details."
+  },
+  {
+    "id": "voc-0028",
+    "english_word": "usually",
+    "example_sentence_en": "I usually study after dinner."
+  },
+  {
+    "id": "voc-0029",
+    "english_word": "often",
+    "example_sentence_en": "We often talk in English at work."
+  },
+  {
+    "id": "voc-0030",
+    "english_word": "sometimes",
+    "example_sentence_en": "Sometimes I overthink simple things."
+  },
+  {
+    "id": "voc-0031",
+    "english_word": "rarely",
+    "example_sentence_en": "I rarely drink coffee at night."
+  },
+  {
+    "id": "voc-0032",
+    "english_word": "never",
+    "example_sentence_en": "He never gives up easily."
+  },
+  {
+    "id": "voc-0033",
+    "english_word": "already",
+    "example_sentence_en": "I have already finished the task."
+  },
+  {
+    "id": "voc-0034",
+    "english_word": "yet",
+    "example_sentence_en": "I haven't decided yet."
+  },
+  {
+    "id": "voc-0035",
+    "english_word": "still",
+    "example_sentence_en": "I still need more practice."
+  },
+  {
+    "id": "voc-0036",
+    "english_word": "before",
+    "example_sentence_en": "Think before you answer."
+  },
+  {
+    "id": "voc-0037",
+    "english_word": "be",
+    "example_sentence_en": "I want to be more consistent with my practice."
+  },
+  {
+    "id": "voc-0038",
+    "english_word": "have",
+    "example_sentence_en": "We have a meeting at ten."
+  },
+  {
+    "id": "voc-0039",
+    "english_word": "do",
+    "example_sentence_en": "I need to do my homework tonight."
+  },
+  {
+    "id": "voc-0040",
+    "english_word": "make",
+    "example_sentence_en": "Let's make a simple plan first."
+  },
+  {
+    "id": "voc-0041",
+    "english_word": "take",
+    "example_sentence_en": "Take your time and answer calmly."
+  },
+  {
+    "id": "voc-0042",
+    "english_word": "get",
+    "example_sentence_en": "I want to get better at speaking."
+  },
+  {
+    "id": "voc-0043",
+    "english_word": "go",
+    "example_sentence_en": "We go to the gym after work."
+  },
+  {
+    "id": "voc-0044",
+    "english_word": "come",
+    "example_sentence_en": "Can you come a little earlier tomorrow?"
+  },
+  {
+    "id": "voc-0045",
+    "english_word": "give",
+    "example_sentence_en": "She gave me useful advice."
+  },
+  {
+    "id": "voc-0046",
+    "english_word": "put",
+    "example_sentence_en": "Put the book on the table."
+  },
+  {
+    "id": "voc-0047",
+    "english_word": "keep",
+    "example_sentence_en": "Keep practicing even on busy days."
+  },
+  {
+    "id": "voc-0048",
+    "english_word": "leave",
+    "example_sentence_en": "I usually leave home at eight."
+  },
+  {
+    "id": "voc-0049",
+    "english_word": "bring",
+    "example_sentence_en": "Please bring your notebook to class."
+  },
+  {
+    "id": "voc-0050",
+    "english_word": "start",
+    "example_sentence_en": "Let's start with the easiest part."
+  },
+  {
+    "id": "voc-0051",
+    "english_word": "finish",
+    "example_sentence_en": "I want to finish this chapter today."
+  },
+  {
+    "id": "voc-0052",
+    "english_word": "need",
+    "example_sentence_en": "We need more time for this exercise."
+  },
+  {
+    "id": "voc-0053",
+    "english_word": "want",
+    "example_sentence_en": "I want to sound more natural in English."
+  },
+  {
+    "id": "voc-0054",
+    "english_word": "use",
+    "example_sentence_en": "Try to use new words in real sentences."
+  },
+  {
+    "id": "voc-0055",
+    "english_word": "know",
+    "example_sentence_en": "Do you know the answer?"
+  },
+  {
+    "id": "voc-0056",
+    "english_word": "think",
+    "example_sentence_en": "I think this method works well."
+  },
+  {
+    "id": "voc-0057",
+    "english_word": "believe",
+    "example_sentence_en": "I believe you can improve a lot."
+  },
+  {
+    "id": "voc-0058",
+    "english_word": "understand",
+    "example_sentence_en": "I understand the idea now."
+  },
+  {
+    "id": "voc-0059",
+    "english_word": "remember",
+    "example_sentence_en": "Remember to review the new words."
+  },
+  {
+    "id": "voc-0060",
+    "english_word": "forget",
+    "example_sentence_en": "I always forget names under pressure."
+  },
+  {
+    "id": "voc-0061",
+    "english_word": "learn",
+    "example_sentence_en": "We learn faster when we repeat out loud."
+  },
+  {
+    "id": "voc-0062",
+    "english_word": "teach",
+    "example_sentence_en": "Good teachers teach with patience."
+  },
+  {
+    "id": "voc-0063",
+    "english_word": "speak",
+    "example_sentence_en": "She speaks English at work every day."
+  },
+  {
+    "id": "voc-0064",
+    "english_word": "say",
+    "example_sentence_en": "What did he say exactly?"
+  },
+  {
+    "id": "voc-0065",
+    "english_word": "tell",
+    "example_sentence_en": "Tell me the truth."
+  },
+  {
+    "id": "voc-0066",
+    "english_word": "ask",
+    "example_sentence_en": "Don't be afraid to ask questions."
+  },
+  {
+    "id": "voc-0067",
+    "english_word": "answer",
+    "example_sentence_en": "Try to answer in full sentences."
+  },
+  {
+    "id": "voc-0068",
+    "english_word": "call",
+    "example_sentence_en": "I'll call you after lunch."
+  },
+  {
+    "id": "voc-0069",
+    "english_word": "meet",
+    "example_sentence_en": "We met at a language exchange."
+  },
+  {
+    "id": "voc-0070",
+    "english_word": "find",
+    "example_sentence_en": "I can't find my headphones."
+  },
+  {
+    "id": "voc-0071",
+    "english_word": "show",
+    "example_sentence_en": "Can you show me another example?"
+  },
+  {
+    "id": "voc-0072",
+    "english_word": "change",
+    "example_sentence_en": "Small habits can change everything."
+  },
+  {
+    "id": "voc-0073",
+    "english_word": "house",
+    "example_sentence_en": "Their house is outside the city."
+  },
+  {
+    "id": "voc-0074",
+    "english_word": "flat",
+    "example_sentence_en": "I live in a small flat near the center."
+  },
+  {
+    "id": "voc-0075",
+    "english_word": "room",
+    "example_sentence_en": "My room is usually very quiet."
+  },
+  {
+    "id": "voc-0076",
+    "english_word": "kitchen",
+    "example_sentence_en": "The kitchen is next to the living room."
+  },
+  {
+    "id": "voc-0077",
+    "english_word": "bathroom",
+    "example_sentence_en": "The bathroom is at the end of the hall."
+  },
+  {
+    "id": "voc-0078",
+    "english_word": "bedroom",
+    "example_sentence_en": "My bedroom gets a lot of sunlight."
+  },
+  {
+    "id": "voc-0079",
+    "english_word": "living room",
+    "example_sentence_en": "We watch films in the living room."
+  },
+  {
+    "id": "voc-0080",
+    "english_word": "balcony",
+    "example_sentence_en": "She drinks coffee on the balcony every morning."
+  },
+  {
+    "id": "voc-0081",
+    "english_word": "wall",
+    "example_sentence_en": "There is a clock on the wall."
+  },
+  {
+    "id": "voc-0082",
+    "english_word": "door",
+    "example_sentence_en": "Please close the door quietly."
+  },
+  {
+    "id": "voc-0083",
+    "english_word": "window",
+    "example_sentence_en": "Open the window for a minute."
+  },
+  {
+    "id": "voc-0084",
+    "english_word": "key",
+    "example_sentence_en": "I can't find my house key."
+  },
+  {
+    "id": "voc-0085",
+    "english_word": "table",
+    "example_sentence_en": "Your phone is on the table."
+  },
+  {
+    "id": "voc-0086",
+    "english_word": "chair",
+    "example_sentence_en": "Take a chair and sit down."
+  },
+  {
+    "id": "voc-0087",
+    "english_word": "bed",
+    "example_sentence_en": "I went to bed too late yesterday."
+  },
+  {
+    "id": "voc-0088",
+    "english_word": "sofa",
+    "example_sentence_en": "He fell asleep on the sofa."
+  },
+  {
+    "id": "voc-0089",
+    "english_word": "lamp",
+    "example_sentence_en": "This lamp gives a warm light."
+  },
+  {
+    "id": "voc-0090",
+    "english_word": "shelf",
+    "example_sentence_en": "The books are on the top shelf."
+  },
+  {
+    "id": "voc-0091",
+    "english_word": "get dressed",
+    "example_sentence_en": "She got dressed in five minutes."
+  },
+  {
+    "id": "voc-0092",
+    "english_word": "brush",
+    "example_sentence_en": "I brush my teeth after breakfast."
+  },
+  {
+    "id": "voc-0093",
+    "english_word": "shower",
+    "example_sentence_en": "I need a quick shower before work."
+  },
+  {
+    "id": "voc-0094",
+    "english_word": "have breakfast",
+    "example_sentence_en": "We have breakfast together on Sundays."
+  },
+  {
+    "id": "voc-0095",
+    "english_word": "leave home",
+    "example_sentence_en": "I leave home at eight every day."
+  },
+  {
+    "id": "voc-0096",
+    "english_word": "arrive",
+    "example_sentence_en": "They arrived on time."
+  },
+  {
+    "id": "voc-0097",
+    "english_word": "work",
+    "example_sentence_en": "I work better in the morning."
+  },
+  {
+    "id": "voc-0098",
+    "english_word": "study",
+    "example_sentence_en": "She studies English every evening."
+  },
+  {
+    "id": "voc-0099",
+    "english_word": "cook",
+    "example_sentence_en": "I don't feel like cooking tonight."
+  },
+  {
+    "id": "voc-0100",
+    "english_word": "clean",
+    "example_sentence_en": "We clean the flat every Saturday."
+  },
+  {
+    "id": "voc-0101",
+    "english_word": "rest",
+    "example_sentence_en": "You should rest for a while."
+  },
+  {
+    "id": "voc-0102",
+    "english_word": "walk",
+    "example_sentence_en": "I like to walk after dinner."
+  },
+  {
+    "id": "voc-0103",
+    "english_word": "exercise",
+    "example_sentence_en": "He exercises four times a week."
+  },
+  {
+    "id": "voc-0104",
+    "english_word": "shop",
+    "example_sentence_en": "We need to shop for food later."
+  },
+  {
+    "id": "voc-0105",
+    "english_word": "relax",
+    "example_sentence_en": "I relax by listening to music."
+  },
+  {
+    "id": "voc-0106",
+    "english_word": "sleep",
+    "example_sentence_en": "I slept badly last night."
+  },
+  {
+    "id": "voc-0107",
+    "english_word": "bread",
+    "example_sentence_en": "I buy fresh bread every morning."
+  },
+  {
+    "id": "voc-0108",
+    "english_word": "rice",
+    "example_sentence_en": "We had rice with chicken for lunch."
+  },
+  {
+    "id": "voc-0109",
+    "english_word": "pasta",
+    "example_sentence_en": "Pasta is easy to cook."
+  },
+  {
+    "id": "voc-0110",
+    "english_word": "meat",
+    "example_sentence_en": "He doesn't eat much meat."
+  },
+  {
+    "id": "voc-0111",
+    "english_word": "fish",
+    "example_sentence_en": "This fish tastes very fresh."
+  },
+  {
+    "id": "voc-0112",
+    "english_word": "chicken",
+    "example_sentence_en": "I made chicken with vegetables."
+  },
+  {
+    "id": "voc-0113",
+    "english_word": "egg",
+    "example_sentence_en": "I usually eat two eggs for breakfast."
+  },
+  {
+    "id": "voc-0114",
+    "english_word": "milk",
+    "example_sentence_en": "There isn't any milk left."
+  },
+  {
+    "id": "voc-0115",
+    "english_word": "water",
+    "example_sentence_en": "Drink more water during the day."
+  },
+  {
+    "id": "voc-0116",
+    "english_word": "coffee",
+    "example_sentence_en": "I need coffee to wake up."
+  },
+  {
+    "id": "voc-0117",
+    "english_word": "tea",
+    "example_sentence_en": "She prefers tea in the evening."
+  },
+  {
+    "id": "voc-0118",
+    "english_word": "fruit",
+    "example_sentence_en": "Fruit is a good snack."
+  },
+  {
+    "id": "voc-0119",
+    "english_word": "vegetable",
+    "example_sentence_en": "Try to eat more vegetables."
+  },
+  {
+    "id": "voc-0120",
+    "english_word": "oil",
+    "example_sentence_en": "Add a little oil to the pan."
+  },
+  {
+    "id": "voc-0121",
+    "english_word": "salt",
+    "example_sentence_en": "Don't put too much salt in it."
+  },
+  {
+    "id": "voc-0122",
+    "english_word": "sugar",
+    "example_sentence_en": "I take my coffee without sugar."
+  },
+  {
+    "id": "voc-0123",
+    "english_word": "lunch",
+    "example_sentence_en": "Let's have lunch outside today."
+  },
+  {
+    "id": "voc-0124",
+    "english_word": "dinner",
+    "example_sentence_en": "Dinner will be ready in ten minutes."
+  },
+  {
+    "id": "voc-0125",
+    "english_word": "buy",
+    "example_sentence_en": "I need to buy a new charger."
+  },
+  {
+    "id": "voc-0126",
+    "english_word": "pay",
+    "example_sentence_en": "Can I pay by card here?"
+  },
+  {
+    "id": "voc-0127",
+    "english_word": "price",
+    "example_sentence_en": "The price is higher than I expected."
+  },
+  {
+    "id": "voc-0128",
+    "english_word": "cheap",
+    "example_sentence_en": "This shirt was really cheap."
+  },
+  {
+    "id": "voc-0129",
+    "english_word": "expensive",
+    "example_sentence_en": "That jacket looks good but it's too expensive."
+  },
+  {
+    "id": "voc-0130",
+    "english_word": "store",
+    "example_sentence_en": "There is a small store near my house."
+  },
+  {
+    "id": "voc-0131",
+    "english_word": "market",
+    "example_sentence_en": "We buy fruit at the local market."
+  },
+  {
+    "id": "voc-0132",
+    "english_word": "size",
+    "example_sentence_en": "Do you have this in a bigger size?"
+  },
+  {
+    "id": "voc-0133",
+    "english_word": "receipt",
+    "example_sentence_en": "Keep the receipt just in case."
+  },
+  {
+    "id": "voc-0134",
+    "english_word": "wallet",
+    "example_sentence_en": "I left my wallet at home."
+  },
+  {
+    "id": "voc-0135",
+    "english_word": "cash",
+    "example_sentence_en": "I don't usually carry cash."
+  },
+  {
+    "id": "voc-0136",
+    "english_word": "card",
+    "example_sentence_en": "My card didn't work the first time."
+  },
+  {
+    "id": "voc-0137",
+    "english_word": "shirt",
+    "example_sentence_en": "He wore a white shirt."
+  },
+  {
+    "id": "voc-0138",
+    "english_word": "trousers",
+    "example_sentence_en": "These trousers are too long."
+  },
+  {
+    "id": "voc-0139",
+    "english_word": "shoes",
+    "example_sentence_en": "I need comfortable shoes for walking."
+  },
+  {
+    "id": "voc-0140",
+    "english_word": "jacket",
+    "example_sentence_en": "Take a jacket because it's cold outside."
+  },
+  {
+    "id": "voc-0141",
+    "english_word": "bag",
+    "example_sentence_en": "My bag is under the chair."
+  },
+  {
+    "id": "voc-0142",
+    "english_word": "gift",
+    "example_sentence_en": "We bought her a small gift."
+  },
+  {
+    "id": "voc-0143",
+    "english_word": "street",
+    "example_sentence_en": "The hotel is on the next street."
+  },
+  {
+    "id": "voc-0144",
+    "english_word": "square",
+    "example_sentence_en": "Let's meet in the main square."
+  },
+  {
+    "id": "voc-0145",
+    "english_word": "neighborhood",
+    "example_sentence_en": "It's a quiet neighborhood."
+  },
+  {
+    "id": "voc-0146",
+    "english_word": "park",
+    "example_sentence_en": "Children are playing in the park."
+  },
+  {
+    "id": "voc-0147",
+    "english_word": "station",
+    "example_sentence_en": "The station is ten minutes away."
+  },
+  {
+    "id": "voc-0148",
+    "english_word": "airport",
+    "example_sentence_en": "We got to the airport early."
+  },
+  {
+    "id": "voc-0149",
+    "english_word": "hospital",
+    "example_sentence_en": "The hospital is open all night."
+  },
+  {
+    "id": "voc-0150",
+    "english_word": "school",
+    "example_sentence_en": "The school is near the park."
+  },
+  {
+    "id": "voc-0151",
+    "english_word": "university",
+    "example_sentence_en": "She studies at the university."
+  },
+  {
+    "id": "voc-0152",
+    "english_word": "office",
+    "example_sentence_en": "His office is in the city center."
+  },
+  {
+    "id": "voc-0153",
+    "english_word": "bank",
+    "example_sentence_en": "I need to go to the bank later."
+  },
+  {
+    "id": "voc-0154",
+    "english_word": "pharmacy",
+    "example_sentence_en": "There's a pharmacy on the corner."
+  },
+  {
+    "id": "voc-0155",
+    "english_word": "supermarket",
+    "example_sentence_en": "The supermarket closes at ten."
+  },
+  {
+    "id": "voc-0156",
+    "english_word": "restaurant",
+    "example_sentence_en": "We found a nice restaurant nearby."
+  },
+  {
+    "id": "voc-0157",
+    "english_word": "bus",
+    "example_sentence_en": "I usually take the bus to work."
+  },
+  {
+    "id": "voc-0158",
+    "english_word": "train",
+    "example_sentence_en": "The train was delayed again."
+  },
+  {
+    "id": "voc-0159",
+    "english_word": "taxi",
+    "example_sentence_en": "Let's take a taxi because we're late."
+  },
+  {
+    "id": "voc-0160",
+    "english_word": "ticket",
+    "example_sentence_en": "I bought the ticket online."
+  },
+  {
+    "id": "voc-0161",
+    "english_word": "job",
+    "example_sentence_en": "I'm looking for a better job."
+  },
+  {
+    "id": "voc-0162",
+    "english_word": "task",
+    "example_sentence_en": "This task should take ten minutes."
+  },
+  {
+    "id": "voc-0163",
+    "english_word": "project",
+    "example_sentence_en": "We're working on a new project."
+  },
+  {
+    "id": "voc-0164",
+    "english_word": "meeting",
+    "example_sentence_en": "The meeting starts at nine."
+  },
+  {
+    "id": "voc-0165",
+    "english_word": "deadline",
+    "example_sentence_en": "We need to meet the deadline."
+  },
+  {
+    "id": "voc-0166",
+    "english_word": "manager",
+    "example_sentence_en": "My manager is very organized."
+  },
+  {
+    "id": "voc-0167",
+    "english_word": "colleague",
+    "example_sentence_en": "I had lunch with a colleague."
+  },
+  {
+    "id": "voc-0168",
+    "english_word": "customer",
+    "example_sentence_en": "The customer asked for a quick update."
+  },
+  {
+    "id": "voc-0169",
+    "english_word": "salary",
+    "example_sentence_en": "The salary is paid at the end of the month."
+  },
+  {
+    "id": "voc-0170",
+    "english_word": "shift",
+    "example_sentence_en": "She works the morning shift."
+  },
+  {
+    "id": "voc-0171",
+    "english_word": "contract",
+    "example_sentence_en": "I signed the contract yesterday."
+  },
+  {
+    "id": "voc-0172",
+    "english_word": "report",
+    "example_sentence_en": "I finished the report before lunch."
+  },
+  {
+    "id": "voc-0173",
+    "english_word": "file",
+    "example_sentence_en": "Please send me the file again."
+  },
+  {
+    "id": "voc-0174",
+    "english_word": "email",
+    "example_sentence_en": "I answered all my emails."
+  },
+  {
+    "id": "voc-0175",
+    "english_word": "schedule",
+    "example_sentence_en": "My schedule is full this week."
+  },
+  {
+    "id": "voc-0176",
+    "english_word": "break",
+    "example_sentence_en": "Let's take a short break."
+  },
+  {
+    "id": "voc-0177",
+    "english_word": "interview",
+    "example_sentence_en": "The interview went well."
+  },
+  {
+    "id": "voc-0178",
+    "english_word": "skill",
+    "example_sentence_en": "Communication is an important skill."
+  },
+  {
+    "id": "voc-0179",
+    "english_word": "lesson",
+    "example_sentence_en": "Today's lesson is about past tense."
+  },
+  {
+    "id": "voc-0180",
+    "english_word": "course",
+    "example_sentence_en": "I'm taking an online course."
+  },
+  {
+    "id": "voc-0181",
+    "english_word": "class",
+    "example_sentence_en": "Our class starts at six."
+  },
+  {
+    "id": "voc-0182",
+    "english_word": "subject",
+    "example_sentence_en": "Math was never my favorite subject."
+  },
+  {
+    "id": "voc-0183",
+    "english_word": "exam",
+    "example_sentence_en": "He passed the exam last week."
+  },
+  {
+    "id": "voc-0184",
+    "english_word": "grade",
+    "example_sentence_en": "She got a very good grade."
+  },
+  {
+    "id": "voc-0185",
+    "english_word": "notebook",
+    "example_sentence_en": "Write the new words in your notebook."
+  },
+  {
+    "id": "voc-0186",
+    "english_word": "homework",
+    "example_sentence_en": "I haven't done my homework yet."
+  },
+  {
+    "id": "voc-0187",
+    "english_word": "exercise",
+    "example_sentence_en": "This exercise is more difficult."
+  },
+  {
+    "id": "voc-0188",
+    "english_word": "question",
+    "example_sentence_en": "I have a question about this word."
+  },
+  {
+    "id": "voc-0189",
+    "english_word": "answer",
+    "example_sentence_en": "Your answer is almost correct."
+  },
+  {
+    "id": "voc-0190",
+    "english_word": "mistake",
+    "example_sentence_en": "Mistakes are part of learning."
+  },
+  {
+    "id": "voc-0191",
+    "english_word": "practice",
+    "example_sentence_en": "Speaking practice is very important."
+  },
+  {
+    "id": "voc-0192",
+    "english_word": "level",
+    "example_sentence_en": "My listening level is improving."
+  },
+  {
+    "id": "voc-0193",
+    "english_word": "dictionary",
+    "example_sentence_en": "Use a dictionary when needed."
+  },
+  {
+    "id": "voc-0194",
+    "english_word": "example",
+    "example_sentence_en": "Can you give me an example?"
+  },
+  {
+    "id": "voc-0195",
+    "english_word": "rule",
+    "example_sentence_en": "This grammar rule is simple."
+  },
+  {
+    "id": "voc-0196",
+    "english_word": "pronunciation",
+    "example_sentence_en": "His pronunciation is getting better."
+  },
+  {
+    "id": "voc-0197",
+    "english_word": "computer",
+    "example_sentence_en": "My computer is running slowly today."
+  },
+  {
+    "id": "voc-0198",
+    "english_word": "laptop",
+    "example_sentence_en": "I always carry my laptop in this bag."
+  },
+  {
+    "id": "voc-0199",
+    "english_word": "phone",
+    "example_sentence_en": "My phone battery is almost dead."
+  },
+  {
+    "id": "voc-0200",
+    "english_word": "screen",
+    "example_sentence_en": "The text on the screen is too small."
+  },
+  {
+    "id": "voc-0201",
+    "english_word": "keyboard",
+    "example_sentence_en": "I need a better keyboard for work."
+  },
+  {
+    "id": "voc-0202",
+    "english_word": "mouse",
+    "example_sentence_en": "The mouse stopped working."
+  },
+  {
+    "id": "voc-0203",
+    "english_word": "folder",
+    "example_sentence_en": "The files are in the main folder."
+  },
+  {
+    "id": "voc-0204",
+    "english_word": "app",
+    "example_sentence_en": "This app is very useful for practice."
+  },
+  {
+    "id": "voc-0205",
+    "english_word": "website",
+    "example_sentence_en": "I found the answer on a website."
+  },
+  {
+    "id": "voc-0206",
+    "english_word": "password",
+    "example_sentence_en": "Don't share your password with anyone."
+  },
+  {
+    "id": "voc-0207",
+    "english_word": "account",
+    "example_sentence_en": "I can't access my account."
+  },
+  {
+    "id": "voc-0208",
+    "english_word": "message",
+    "example_sentence_en": "I sent you a message this morning."
+  },
+  {
+    "id": "voc-0209",
+    "english_word": "update",
+    "example_sentence_en": "The app needs an update."
+  },
+  {
+    "id": "voc-0210",
+    "english_word": "download",
+    "example_sentence_en": "The download took a long time."
+  },
+  {
+    "id": "voc-0211",
+    "english_word": "upload",
+    "example_sentence_en": "Please upload the document today."
+  },
+  {
+    "id": "voc-0212",
+    "english_word": "link",
+    "example_sentence_en": "Send me the link when you can."
+  },
+  {
+    "id": "voc-0213",
+    "english_word": "code",
+    "example_sentence_en": "I wrote the code last night."
+  },
+  {
+    "id": "voc-0214",
+    "english_word": "bug",
+    "example_sentence_en": "There's still a bug in the system."
+  },
+  {
+    "id": "voc-0215",
+    "english_word": "talk",
+    "example_sentence_en": "Can we talk for a minute?"
+  },
+  {
+    "id": "voc-0216",
+    "english_word": "chat",
+    "example_sentence_en": "We chatted for hours after dinner."
+  },
+  {
+    "id": "voc-0217",
+    "english_word": "discuss",
+    "example_sentence_en": "Let's discuss the plan calmly."
+  },
+  {
+    "id": "voc-0218",
+    "english_word": "explain",
+    "example_sentence_en": "Can you explain that again?"
+  },
+  {
+    "id": "voc-0219",
+    "english_word": "describe",
+    "example_sentence_en": "She described the problem clearly."
+  },
+  {
+    "id": "voc-0220",
+    "english_word": "mention",
+    "example_sentence_en": "He mentioned your name yesterday."
+  },
+  {
+    "id": "voc-0221",
+    "english_word": "repeat",
+    "example_sentence_en": "Could you repeat the last part?"
+  },
+  {
+    "id": "voc-0222",
+    "english_word": "listen",
+    "example_sentence_en": "You need to listen carefully."
+  },
+  {
+    "id": "voc-0223",
+    "english_word": "hear",
+    "example_sentence_en": "I can't hear you very well."
+  },
+  {
+    "id": "voc-0224",
+    "english_word": "understand",
+    "example_sentence_en": "I understand what you mean now."
+  },
+  {
+    "id": "voc-0225",
+    "english_word": "agree",
+    "example_sentence_en": "I agree with your idea."
+  },
+  {
+    "id": "voc-0226",
+    "english_word": "disagree",
+    "example_sentence_en": "I disagree, but I respect your point."
+  },
+  {
+    "id": "voc-0227",
+    "english_word": "promise",
+    "example_sentence_en": "I promise I'll be on time."
+  },
+  {
+    "id": "voc-0228",
+    "english_word": "warn",
+    "example_sentence_en": "They warned us about the traffic."
+  },
+  {
+    "id": "voc-0229",
+    "english_word": "advise",
+    "example_sentence_en": "I advise you to practice daily."
+  },
+  {
+    "id": "voc-0230",
+    "english_word": "suggest",
+    "example_sentence_en": "She suggested a better option."
+  },
+  {
+    "id": "voc-0231",
+    "english_word": "invite",
+    "example_sentence_en": "They invited us to dinner."
+  },
+  {
+    "id": "voc-0232",
+    "english_word": "reply",
+    "example_sentence_en": "He didn't reply to my message."
+  },
+  {
+    "id": "voc-0233",
+    "english_word": "mother",
+    "example_sentence_en": "My mother calls me every Sunday."
+  },
+  {
+    "id": "voc-0234",
+    "english_word": "father",
+    "example_sentence_en": "His father works abroad."
+  },
+  {
+    "id": "voc-0235",
+    "english_word": "son",
+    "example_sentence_en": "Their son is learning English too."
+  },
+  {
+    "id": "voc-0236",
+    "english_word": "daughter",
+    "example_sentence_en": "Her daughter is very curious."
+  },
+  {
+    "id": "voc-0237",
+    "english_word": "brother",
+    "example_sentence_en": "My brother lives in another city."
+  },
+  {
+    "id": "voc-0238",
+    "english_word": "sister",
+    "example_sentence_en": "My sister is younger than me."
+  },
+  {
+    "id": "voc-0239",
+    "english_word": "husband",
+    "example_sentence_en": "Her husband works from home."
+  },
+  {
+    "id": "voc-0240",
+    "english_word": "wife",
+    "example_sentence_en": "His wife is a doctor."
+  },
+  {
+    "id": "voc-0241",
+    "english_word": "friend",
+    "example_sentence_en": "A good friend helped me a lot."
+  },
+  {
+    "id": "voc-0242",
+    "english_word": "partner",
+    "example_sentence_en": "My partner is very supportive."
+  },
+  {
+    "id": "voc-0243",
+    "english_word": "parents",
+    "example_sentence_en": "My parents are proud of me."
+  },
+  {
+    "id": "voc-0244",
+    "english_word": "relatives",
+    "example_sentence_en": "We visit our relatives in summer."
+  },
+  {
+    "id": "voc-0245",
+    "english_word": "neighbor",
+    "example_sentence_en": "Our neighbor is very friendly."
+  },
+  {
+    "id": "voc-0246",
+    "english_word": "child",
+    "example_sentence_en": "Every child learns at a different pace."
+  },
+  {
+    "id": "voc-0247",
+    "english_word": "family",
+    "example_sentence_en": "Family is important to me."
+  },
+  {
+    "id": "voc-0248",
+    "english_word": "love",
+    "example_sentence_en": "Love requires trust and patience."
+  },
+  {
+    "id": "voc-0249",
+    "english_word": "trust",
+    "example_sentence_en": "Trust takes time to build."
+  },
+  {
+    "id": "voc-0250",
+    "english_word": "support",
+    "example_sentence_en": "Her support means a lot to me."
+  },
+  {
+    "id": "voc-0251",
+    "english_word": "happy",
+    "example_sentence_en": "I'm happy with my progress."
+  },
+  {
+    "id": "voc-0252",
+    "english_word": "sad",
+    "example_sentence_en": "He looked sad after the news."
+  },
+  {
+    "id": "voc-0253",
+    "english_word": "angry",
+    "example_sentence_en": "She was angry for a good reason."
+  },
+  {
+    "id": "voc-0254",
+    "english_word": "upset",
+    "example_sentence_en": "I was upset, but I stayed calm."
+  },
+  {
+    "id": "voc-0255",
+    "english_word": "worried",
+    "example_sentence_en": "They are worried about the result."
+  },
+  {
+    "id": "voc-0256",
+    "english_word": "calm",
+    "example_sentence_en": "Take a deep breath and stay calm."
+  },
+  {
+    "id": "voc-0257",
+    "english_word": "tired",
+    "example_sentence_en": "I'm too tired to go out tonight."
+  },
+  {
+    "id": "voc-0258",
+    "english_word": "excited",
+    "example_sentence_en": "We're excited about the trip."
+  },
+  {
+    "id": "voc-0259",
+    "english_word": "nervous",
+    "example_sentence_en": "I always get nervous before interviews."
+  },
+  {
+    "id": "voc-0260",
+    "english_word": "proud",
+    "example_sentence_en": "You should be proud of your effort."
+  },
+  {
+    "id": "voc-0261",
+    "english_word": "ashamed",
+    "example_sentence_en": "He felt ashamed of his mistake."
+  },
+  {
+    "id": "voc-0262",
+    "english_word": "surprised",
+    "example_sentence_en": "I was surprised by her answer."
+  },
+  {
+    "id": "voc-0263",
+    "english_word": "disappointed",
+    "example_sentence_en": "They were disappointed by the delay."
+  },
+  {
+    "id": "voc-0264",
+    "english_word": "bored",
+    "example_sentence_en": "I'm bored with the same routine."
+  },
+  {
+    "id": "voc-0265",
+    "english_word": "grateful",
+    "example_sentence_en": "I'm grateful for your help."
+  },
+  {
+    "id": "voc-0266",
+    "english_word": "afraid",
+    "example_sentence_en": "She was afraid to speak in public."
+  },
+  {
+    "id": "voc-0267",
+    "english_word": "relaxed",
+    "example_sentence_en": "I feel relaxed after a long walk."
+  },
+  {
+    "id": "voc-0268",
+    "english_word": "stressed",
+    "example_sentence_en": "He's been stressed all week."
+  },
+  {
+    "id": "voc-0292",
+    "english_word": "heart",
+    "example_sentence_en": "Exercise is good for your heart."
+  },
+  {
+    "id": "voc-0293",
+    "english_word": "stomach",
+    "example_sentence_en": "My stomach feels strange today."
+  },
+  {
+    "id": "voc-0294",
+    "english_word": "throat",
+    "example_sentence_en": "I have a sore throat."
+  },
+  {
+    "id": "voc-0295",
+    "english_word": "pain",
+    "example_sentence_en": "The pain is getting better."
+  },
+  {
+    "id": "voc-0296",
+    "english_word": "sick",
+    "example_sentence_en": "I feel sick after the trip."
+  },
+  {
+    "id": "voc-0297",
+    "english_word": "healthy",
+    "example_sentence_en": "A healthy diet matters a lot."
+  },
+  {
+    "id": "voc-0298",
+    "english_word": "doctor",
+    "example_sentence_en": "You should see a doctor."
+  },
+  {
+    "id": "voc-0299",
+    "english_word": "medicine",
+    "example_sentence_en": "Take the medicine after lunch."
+  },
+  {
+    "id": "voc-0300",
+    "english_word": "fever",
+    "example_sentence_en": "He had a fever last night."
+  },
+  {
+    "id": "voc-0301",
+    "english_word": "cough",
+    "example_sentence_en": "This cough won't go away."
+  },
+  {
+    "id": "voc-0302",
+    "english_word": "rest",
+    "example_sentence_en": "You need more rest."
+  },
+  {
+    "id": "voc-0303",
+    "english_word": "breathe",
+    "example_sentence_en": "Try to breathe slowly."
+  },
+  {
+    "id": "voc-0304",
+    "english_word": "recover",
+    "example_sentence_en": "It took her a week to recover."
+  },
+  {
+    "id": "voc-0305",
+    "english_word": "money",
+    "example_sentence_en": "I need to save more money."
+  },
+  {
+    "id": "voc-0306",
+    "english_word": "bank account",
+    "example_sentence_en": "My salary goes into my bank account."
+  },
+  {
+    "id": "voc-0307",
+    "english_word": "save",
+    "example_sentence_en": "We're saving for a trip."
+  },
+  {
+    "id": "voc-0308",
+    "english_word": "spend",
+    "example_sentence_en": "Try not to spend too much."
+  },
+  {
+    "id": "voc-0309",
+    "english_word": "cost",
+    "example_sentence_en": "How much does it cost?"
+  },
+  {
+    "id": "voc-0310",
+    "english_word": "budget",
+    "example_sentence_en": "We need a realistic budget."
+  },
+  {
+    "id": "voc-0311",
+    "english_word": "rent",
+    "example_sentence_en": "Rent is expensive in that area."
+  },
+  {
+    "id": "voc-0312",
+    "english_word": "bill",
+    "example_sentence_en": "The electricity bill was higher this month."
+  },
+  {
+    "id": "voc-0313",
+    "english_word": "afford",
+    "example_sentence_en": "I can't afford that right now."
+  },
+  {
+    "id": "voc-0314",
+    "english_word": "payment",
+    "example_sentence_en": "The payment went through successfully."
+  },
+  {
+    "id": "voc-0315",
+    "english_word": "hotel",
+    "example_sentence_en": "We stayed in a small hotel."
+  },
+  {
+    "id": "voc-0316",
+    "english_word": "reservation",
+    "example_sentence_en": "I made the reservation online."
+  },
+  {
+    "id": "voc-0317",
+    "english_word": "passport",
+    "example_sentence_en": "Don't forget your passport."
+  },
+  {
+    "id": "voc-0318",
+    "english_word": "suitcase",
+    "example_sentence_en": "My suitcase is too heavy."
+  },
+  {
+    "id": "voc-0319",
+    "english_word": "flight",
+    "example_sentence_en": "The flight was delayed by two hours."
+  },
+  {
+    "id": "voc-0320",
+    "english_word": "luggage",
+    "example_sentence_en": "Our luggage arrived late."
+  },
+  {
+    "id": "voc-0346",
+    "english_word": "result",
+    "example_sentence_en": "The result was better than expected."
+  },
+  {
+    "id": "voc-0347",
+    "english_word": "advantage",
+    "example_sentence_en": "Working from home has one big advantage."
+  },
+  {
+    "id": "voc-0348",
+    "english_word": "disadvantage",
+    "example_sentence_en": "The main disadvantage is the cost."
+  },
+  {
+    "id": "voc-0349",
+    "english_word": "solution",
+    "example_sentence_en": "We need a practical solution."
+  },
+  {
+    "id": "voc-0350",
+    "english_word": "problem",
+    "example_sentence_en": "That's not the real problem."
+  },
+  {
+    "id": "voc-0351",
+    "english_word": "cause",
+    "example_sentence_en": "We still don't know the cause."
+  },
+  {
+    "id": "voc-0352",
+    "english_word": "effect",
+    "example_sentence_en": "Stress can have a bad effect on sleep."
+  },
+  {
+    "id": "voc-0353",
+    "english_word": "maybe",
+    "example_sentence_en": "Maybe we should wait a bit longer."
+  },
+  {
+    "id": "voc-0354",
+    "english_word": "perhaps",
+    "example_sentence_en": "Perhaps he's just busy."
+  },
+  {
+    "id": "voc-0355",
+    "english_word": "definitely",
+    "example_sentence_en": "I will definitely try that."
+  },
+  {
+    "id": "voc-0356",
+    "english_word": "probably",
+    "example_sentence_en": "She will probably arrive late."
+  },
+  {
+    "id": "voc-0357",
+    "english_word": "however",
+    "example_sentence_en": "The plan is good; however, it's expensive."
+  },
+  {
+    "id": "voc-0358",
+    "english_word": "although",
+    "example_sentence_en": "Although it was hard, we finished it."
+  },
+  {
+    "id": "voc-0359",
+    "english_word": "and",
+    "example_sentence_en": "I work and study at the same time."
+  },
+  {
+    "id": "voc-0360",
+    "english_word": "but",
+    "example_sentence_en": "I wanted to go, but I was tired."
+  },
+  {
+    "id": "voc-0361",
+    "english_word": "because",
+    "example_sentence_en": "I stayed home because it was raining."
+  },
+  {
+    "id": "voc-0362",
+    "english_word": "so",
+    "example_sentence_en": "I was hungry, so I made dinner."
+  },
+  {
+    "id": "voc-0363",
+    "english_word": "if",
+    "example_sentence_en": "If you practice, you'll improve."
+  },
+  {
+    "id": "voc-0364",
+    "english_word": "when",
+    "example_sentence_en": "Call me when you arrive."
+  },
+  {
+    "id": "voc-0365",
+    "english_word": "while",
+    "example_sentence_en": "I listened to music while I worked."
+  },
+  {
+    "id": "voc-0366",
+    "english_word": "unless",
+    "example_sentence_en": "I won't go unless you come too."
+  },
+  {
+    "id": "voc-0367",
+    "english_word": "therefore",
+    "example_sentence_en": "The road was closed; therefore, we took another route."
+  },
+  {
+    "id": "voc-0368",
+    "english_word": "also",
+    "example_sentence_en": "She speaks French and also English."
+  },
+  {
+    "id": "voc-0369",
+    "english_word": "besides",
+    "example_sentence_en": "Besides, we don't have enough time."
+  },
+  {
+    "id": "voc-0370",
+    "english_word": "first",
+    "example_sentence_en": "First, let's review the basics."
+  },
+  {
+    "id": "voc-0371",
+    "english_word": "then",
+    "example_sentence_en": "Then we can move to the next part."
+  },
+  {
+    "id": "voc-0372",
+    "english_word": "finally",
+    "example_sentence_en": "Finally, everything made sense."
+  },
+  {
+    "id": "voc-0373",
+    "english_word": "in fact",
+    "example_sentence_en": "In fact, I already knew that."
+  },
+  {
+    "id": "voc-0374",
+    "english_word": "for example",
+    "example_sentence_en": "You need more input, for example, podcasts."
+  },
+  {
+    "id": "voc-0400",
+    "english_word": "turn off",
+    "example_sentence_en": "Don't forget to turn off your phone."
+  },
+  {
+    "id": "voc-0401",
+    "english_word": "go out",
+    "example_sentence_en": "We don't go out much during the week."
+  },
+  {
+    "id": "voc-0402",
+    "english_word": "come back",
+    "example_sentence_en": "She'll come back tomorrow."
+  },
+  {
+    "id": "voc-0403",
+    "english_word": "find out",
+    "example_sentence_en": "I need to find out what happened."
+  },
+  {
+    "id": "voc-0404",
+    "english_word": "look for",
+    "example_sentence_en": "I'm looking for my wallet."
+  },
+  {
+    "id": "voc-0405",
+    "english_word": "put on",
+    "example_sentence_en": "Put on a jacket before you leave."
+  },
+  {
+    "id": "voc-0406",
+    "english_word": "take off",
+    "example_sentence_en": "He took off his shoes at the door."
+  },
+  {
+    "id": "voc-0407",
+    "english_word": "pick up",
+    "example_sentence_en": "I'll pick you up after work."
+  },
+  {
+    "id": "voc-0408",
+    "english_word": "give back",
+    "example_sentence_en": "Please give back the book next week."
+  },
+  {
+    "id": "voc-0409",
+    "english_word": "carry on",
+    "example_sentence_en": "Carry on; you're doing well."
+  },
+  {
+    "id": "voc-0410",
+    "english_word": "slow down",
+    "example_sentence_en": "Slow down and speak clearly."
+  },
+  {
+    "id": "voc-0411",
+    "english_word": "hurry up",
+    "example_sentence_en": "Hurry up or we'll miss the bus."
+  },
+  {
+    "id": "voc-0412",
+    "english_word": "write down",
+    "example_sentence_en": "Write down the new expression."
+  },
+  {
+    "id": "voc-0413",
+    "english_word": "How are you doing?",
+    "example_sentence_en": "I usually ask, 'How are you doing?' at the start of a conversation."
+  },
+  {
+    "id": "voc-0414",
+    "english_word": "What do you mean?",
+    "example_sentence_en": "If something is unclear, just ask, 'What do you mean?'"
+  },
+  {
+    "id": "voc-0415",
+    "english_word": "As far as I know",
+    "example_sentence_en": "As far as I know, the class starts at six."
+  },
+  {
+    "id": "voc-0416",
+    "english_word": "It depends",
+    "example_sentence_en": "It depends on your schedule and priorities."
+  },
+  {
+    "id": "voc-0417",
+    "english_word": "That makes sense",
+    "example_sentence_en": "Now I understand it better; that makes sense."
+  },
+  {
+    "id": "voc-0418",
+    "english_word": "I'm not sure",
+    "example_sentence_en": "I'm not sure if that's the right answer."
+  },
+  {
+    "id": "voc-0419",
+    "english_word": "Let me think",
+    "example_sentence_en": "Let me think before I reply."
+  },
+  {
+    "id": "voc-0420",
+    "english_word": "To be honest",
+    "example_sentence_en": "To be honest, I need more time."
+  },
+  {
+    "id": "voc-0421",
+    "english_word": "In my opinion",
+    "example_sentence_en": "In my opinion, practice matters more than talent."
+  },
+  {
+    "id": "voc-0422",
+    "english_word": "Sounds good",
+    "example_sentence_en": "We can meet at seven. Sounds good."
+  },
+  {
+    "id": "voc-0423",
+    "english_word": "No worries",
+    "example_sentence_en": "No worries, we can do it tomorrow."
+  },
+  {
+    "id": "voc-0424",
+    "english_word": "It's up to you",
+    "example_sentence_en": "We can stay or leave; it's up to you."
+  },
+  {
+    "id": "voc-0425",
+    "english_word": "I'm used to it",
+    "example_sentence_en": "I work under pressure, so I'm used to it."
+  },
+  {
+    "id": "voc-0427",
+    "english_word": "I'm running late",
+    "example_sentence_en": "Sorry, I'm running late."
+  }
+]
