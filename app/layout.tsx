@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "English Vocab App",
+  title: "ThinkLingo",
   description: "Aprende vocabulario en contexto",
 };
 
