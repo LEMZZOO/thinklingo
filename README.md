@@ -13,7 +13,7 @@ La aplicación permite estudiar vocabulario, consultar ejemplos reales de uso, p
 
 ---
 
-> `https://thinklingo.vercel.app`
+[Abrir Thinklingo](https://thinklingo.vercel.app)
 
 ---
 
@@ -248,7 +248,7 @@ Versión inicial funcional completada con:
 
 Si quieres usar este proyecto como referencia o ver más trabajo mío, puedes enlazar aquí también tu perfil de LinkedIn y tu portfolio.
 
-- LinkedIn: `<https://www.linkedin.com/in/lamine-sane-26b30b214/>`
+- [LinkedIn](https://www.linkedin.com/in/lamine-sane-26b30b214/)
 
 ---
 
