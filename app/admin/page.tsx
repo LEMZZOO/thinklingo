@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 export default async function AdminPage() {
   const supabase = await createClient();
@@ -41,17 +42,21 @@ export default async function AdminPage() {
         </div>
 
         <div className="pt-4 flex flex-col gap-3">
-          <p className="text-[11px] text-slate-400 dark:text-slate-600 text-center uppercase tracking-widest font-bold">
-            Configuración de Academias (Próximamente)
+          <Link 
+            href="/admin/academias"
+            className="w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98] text-center flex items-center justify-center gap-2 group"
+          >
+            Gestionar Academias
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+          </Link>
+          <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center uppercase tracking-widest font-bold mt-2">
+            Fase 2: Academy Core Activo
           </p>
-          <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-            <div className="h-full bg-blue-500 w-1/4 rounded-full"></div>
-          </div>
         </div>
       </div>
 
       <p className="mt-8 text-xs text-slate-400 dark:text-slate-600 text-center uppercase tracking-[0.2em] font-black">
-        Academy Core <span className="text-slate-300 dark:text-slate-800">•</span> Protección Admin Lista
+        Academy Core <span className="text-slate-300 dark:text-slate-800">•</span> Gestión de Academias Lista
       </p>
     </main>
   );

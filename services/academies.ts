@@ -39,3 +39,40 @@ export async function getActiveAcademies(): Promise<Academy[]> {
 
   return data as Academy[];
 }
+
+/**
+ * Obtiene todas las academias (incluyendo inactivas) para el panel admin.
+ */
+export async function getAllAcademies(): Promise<Academy[]> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from('academies')
+    .select('*')
+    .order('name');
+
+  if (error) {
+    return [];
+  }
+
+  return data as Academy[];
+}
+
+/**
+ * Obtiene una academia específica por su ID.
+ */
+export async function getAcademyById(id: string): Promise<Academy | null> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from('academies')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error || !data) {
+    return null;
+  }
+
+  return data as Academy;
+}
