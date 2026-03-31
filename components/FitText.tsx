@@ -10,13 +10,15 @@ interface FitTextProps {
   maxFontSize?: number;
   minFontSize?: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export function FitText({ 
   text, 
   maxFontSize = 60, 
   minFontSize = 16, 
-  className = "" 
+  className = "",
+  style = {}
 }: FitTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -71,7 +73,8 @@ export function FitText({
           wordBreak: 'normal',
           overflowWrap: 'normal',
           hyphens: 'none',
-          lineHeight: '1.1'
+          lineHeight: '1.1',
+          ...style
         }}
       >
         {text}
