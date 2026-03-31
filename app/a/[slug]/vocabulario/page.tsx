@@ -75,17 +75,9 @@ export default async function AcademyVocabPage({
         </div>
 
         <div className="w-full max-w-xs h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-            <div className="h-full bg-(--academy-primary) w-1/3 rounded-full animate-[progress_3s_ease-in-out_infinite]"></div>
+            <div className="h-full bg-(--academy-primary) w-1/3 rounded-full animate-pulse"></div>
         </div>
       </section>
-
-      <style jsx global>{`
-        @keyframes progress {
-          0% { transform: translateX(-100%); }
-          50% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-      `}</style>
     </main>
   );
 }
