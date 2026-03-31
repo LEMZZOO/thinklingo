@@ -5,6 +5,7 @@ import { getAllVocabulary } from '@/lib/vocabulary';
 import { useAppContext } from '@/components/AppProvider';
 import { VocabularyEntry } from '@/types';
 import { FitText } from '@/components/FitText';
+import { InlineNotice } from '@/components/InlineNotice';
 
 type QuizMode = 'en-es' | 'es-en';
 
@@ -40,13 +41,15 @@ function getCategoryLabel(category: string) {
 }
 
 export default function Quiz() {
-  const { progress, updateQuizStats, isMounted } = useAppContext();
+  const { getProgress, updateQuizStats, isMounted } = useAppContext();
+  const progress = getProgress('global');
 
   const [hasStarted, setHasStarted] = useState(false);
   const [mode, setMode] = useState<QuizMode>('en-es');
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [onlyFavs, setOnlyFavs] = useState(false);
+  const [alertMsg, setAlertMsg] = useState<string | null>(null);
 
   const [deck, setDeck] = useState<VocabularyEntry[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,10 +98,11 @@ export default function Quiz() {
     });
 
     if (filtered.length === 0) {
-      alert('No hay palabras que coincidan con estos filtros.');
+      setAlertMsg('No hay palabras que coincidan con estos filtros.');
       return;
     }
 
+    setAlertMsg(null);
     filtered = [...filtered].sort(() => Math.random() - 0.5);
 
     setDeck(filtered);
@@ -117,7 +121,7 @@ export default function Quiz() {
     setIsAnswered(true);
 
     const isCorrect = id === currentCard.id;
-    updateQuizStats(isCorrect);
+    updateQuizStats('global', isCorrect);
   };
 
   const handleNext = () => {
@@ -320,12 +324,16 @@ export default function Quiz() {
               </div>
             </div>
 
-            <button
-              onClick={handleStart}
-              className="w-full bg-purple-600 text-white font-black text-lg text-center py-4 rounded-2xl shadow-[0_4px_14px_0_rgba(147,51,234,0.39)] hover:bg-purple-700 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
-            >
-              Comenzar Quiz
-            </button>
+            <div className="space-y-4">
+              {alertMsg && <InlineNotice type="warning" message={alertMsg} onClose={() => setAlertMsg(null)} />}
+              
+              <button
+                onClick={handleStart}
+                className="w-full bg-purple-600 text-white font-black text-lg text-center py-4 rounded-2xl shadow-[0_4px_14px_0_rgba(147,51,234,0.39)] hover:bg-purple-700 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+              >
+                Comenzar Quiz
+              </button>
+            </div>
           </div>
         ) : (
           <div className="flex-1 flex flex-col max-h-[75vh]">

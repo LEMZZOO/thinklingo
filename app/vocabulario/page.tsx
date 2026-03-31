@@ -37,7 +37,8 @@ function getCategoryLabel(category: string) {
 }
 
 export default function VocabularioList() {
-  const { progress, toggleFavorite, isMounted } = useAppContext();
+  const { getProgress, toggleFavorite, isMounted } = useAppContext();
+  const progress = getProgress('global');
 
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
@@ -305,7 +306,7 @@ export default function VocabularioList() {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  toggleFavorite(v.id);
+                  toggleFavorite('global', v.id);
                 }}
                 className="absolute top-2 right-2 p-3 rounded-full bg-white/50 dark:bg-slate-800/50 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition-colors z-10"
                 aria-label={isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}

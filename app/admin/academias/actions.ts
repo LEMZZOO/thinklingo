@@ -36,6 +36,7 @@ export type AcademyFormState = {
     color_secondary?: string;
     color_accent?: string;
     is_active?: boolean;
+    uses_custom_vocabulary?: boolean;
   };
 };
 
@@ -57,6 +58,8 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
   const color_secondary = formData.get('color_secondary') as string;
   const color_accent = formData.get('color_accent') as string;
   const is_active = formData.get('is_active') === 'on';
+  // checkbox ausente en formData cuando está desmarcado → false
+  const uses_custom_vocabulary = formData.get('uses_custom_vocabulary') === 'on';
 
   // Recopilar datos actuales para devolverlos en caso de error
   const currentData = {
@@ -68,7 +71,8 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     color_primary,
     color_secondary,
     color_accent,
-    is_active
+    is_active,
+    uses_custom_vocabulary,
   };
 
   // 1. Validaciones básicas
@@ -142,6 +146,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     color_secondary,
     color_accent,
     is_active,
+    uses_custom_vocabulary,
   };
 
   if (id) {

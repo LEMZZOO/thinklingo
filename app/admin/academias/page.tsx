@@ -56,18 +56,20 @@ export default async function AcademiasListPage() {
               </thead>
               <tbody className="divide-y divide-gray-50 dark:divide-slate-800/50">
                 {academies.map((academy) => (
-                  <tr key={academy.id} className="group hover:bg-slate-50 dark:hover:bg-slate-950 transition-colors">
+                  <tr key={academy.id} className="group hover:bg-blue-50/40 dark:hover:bg-slate-800/40 transition-colors cursor-pointer">
                     <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                         <div 
-                           className="w-3 h-3 rounded-full" 
-                           style={{ backgroundColor: academy.color_primary }}
-                         ></div>
-                         <span className="font-bold text-slate-700 dark:text-slate-200">{academy.name}</span>
-                      </div>
+                      <Link href={`/admin/academias/${academy.id}`} className="flex items-center gap-3 min-w-0">
+                        <div 
+                          className="w-3 h-3 rounded-full shrink-0" 
+                          style={{ backgroundColor: academy.color_primary }}
+                        />
+                        <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{academy.name}</span>
+                      </Link>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="text-xs font-mono text-slate-400 dark:text-slate-500">/a/{academy.slug}</span>
+                      <Link href={`/admin/academias/${academy.id}`} className="block">
+                        <span className="text-xs font-mono text-slate-400 dark:text-slate-500">/a/{academy.slug}</span>
+                      </Link>
                     </td>
                     <td className="px-6 py-4">
                       {academy.is_active ? (
@@ -81,12 +83,20 @@ export default async function AcademiasListPage() {
                       )}
                     </td>
                     <td className="px-6 py-4 text-right">
-                       <Link 
-                         href={`/admin/academias/${academy.id}`}
-                         className="text-blue-600 dark:text-blue-400 font-bold text-xs hover:bg-blue-100 dark:hover:bg-blue-950 px-3 py-1.5 rounded-lg transition-colors border border-transparent hover:border-blue-200 dark:hover:border-blue-900"
-                       >
-                         Editar
-                       </Link>
+                      <div className="flex items-center justify-end gap-2">
+                        <Link 
+                          href={`/admin/academias/${academy.id}/vocabulario`}
+                          className="text-slate-500 dark:text-slate-400 font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+                        >
+                          Vocabulario
+                        </Link>
+                        <Link 
+                          href={`/admin/academias/${academy.id}/editar`}
+                          className="text-blue-600 dark:text-blue-400 font-bold text-xs hover:bg-blue-100 dark:hover:bg-blue-950 px-3 py-1.5 rounded-lg transition-colors border border-transparent hover:border-blue-200 dark:hover:border-blue-900"
+                        >
+                          Editar
+                        </Link>
+                      </div>
                     </td>
                   </tr>
                 ))}

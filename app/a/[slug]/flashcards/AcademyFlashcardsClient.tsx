@@ -2,10 +2,10 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { getAllVocabulary } from '@/lib/vocabulary';
 import { useAppContext } from '@/components/AppProvider';
 import { FitText } from '@/components/FitText';
 import { Academy } from '@/types/academy';
+import { VocabularyEntry } from '@/types';
 
 const CATEGORY_LABELS: Record<string, string> = {
   adjectives: 'Adjetivos',
@@ -34,16 +34,21 @@ const DIFFICULTY_OPTIONS = [
   { value: 'advanced', label: 'Advanced' },
 ];
 
-function getCategoryLabel(category: string) {
-  return CATEGORY_LABELS[category] ?? category;
+function getCategoryLabel(category?: string | null) {
+  if (!category || !category.trim()) return 'Sin categoría';
+  const cat = category.trim();
+  if (cat === '_uncategorized') return 'Sin categoría';
+  return CATEGORY_LABELS[cat] ?? cat;
 }
 
 interface AcademyFlashcardsClientProps {
   academy: Academy;
+  entries: VocabularyEntry[];
 }
 
-export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProps) {
-  const { progress, toggleFavorite, setStatus, isMounted } = useAppContext();
+export function AcademyFlashcardsClient({ academy, entries }: AcademyFlashcardsClientProps) {
+  const { getProgress, toggleFavorite, setStatus, isMounted } = useAppContext();
+  const progress = getProgress(academy.slug);
 
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
@@ -55,20 +60,30 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
 
   const categoryDropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const allVocab = useMemo(() => getAllVocabulary(), []);
-  const allCategories = useMemo(
-    () => Array.from(new Set(allVocab.map((v) => v.category))).sort(),
-    [allVocab]
-  );
+  const allCategories = useMemo(() => {
+    return Array.from(
+      new Set(
+        entries.map((v) => {
+          const c = v.category?.trim();
+          return c ? c : '_uncategorized';
+        })
+      )
+    ).sort((a, b) => {
+      if (a === '_uncategorized') return 1;
+      if (b === '_uncategorized') return -1;
+      return a.localeCompare(b);
+    });
+  }, [entries]);
 
   const deck = useMemo(() => {
-    return allVocab.filter((v) => {
-      if (category && v.category !== category) return false;
+    return entries.filter((v) => {
+      const itemTargetCat = v.category?.trim() ? v.category.trim() : '_uncategorized';
+      if (category && itemTargetCat !== category) return false;
       if (difficulty && v.difficulty !== difficulty) return false;
       if (onlyFavs && (!isMounted || !progress.favorites.includes(v.id))) return false;
       return true;
     });
-  }, [allVocab, category, difficulty, onlyFavs, progress.favorites, isMounted]);
+  }, [entries, category, difficulty, onlyFavs, progress.favorites, isMounted]);
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -89,7 +104,9 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);  // Safe currentCard derivation
+  }, []);  
+
+  // Safe currentCard derivation
   const currentCard = deck.length > 0 ? deck[Math.min(currentIndex, deck.length - 1)] : null;
 
   const isFav =
@@ -100,7 +117,7 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
   const handleNext = () => {
     if (currentCard && currentIndex < deck.length - 1) {
       if (isMounted && progress.status[currentCard.id] !== 'learned') {
-        setStatus(currentCard.id, 'seen');
+        setStatus(academy.slug, currentCard.id, 'seen');
       }
 
       setCurrentIndex((prev) => prev + 1);
@@ -121,12 +138,12 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
 
   return (
     <main className="min-h-screen flex flex-col bg-gray-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors pb-16">
-      <header className="sticky top-0 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-4 pb-4">
+      <header className="sticky top-12 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-4 pb-4">
         <div className="flex justify-between items-center mb-4">
           <Link href={`/a/${academy.slug}`} className="group flex items-center gap-3">
              <div 
                style={primaryBg}
-               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-(--academy-primary)/20 group-hover:scale-105 transition-transform"
+               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform"
              >
                 {academy.logo_url ? (
                    <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
@@ -135,7 +152,7 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                 )}
              </div>
              <div>
-               <h1 className="text-lg font-black text-slate-800 dark:text-slate-100 leading-none group-hover:text-(--academy-primary) transition-colors">
+               <h1 className="text-lg font-black text-slate-800 dark:text-slate-100 leading-none group-hover:text-[var(--academy-primary)] transition-colors">
                  {academy.name}
                </h1>
                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">
@@ -158,7 +175,7 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                      className="flex h-11 w-full items-center justify-between rounded-xl border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 shadow-sm transition hover:bg-gray-50 dark:hover:bg-slate-800"
                    >
                      <span className="truncate">
-                       {category ? getCategoryLabel(category) : 'Categoría'}
+                       {category ? getCategoryLabel(category) : 'Todas las categorías'}
                      </span>
                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" className={`ml-3 transition-transform ${categoryOpen ? 'rotate-180' : ''}`}><path d="m6 9 6 6 6-6"/></svg>
                    </button>
@@ -171,7 +188,7 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-bold uppercase transition ${category === '' ? 'text-white' : 'text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-white/5'}`}
                          style={category === '' ? primaryBg : {}}
                        >
-                         <span>Todas</span>
+                         <span>Todas las categorías</span>
                        </button>
                        {allCategories.map((item) => {
                          const active = category === item;
@@ -222,15 +239,6 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                  {onlyFavs ? 'Favoritas' : 'Todas'}
                </button>
 
-               <div className="flex items-center gap-3 shrink-0">
-                  <Link 
-                    href={`/a/${academy.slug}/vocabulario`}
-                    className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-(--academy-primary) transition-colors flex items-center gap-1.5 p-2"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
-                    Lista
-                  </Link>
-               </div>
             </div>
         </div>
       </header>
@@ -241,6 +249,7 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 text-slate-400"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M8 12h8"/></svg>
             <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Sin tarjetas</p>
             <button
+               type="button"
                onClick={() => { setCategory(''); setDifficulty(''); setOnlyFavs(false); }}
                className="mt-4 text-xs font-black uppercase tracking-widest"
                style={primaryText}
@@ -313,6 +322,8 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
              {/* Actions */}
              <div className="mt-10 flex items-center justify-center gap-6">
                 <button 
+                   type="button"
+                   aria-label="Anterior"
                    onClick={handlePrev}
                    disabled={currentIndex === 0}
                    className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-lg shadow-black/5 disabled:opacity-30 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all active:scale-90"
@@ -322,7 +333,9 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
 
                 <div className="flex gap-4">
                    <button 
-                     onClick={() => toggleFavorite(currentCard.id)}
+                     type="button"
+                     aria-label={isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+                     onClick={() => toggleFavorite(academy.slug, currentCard.id)}
                      className={`w-16 h-16 flex items-center justify-center rounded-3xl shadow-xl transition-all active:scale-95 ${isFav 
                        ? 'bg-amber-100 dark:bg-amber-950/30 border-amber-200 text-amber-500' 
                        : 'bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800 text-slate-300 hover:text-amber-500'}`}
@@ -331,7 +344,9 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                    </button>
 
                    <button 
-                     onClick={() => setStatus(currentCard.id, isLearned ? 'new' : 'learned')}
+                     type="button"
+                     aria-label={isLearned ? 'Marcar como nuevo' : 'Marcar como aprendido'}
+                     onClick={() => setStatus(academy.slug, currentCard.id, isLearned ? 'new' : 'learned')}
                      style={isLearned ? primaryBg : {}}
                      className={`w-16 h-16 flex items-center justify-center rounded-3xl shadow-xl transition-all active:scale-95 ${isLearned 
                        ? 'text-white border-0' 
@@ -346,6 +361,8 @@ export function AcademyFlashcardsClient({ academy }: AcademyFlashcardsClientProp
                 </div>
 
                 <button 
+                   type="button"
+                   aria-label="Siguiente"
                    onClick={handleNext}
                    disabled={currentIndex === deck.length - 1}
                    className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-lg shadow-black/5 disabled:opacity-30 hover:bg-gray-50 dark:hover:bg-slate-800 transition-all active:scale-90"

@@ -45,12 +45,7 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  // If user is already logged in, don't show login page
-  if (request.nextUrl.pathname.startsWith('/login')) {
-    if (user) {
-      return NextResponse.redirect(new URL('/', request.url))
-    }
-  }
+  // Let login page handle its own dynamic redirects based on memberships
 
   return supabaseResponse
 }

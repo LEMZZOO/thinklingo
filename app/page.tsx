@@ -5,7 +5,8 @@ import { getAllVocabulary } from '@/lib/vocabulary';
 import { useAppContext } from '@/components/AppProvider';
 
 export default function Home() {
-  const { theme, toggleTheme, progress, isMounted } = useAppContext();
+  const { theme, toggleTheme, getProgress, isMounted } = useAppContext();
+  const progress = getProgress('global');
   const vocab = getAllVocabulary();
 
   const totalWords = vocab.length;

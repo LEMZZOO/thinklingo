@@ -21,85 +21,103 @@ const DEFAULT_PROGRESS: UserProgress = {
   quizStats: { correct: 0, incorrect: 0, total: 0 },
 };
 
+type AllProgress = Record<string, UserProgress>;
+
 export function useVocabProgress() {
-  const [progress, setProgress] = useState<UserProgress>(DEFAULT_PROGRESS);
+  const [allProgress, setAllProgress] = useState<AllProgress>({});
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const loaded = getFromStorage<UserProgress>('progress', DEFAULT_PROGRESS);
-    if (loaded && typeof loaded === 'object') {
-      setProgress({
-        favorites: loaded.favorites || [],
-        status: loaded.status || {},
-        quizStats: loaded.quizStats || { correct: 0, incorrect: 0, total: 0 },
-      });
+    // Migration & Load logic
+    const oldFormat = getFromStorage<any>('progress', null);
+    let loadedV2 = getFromStorage<AllProgress>('progress_v2', {});
+
+    // If no v2 progress, but old v1 exists with an array of favorites, migrate it to a 'global' namespace
+    if (Object.keys(loadedV2).length === 0 && oldFormat && Array.isArray(oldFormat.favorites)) {
+      loadedV2 = { global: oldFormat };
+      saveToStorage('progress_v2', loadedV2);
     }
+    
+    setAllProgress(loadedV2);
     setMounted(true);
   }, []);
 
-  const saveAndSet = useCallback((newProgress: UserProgress) => {
-    setProgress(newProgress);
-    saveToStorage('progress', newProgress);
-  }, []);
+  const getProgress = useCallback((academyKey: string) => {
+    return allProgress[academyKey] || DEFAULT_PROGRESS;
+  }, [allProgress]);
 
-  const toggleFavorite = useCallback((id: string) => {
-    setProgress((prev) => {
-      const isFav = prev.favorites.includes(id);
+  const toggleFavorite = useCallback((academyKey: string, id: string) => {
+    setAllProgress((prev) => {
+      const prog = prev[academyKey] || DEFAULT_PROGRESS;
+      const isFav = prog.favorites.includes(id);
       const newFavs = isFav 
-        ? prev.favorites.filter((fid) => fid !== id)
-        : [...prev.favorites, id];
+        ? prog.favorites.filter((fid) => fid !== id)
+        : [...prog.favorites, id];
         
-      const newState = { ...prev, favorites: newFavs };
-      saveToStorage('progress', newState);
+      const newState = { ...prev, [academyKey]: { ...prog, favorites: newFavs } };
+      saveToStorage('progress_v2', newState);
       return newState;
     });
   }, []);
 
-  const setStatus = useCallback((id: string, st: WordStatus) => {
-    setProgress((prev) => {
+  const setStatus = useCallback((academyKey: string, id: string, st: WordStatus) => {
+    setAllProgress((prev) => {
+      const prog = prev[academyKey] || DEFAULT_PROGRESS;
       const newState = {
         ...prev,
-        status: { ...prev.status, [id]: st },
+        [academyKey]: { ...prog, status: { ...prog.status, [id]: st } },
       };
-      saveToStorage('progress', newState);
+      saveToStorage('progress_v2', newState);
       return newState;
     });
   }, []);
 
-  const updateQuizStats = useCallback((isCorrect: boolean) => {
-    setProgress((prev) => {
-      const stats = prev.quizStats || { correct: 0, incorrect: 0, total: 0 };
+  const updateQuizStats = useCallback((academyKey: string, isCorrect: boolean) => {
+    setAllProgress((prev) => {
+      const prog = prev[academyKey] || DEFAULT_PROGRESS;
+      const stats = prog.quizStats || { correct: 0, incorrect: 0, total: 0 };
       const newState = {
         ...prev,
-        quizStats: {
-          correct: stats.correct + (isCorrect ? 1 : 0),
-          incorrect: stats.incorrect + (isCorrect ? 0 : 1),
-          total: stats.total + 1,
+        [academyKey]: {
+          ...prog,
+          quizStats: {
+            correct: stats.correct + (isCorrect ? 1 : 0),
+            incorrect: stats.incorrect + (isCorrect ? 0 : 1),
+            total: stats.total + 1,
+          }
         }
       };
-      saveToStorage('progress', newState);
+      saveToStorage('progress_v2', newState);
       return newState;
     });
   }, []);
 
-  const resetData = useCallback((type: 'all' | 'quiz' | 'favorites' | 'status') => {
-    setProgress((prev) => {
-      let newState = { ...prev };
+  const resetData = useCallback((academyKey: string, type: 'all' | 'quiz' | 'favorites' | 'status') => {
+    setAllProgress((prev) => {
+      const prog = prev[academyKey] || DEFAULT_PROGRESS;
+      let newProg = { ...prog };
+
       if (type === 'all') {
-        newState = DEFAULT_PROGRESS;
+        newProg = {
+          favorites: [],
+          status: {},
+          quizStats: { correct: 0, incorrect: 0, total: 0 }
+        };
       } else if (type === 'quiz') {
-        newState.quizStats = { correct: 0, incorrect: 0, total: 0 };
+        newProg.quizStats = { correct: 0, incorrect: 0, total: 0 };
       } else if (type === 'favorites') {
-        newState.favorites = [];
+        newProg.favorites = [];
       } else if (type === 'status') {
-        newState.status = {};
+        newProg.status = {};
       }
-      saveToStorage('progress', newState);
+
+      const newState = { ...prev, [academyKey]: newProg };
+      saveToStorage('progress_v2', newState);
       return newState;
     });
   }, []);
 
-  return { progress, toggleFavorite, setStatus, updateQuizStats, resetData, isMounted: mounted };
+  return { getProgress, toggleFavorite, setStatus, updateQuizStats, resetData, isMounted: mounted };
 }
 
 export function useTheme() {

@@ -1,5 +1,8 @@
 import { getAcademyBySlug } from '@/services/academies';
+import { getActiveAcademyVocabulary, getAcademyVocabularySource, toVocabularyEntry } from '@/services/academyVocabulary';
+import { getAllVocabulary } from '@/lib/vocabulary';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { AcademyVocabClient } from './AcademyVocabClient';
 
 export default async function AcademyVocabPage({
@@ -14,7 +17,14 @@ export default async function AcademyVocabPage({
     notFound();
   }
 
+  const source = getAcademyVocabularySource(academy);
+  const entries = source === 'db' 
+    ? (await getActiveAcademyVocabulary(academy.id)).map(toVocabularyEntry)
+    : getAllVocabulary();
+
   return (
-    <AcademyVocabClient academy={academy} />
+    <Suspense fallback={null}>
+      <AcademyVocabClient academy={academy} entries={entries} />
+    </Suspense>
   );
 }

@@ -3,7 +3,8 @@
 import { useAppContext } from '@/components/AppProvider';
 
 export default function ClientDetailControls({ id }: { id: string }) {
-  const { progress, toggleFavorite, setStatus, isMounted } = useAppContext();
+  const { getProgress, toggleFavorite, setStatus, isMounted } = useAppContext();
+  const progress = getProgress('global');
 
   if (!isMounted) return null;
 
@@ -18,7 +19,7 @@ export default function ClientDetailControls({ id }: { id: string }) {
 
       <div className="grid grid-cols-2 gap-3">
          <button 
-          onClick={() => toggleFavorite(id)}
+          onClick={() => toggleFavorite('global', id)}
           className={`col-span-2 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl transition-all font-bold ${
             isFav 
               ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-500 border border-amber-200 dark:border-amber-800 shadow-sm'
@@ -32,7 +33,7 @@ export default function ClientDetailControls({ id }: { id: string }) {
         </button>
 
         <button
-          onClick={() => setStatus(id, status === 'seen' ? 'new' : 'seen')}
+          onClick={() => setStatus('global', id, status === 'seen' ? 'new' : 'seen')}
           className={`col-span-1 flex items-center justify-center gap-2 px-3 py-3.5 rounded-2xl transition-all font-bold border ${
             status === 'seen'
               ? 'bg-blue-600 border-blue-600 text-white shadow-md'
@@ -44,7 +45,7 @@ export default function ClientDetailControls({ id }: { id: string }) {
         </button>
 
         <button
-          onClick={() => setStatus(id, status === 'learned' ? 'new' : 'learned')}
+          onClick={() => setStatus('global', id, status === 'learned' ? 'new' : 'learned')}
            className={`col-span-1 flex items-center justify-center gap-2 px-3 py-3.5 rounded-2xl transition-all font-bold border ${
             status === 'learned'
               ? 'bg-green-500 border-green-500 text-white shadow-md'

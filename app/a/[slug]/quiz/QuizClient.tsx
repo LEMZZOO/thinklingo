@@ -2,11 +2,11 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { getAllVocabulary } from '@/lib/vocabulary';
 import { useAppContext } from '@/components/AppProvider';
 import { VocabularyEntry } from '@/types';
 import { FitText } from '@/components/FitText';
 import { Academy } from '@/types/academy';
+import { InlineNotice } from '@/components/InlineNotice';
 
 type QuizMode = 'en-es' | 'es-en';
 
@@ -37,22 +37,28 @@ const DIFFICULTY_OPTIONS = [
   { value: 'advanced', label: 'Advanced' },
 ];
 
-function getCategoryLabel(category: string) {
-  return CATEGORY_LABELS[category] ?? category;
+function getCategoryLabel(category?: string | null) {
+  if (!category || !category.trim()) return 'Sin categoría';
+  const cat = category.trim();
+  if (cat === '_uncategorized') return 'Sin categoría';
+  return CATEGORY_LABELS[cat] ?? cat;
 }
 
 interface AcademyQuizClientProps {
   academy: Academy;
+  entries: VocabularyEntry[];
 }
 
-export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
-  const { progress, updateQuizStats, isMounted } = useAppContext();
+export default function AcademyQuizClient({ academy, entries }: AcademyQuizClientProps) {
+  const { getProgress, updateQuizStats, isMounted } = useAppContext();
+  const progress = getProgress(academy.slug);
 
   const [hasStarted, setHasStarted] = useState(false);
   const [mode, setMode] = useState<QuizMode>('en-es');
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [onlyFavs, setOnlyFavs] = useState(false);
+  const [alertMsg, setAlertMsg] = useState<string | null>(null);
 
   const [deck, setDeck] = useState<VocabularyEntry[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,11 +69,20 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
 
   const categoryDropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const allVocab = useMemo(() => getAllVocabulary(), []);
-  const allCategories = useMemo(
-    () => Array.from(new Set(allVocab.map((v) => v.category))).sort(),
-    [allVocab]
-  );
+  const allCategories = useMemo(() => {
+    return Array.from(
+      new Set(
+        entries.map((v) => {
+          const c = v.category?.trim();
+          return c ? c : '_uncategorized';
+        })
+      )
+    ).sort((a, b) => {
+      if (a === '_uncategorized') return 1;
+      if (b === '_uncategorized') return -1;
+      return a.localeCompare(b);
+    });
+  }, [entries]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -86,25 +101,27 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
   }, []);
 
   const generateOptions = (correct: VocabularyEntry) => {
-    const others = allVocab.filter((v) => v.id !== correct.id);
+    const others = entries.filter((v) => v.id !== correct.id);
     const shuffledOthers = [...others].sort(() => Math.random() - 0.5);
     const selectedWrong = shuffledOthers.slice(0, 3);
     return [correct, ...selectedWrong].sort(() => Math.random() - 0.5);
   };
 
   const handleStart = () => {
-    let filtered = allVocab.filter((v) => {
-      if (category && v.category !== category) return false;
+    let filtered = entries.filter((v) => {
+      const itemTargetCat = v.category?.trim() ? v.category.trim() : '_uncategorized';
+      if (category && itemTargetCat !== category) return false;
       if (difficulty && v.difficulty !== difficulty) return false;
       if (onlyFavs && (!isMounted || !progress.favorites.includes(v.id))) return false;
       return true;
     });
 
     if (filtered.length === 0) {
-      alert('Sin palabras para estos filtros.');
+      setAlertMsg('Sin palabras para estos filtros.');
       return;
     }
 
+    setAlertMsg(null);
     filtered = [...filtered].sort(() => Math.random() - 0.5);
 
     setDeck(filtered);
@@ -123,7 +140,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
     setIsAnswered(true);
 
     const isCorrect = id === currentCard.id;
-    updateQuizStats(isCorrect);
+    updateQuizStats(academy.slug, isCorrect);
   };
 
   const handleNext = () => {
@@ -146,12 +163,12 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
 
   return (
     <main className="min-h-screen flex flex-col bg-gray-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors pb-16">
-      <header className="sticky top-0 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-4 pb-4">
+      <header className="sticky top-12 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-4 pb-4">
         <div className="flex justify-between items-center mb-4">
           <Link href={`/a/${academy.slug}`} className="group flex items-center gap-3">
              <div 
                style={primaryBg}
-               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-(--academy-primary)/20 group-hover:scale-105 transition-transform"
+               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform"
              >
                 {academy.logo_url ? (
                    <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
@@ -160,7 +177,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
                 )}
              </div>
              <div>
-               <h1 className="text-lg font-black text-slate-800 dark:text-slate-100 leading-none group-hover:text-(--academy-primary) transition-colors">
+               <h1 className="text-lg font-black text-slate-800 dark:text-slate-100 leading-none group-hover:text-[var(--academy-primary)] transition-colors">
                  {academy.name}
                </h1>
                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">
@@ -175,13 +192,6 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
             </span>
           )}
         </div>
-
-        {!hasStarted && (
-           <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-400 overflow-x-auto scrollbar-hide pb-2">
-              <Link href={`/a/${academy.slug}/vocabulario`} className="hover:text-(--academy-primary) transition-colors whitespace-nowrap">Lista</Link>
-              <Link href={`/a/${academy.slug}/flashcards`} className="hover:text-(--academy-primary) transition-colors whitespace-nowrap">Flashcards</Link>
-           </div>
-        )}
       </header>
 
       <div className="flex-1 flex flex-col p-6 max-w-md mx-auto w-full">
@@ -197,20 +207,22 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
                 <h3 className="text-[10px] font-black text-slate-300 dark:text-slate-600 uppercase tracking-widest mb-3">Modo</h3>
                 <div className="grid grid-cols-2 gap-3">
                   <button
+                    type="button"
                     onClick={() => setMode('en-es')}
                     className={`p-4 rounded-2xl border-2 transition-all font-black text-xs ${mode === 'en-es'
-                        ? 'border-(--academy-primary) bg-(--academy-primary)/5 text-(--academy-primary)'
-                        : 'border-gray-50 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-400 hover:border-(--academy-primary)/30'
+                        ? 'border-[var(--academy-primary)] bg-[var(--academy-primary)]/5 text-[var(--academy-primary)]'
+                        : 'border-gray-50 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-400 hover:border-gray-200 dark:hover:border-slate-700'
                       }`}
                     style={mode === 'en-es' ? { borderColor: 'var(--academy-primary)', backgroundColor: 'color-mix(in srgb, var(--academy-primary) 5%, transparent)', color: 'var(--academy-primary)' } : {}}
                   >
                     EN → ES
                   </button>
                   <button
+                    type="button"
                     onClick={() => setMode('es-en')}
                     className={`p-4 rounded-2xl border-2 transition-all font-black text-xs ${mode === 'es-en'
-                        ? 'border-(--academy-primary) bg-(--academy-primary)/5 text-(--academy-primary)'
-                        : 'border-gray-50 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-400 hover:border-(--academy-primary)/30'
+                        ? 'border-[var(--academy-primary)] bg-[var(--academy-primary)]/5 text-[var(--academy-primary)]'
+                        : 'border-gray-50 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-400 hover:border-gray-200 dark:hover:border-slate-700'
                       }`}
                     style={mode === 'es-en' ? { borderColor: 'var(--academy-primary)', backgroundColor: 'color-mix(in srgb, var(--academy-primary) 5%, transparent)', color: 'var(--academy-primary)' } : {}}
                   >
@@ -242,7 +254,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
                           className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-black uppercase transition ${category === '' ? 'text-white' : 'text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-white/5'}`}
                           style={category === '' ? primaryBg : {}}
                         >
-                          <span>Todas</span>
+                          <span>Todas las categorías</span>
                         </button>
                         {allCategories.map((item) => {
                           const active = category === item;
@@ -294,17 +306,23 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
               </div>
             </div>
 
-            <button
-              onClick={handleStart}
-              style={primaryBg}
-              className="w-full text-white font-black text-lg py-5 rounded-2xl shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
-            >
-              Comenzar
-            </button>
+            <div className="space-y-4">
+              {alertMsg && <InlineNotice type="warning" message={alertMsg} onClose={() => setAlertMsg(null)} />}
+              
+              <button
+                type="button"
+                onClick={handleStart}
+                style={primaryBg}
+                className="w-full text-white font-black text-lg py-5 rounded-2xl shadow-xl hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+              >
+                Comenzar
+              </button>
+            </div>
           </div>
         ) : (
           <div className="flex-1 flex flex-col space-y-6 animate-in fade-in duration-500">
             <button
+              type="button"
               onClick={() => setHasStarted(false)}
               className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center gap-2 self-start transition-colors"
             >
@@ -356,6 +374,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
 
                       return (
                         <button
+                          type="button"
                           key={opt.id}
                           onClick={() => handleSelect(opt.id)}
                           disabled={isAnswered}
@@ -370,6 +389,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
 
                   <div className={`mt-4 transition-all duration-500 ${isAnswered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
                     <button
+                      type="button"
                       onClick={handleNext}
                       style={primaryBg}
                       className="w-full text-white font-black text-lg py-5 rounded-2xl shadow-xl flex items-center justify-center gap-3 hover:-translate-y-0.5 active:scale-[0.98] transition-all"
@@ -383,7 +403,7 @@ export default function AcademyQuizClient({ academy }: AcademyQuizClientProps) {
               <div className="flex-1 flex flex-col items-center justify-center py-20 text-center opacity-50 grayscale">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 text-slate-400"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Error de carga</p>
-                <button onClick={() => setHasStarted(false)} className="mt-4 text-xs font-black uppercase tracking-widest" style={primaryText}>Reiniciar</button>
+                <button type="button" onClick={() => setHasStarted(false)} className="mt-4 text-xs font-black uppercase tracking-widest" style={primaryText}>Reiniciar</button>
               </div>
             )}
           </div>

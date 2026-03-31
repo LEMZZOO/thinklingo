@@ -37,7 +37,8 @@ function getCategoryLabel(category: string) {
 }
 
 export default function Flashcards() {
-  const { progress, toggleFavorite, setStatus, isMounted } = useAppContext();
+  const { getProgress, toggleFavorite, setStatus, isMounted } = useAppContext();
+  const progress = getProgress('global');
 
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
@@ -95,7 +96,7 @@ export default function Flashcards() {
   const handleNext = () => {
     if (currentIndex < deck.length - 1) {
       if (isMounted && currentCard && progress.status[currentCard.id] !== 'learned') {
-        setStatus(currentCard.id, 'seen');
+        setStatus('global', currentCard.id, 'seen');
       }
 
       setCurrentIndex((prev) => prev + 1);
@@ -384,7 +385,7 @@ export default function Flashcards() {
 
               <div className="flex gap-2">
                 <button
-                  onClick={() => toggleFavorite(currentCard.id)}
+                  onClick={() => toggleFavorite('global', currentCard.id)}
                   className={`w-14 h-14 flex items-center justify-center rounded-full shadow-sm border transition-all active:scale-95 ${isFav
                     ? 'bg-amber-100 dark:bg-amber-900/40 border-amber-200 text-amber-500'
                     : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700 text-gray-400 hover:text-amber-500'
@@ -407,7 +408,7 @@ export default function Flashcards() {
                 </button>
 
                 <button
-                  onClick={() => setStatus(currentCard.id, isLearned ? 'new' : 'learned')}
+                  onClick={() => setStatus('global', currentCard.id, isLearned ? 'new' : 'learned')}
                   className={`w-14 h-14 flex items-center justify-center rounded-full shadow-sm border transition-all active:scale-95 ${isLearned
                     ? 'bg-green-500 border-green-500 text-white'
                     : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700 text-gray-400 hover:text-green-500'

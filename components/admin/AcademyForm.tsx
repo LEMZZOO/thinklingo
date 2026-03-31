@@ -4,6 +4,7 @@ import { useActionState, useState, ChangeEvent } from 'react';
 import { saveAcademy } from '@/app/admin/academias/actions';
 import { Academy } from '@/types/academy';
 import Link from 'next/link';
+import { AcademyVocabularyToggle } from '@/components/admin/AcademyVocabularyToggle';
 
 interface AcademyFormProps {
   academy?: Academy;
@@ -33,7 +34,8 @@ export function AcademyForm({ academy }: AcademyFormProps) {
     color_primary: academy?.color_primary || '#3b82f6',
     color_secondary: academy?.color_secondary || '#1d4ed8',
     color_accent: academy?.color_accent || '#8b5cf6',
-    is_active: academy?.is_active ?? true
+    is_active: academy?.is_active ?? true,
+    uses_custom_vocabulary: academy?.uses_custom_vocabulary ?? false,
   };
 
   const [logoPreview, setLogoPreview] = useState<string | null>(currentData.logo_url || null);
@@ -191,6 +193,23 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter px-1">Prioridad: Archivo seleccionado &gt; URL manual.</p>
                </div>
             </div>
+
+            {/* Configuración */}
+            <div className="flex flex-col gap-3 pt-1">
+              <div className="flex items-center gap-2 p-1">
+                <input
+                  type="checkbox"
+                  id="is_active"
+                  name="is_active"
+                  defaultChecked={currentData.is_active}
+                  className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500/20"
+                />
+                <label htmlFor="is_active" className="text-sm font-bold text-slate-600 dark:text-slate-300">
+                  Academia Activa
+                </label>
+              </div>
+              <AcademyVocabularyToggle initialValue={currentData.uses_custom_vocabulary ?? false} />
+            </div>
           </div>
 
           {/* Branding de Colores */}
@@ -232,19 +251,7 @@ export function AcademyForm({ academy }: AcademyFormProps) {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 p-1">
-              <input
-                type="checkbox"
-                id="is_active"
-                name="is_active"
-                defaultChecked={currentData.is_active}
-                className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500/20"
-              />
-              <label htmlFor="is_active" className="text-sm font-bold text-slate-600 dark:text-slate-300">
-                Academia Activa
-              </label>
-            </div>
-          </div>
+           </div>
 
           {/* Headline y Tagline */}
           <div className="md:col-span-2 space-y-4">
