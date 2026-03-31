@@ -21,9 +21,22 @@ function normalizeSlug(slug: string): string {
     .replace(/^-+|-+$/g, '');       // Eliminar guiones al inicio/final
 }
 
+import { createAdminClient } from '@/lib/supabase/admin';
+
 export type AcademyFormState = {
   error?: string;
   success?: boolean;
+  data?: {
+    name?: string;
+    slug?: string;
+    logo_url?: string;
+    headline?: string;
+    tagline?: string;
+    color_primary?: string;
+    color_secondary?: string;
+    color_accent?: string;
+    is_active?: boolean;
+  };
 };
 
 export async function saveAcademy(prev: any, formData: FormData): Promise<AcademyFormState> {
@@ -38,7 +51,6 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
   const id = formData.get('id') as string | null;
   const name = formData.get('name') as string;
   const rawSlug = formData.get('slug') as string;
-  const logo_url = formData.get('logo_url') as string;
   const headline = formData.get('headline') as string;
   const tagline = formData.get('tagline') as string;
   const color_primary = formData.get('color_primary') as string;
@@ -46,18 +58,65 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
   const color_accent = formData.get('color_accent') as string;
   const is_active = formData.get('is_active') === 'on';
 
+  // Recopilar datos actuales para devolverlos en caso de error
+  const currentData = {
+    name,
+    slug: rawSlug,
+    logo_url: formData.get('logo_url') as string,
+    headline,
+    tagline,
+    color_primary,
+    color_secondary,
+    color_accent,
+    is_active
+  };
+
   // 1. Validaciones básicas
   if (!name || !rawSlug || !color_primary || !color_secondary || !color_accent) {
-    return { error: 'Todos los campos obligatorios deben estar rellenos.' };
+    return { error: 'Todos los campos obligatorios deben estar rellenos.', data: currentData };
   }
+
+  const logo_file = formData.get('logo_file') as File | null;
+  let final_logo_url = formData.get('logo_url') as string;
 
   // 2. Normalización de slug
   const slug = normalizeSlug(rawSlug);
   if (!slug) {
-    return { error: 'El slug generado no es válido (debe contener letras o números).' };
+    return { error: 'El slug generado no es válido (debe contener letras o números).', data: currentData };
   }
 
-  // 3. Verificación de duplicados
+  // 3. Subida de Logo (si existe archivo)
+  if (logo_file && logo_file.size > 0) {
+    try {
+      const fileExt = logo_file.name.split('.').pop() || 'png';
+      const fileName = `${slug}-${Date.now()}.${fileExt}`;
+      const filePath = `logos/${fileName}`;
+
+      // Usar el admin client para saltar políticas RLS (solo en servidor)
+      const adminSupabase = createAdminClient();
+
+      const { error: uploadError } = await adminSupabase.storage
+        .from('academy-logos')
+        .upload(filePath, logo_file, {
+          cacheControl: '3600',
+          upsert: false
+        });
+
+      if (uploadError) {
+        return { error: `Error subiendo logo: ${uploadError.message}`, data: currentData };
+      }
+
+      const { data: { publicUrl } } = adminSupabase.storage
+        .from('academy-logos')
+        .getPublicUrl(filePath);
+      
+      final_logo_url = publicUrl;
+    } catch (e: any) {
+      return { error: `Error inesperado en la subida: ${e.message}`, data: currentData };
+    }
+  }
+
+  // 4. Verificación de duplicados
   const query = supabase
     .from('academies')
     .select('id')
@@ -69,14 +128,14 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
 
   const { data: existing } = await query.single();
   if (existing) {
-    return { error: `La URL (slug) "${slug}" ya está siendo usada por otra academia.` };
+    return { error: `La URL (slug) "${slug}" ya está siendo usada por otra academia.`, data: currentData };
   }
 
-  // 4. Upsert (Create or Update)
+  // 5. Upsert (Create or Update)
   const academyData = {
     name,
     slug,
-    logo_url: logo_url || null,
+    logo_url: final_logo_url || null,
     headline: headline || null,
     tagline: tagline || null,
     color_primary,
@@ -92,17 +151,17 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
       .update(academyData)
       .eq('id', id);
 
-    if (updateError) return { error: updateError.message };
+    if (updateError) return { error: updateError.message, data: currentData };
   } else {
     // Modo Creación
     const { error: insertError } = await supabase
       .from('academies')
       .insert([academyData]);
 
-    if (insertError) return { error: insertError.message };
+    if (insertError) return { error: insertError.message, data: currentData };
   }
 
-  // 5. Revalidar y redireccionar
+  // 6. Revalidar y redireccionar
   revalidatePath('/admin/academias');
   revalidatePath(`/a/${slug}`);
   redirect('/admin/academias');

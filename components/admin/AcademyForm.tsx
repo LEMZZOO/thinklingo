@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState, ChangeEvent } from 'react';
 import { saveAcademy } from '@/app/admin/academias/actions';
 import { Academy } from '@/types/academy';
 import Link from 'next/link';
@@ -10,6 +10,8 @@ interface AcademyFormProps {
 }
 
 export function AcademyForm({ academy }: AcademyFormProps) {
+  const [fileError, setFileError] = useState<string | null>(null);
+
   const [state, formAction, isPending] = useActionState(
     async (prev: any, formData: FormData) => {
       // Si estamos editando, inyectamos el ID
@@ -18,8 +20,53 @@ export function AcademyForm({ academy }: AcademyFormProps) {
       }
       return await saveAcademy(prev, formData);
     },
-    { error: undefined }
+    { error: undefined, data: undefined }
   );
+
+  // Priorizamos los datos del intento fallido (state.data) sobre los datos originales (academy)
+  const currentData = state?.data || {
+    name: academy?.name || '',
+    slug: academy?.slug || '',
+    logo_url: academy?.logo_url || '',
+    headline: academy?.headline || '',
+    tagline: academy?.tagline || '',
+    color_primary: academy?.color_primary || '#3b82f6',
+    color_secondary: academy?.color_secondary || '#1d4ed8',
+    color_accent: academy?.color_accent || '#8b5cf6',
+    is_active: academy?.is_active ?? true
+  };
+
+  const [logoPreview, setLogoPreview] = useState<string | null>(currentData.logo_url || null);
+
+  const handleLogoChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    setFileError(null);
+
+    if (file) {
+      // Validar tipo de archivo
+      if (!file.type.startsWith('image/')) {
+        setFileError('El archivo debe ser una imagen válida (PNG, JPG, etc.).');
+        e.target.value = ''; // Limpiar el input
+        setLogoPreview(currentData.logo_url || null);
+        return;
+      }
+
+      // Validar tamaño (2 MB = 2 * 1024 * 1024 bytes)
+      const MAX_SIZE = 2 * 1024 * 1024;
+      if (file.size > MAX_SIZE) {
+        setFileError('La imagen es demasiado pesada (máximo 2 MB).');
+        e.target.value = ''; // Limpiar el input
+        setLogoPreview(currentData.logo_url || null);
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLogoPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const isEdit = !!academy;
 
@@ -35,6 +82,23 @@ export function AcademyForm({ academy }: AcademyFormProps) {
           </p>
         </div>
 
+        {state?.error && (
+          <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50 rounded-2xl animate-in shake duration-500 space-y-2">
+            <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p className="text-sm font-black uppercase tracking-tight">Error al guardar</p>
+            </div>
+            <p className="text-xs font-bold text-rose-500/80 dark:text-rose-400/80 ml-7">
+              {state.error}
+            </p>
+            <div className="mt-2 bg-rose-100/50 dark:bg-rose-900/20 p-2 rounded-lg ml-7 border border-rose-200/50">
+               <p className="text-[10px] font-black uppercase tracking-widest text-rose-600 dark:text-rose-400">
+                 ⚠️ Importante: El archivo de imagen debe volver a seleccionarse.
+               </p>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Información General */}
           <div className="space-y-4">
@@ -49,7 +113,8 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                 id="name"
                 name="name"
                 type="text"
-                defaultValue={academy?.name}
+                key={`name-${currentData.name}`} 
+                defaultValue={currentData.name}
                 required
                 className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
                 placeholder="Ej. English Master"
@@ -67,28 +132,64 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                 id="slug"
                 name="slug"
                 type="text"
-                defaultValue={academy?.slug}
+                key={`slug-${currentData.slug}`}
+                defaultValue={currentData.slug}
                 required
                 className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100 font-mono"
                 placeholder="ej-mi-academia"
               />
             </div>
 
-            <div className="space-y-2">
-              <label 
-                htmlFor="logo_url" 
-                className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
-              >
-                Logo URL (Texto)
-              </label>
-              <input
-                id="logo_url"
-                name="logo_url"
-                type="text"
-                defaultValue={academy?.logo_url || ''}
-                className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
-                placeholder="https://ejemplo.com/logo.png"
-              />
+            <div className="space-y-4">
+               <div className="space-y-2">
+                 <label 
+                   htmlFor="logo_file" 
+                   className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
+                 >
+                   Subir Logo
+                 </label>
+                 <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-xl bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+                      {logoPreview ? (
+                        <img src={logoPreview} alt="Preview" className="w-full h-full object-contain" />
+                      ) : (
+                        <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">Logo</div>
+                      )}
+                    </div>
+                    <input
+                      id="logo_file"
+                      name="logo_file"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleLogoChange}
+                      className={`flex-1 text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-slate-800 dark:file:text-slate-300 border border-dashed rounded-xl p-1 transition-colors ${fileError ? 'border-rose-500 bg-rose-50/10' : 'border-gray-200 dark:border-slate-800'}`}
+                    />
+                 </div>
+                 {fileError && (
+                    <p className="text-[10px] font-black text-rose-500 uppercase tracking-tight px-1 animate-in slide-in-from-top-1">
+                      ⚠️ {fileError}
+                    </p>
+                 )}
+               </div>
+
+               <div className="space-y-2">
+                 <label 
+                   htmlFor="logo_url" 
+                   className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
+                 >
+                   O usar URL directa
+                 </label>
+                 <input
+                   id="logo_url"
+                   name="logo_url"
+                   type="text"
+                   key={`logo_url-${currentData.logo_url}`}
+                   defaultValue={currentData.logo_url}
+                   className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
+                   placeholder="https://ejemplo.com/logo.png"
+                 />
+                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter px-1">Prioridad: Archivo seleccionado &gt; URL manual.</p>
+               </div>
             </div>
           </div>
 
@@ -105,7 +206,7 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                    <input 
                       type="color" 
                       name="color_primary" 
-                      defaultValue={academy?.color_primary || '#3b82f6'} 
+                      defaultValue={currentData.color_primary} 
                       className="w-8 h-8 rounded cursor-pointer border-0 bg-transparent"
                    />
                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Primario</span>
@@ -114,7 +215,7 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                    <input 
                       type="color" 
                       name="color_secondary" 
-                      defaultValue={academy?.color_secondary || '#1d4ed8'} 
+                      defaultValue={currentData.color_secondary} 
                       className="w-8 h-8 rounded cursor-pointer border-0 bg-transparent"
                    />
                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Secundario</span>
@@ -123,7 +224,7 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                    <input 
                       type="color" 
                       name="color_accent" 
-                      defaultValue={academy?.color_accent || '#8b5cf6'} 
+                      defaultValue={currentData.color_accent} 
                       className="w-8 h-8 rounded cursor-pointer border-0 bg-transparent"
                    />
                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Acento</span>
@@ -136,7 +237,7 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                 type="checkbox"
                 id="is_active"
                 name="is_active"
-                defaultChecked={isEdit ? academy?.is_active : true}
+                defaultChecked={currentData.is_active}
                 className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500/20"
               />
               <label htmlFor="is_active" className="text-sm font-bold text-slate-600 dark:text-slate-300">
@@ -158,7 +259,8 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                 id="headline"
                 name="headline"
                 type="text"
-                defaultValue={academy?.headline || ''}
+                key={`headline-${currentData.headline}`}
+                defaultValue={currentData.headline}
                 className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
                 placeholder="Aprende Inglés Moderno"
               />
@@ -174,21 +276,14 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                 id="tagline"
                 name="tagline"
                 type="text"
-                defaultValue={academy?.tagline || ''}
+                key={`tagline-${currentData.tagline}`}
+                defaultValue={currentData.tagline}
                 className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
                 placeholder="La mejor academia para desarrolladores"
               />
             </div>
           </div>
         </div>
-
-        {state?.error && (
-          <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/50 rounded-xl animate-in shake duration-500">
-            <p className="text-sm font-bold text-rose-600 dark:text-rose-400">
-              Error: {state.error}
-            </p>
-          </div>
-        )}
       </div>
 
       <div className="bg-gray-50 dark:bg-slate-950/50 p-6 flex items-center justify-between gap-4 border-t border-gray-100 dark:border-slate-800">
@@ -200,8 +295,8 @@ export function AcademyForm({ academy }: AcademyFormProps) {
         </Link>
         <button
           type="submit"
-          disabled={isPending}
-          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 disabled:opacity-50 transition-all active:scale-[0.98]"
+          disabled={isPending || !!fileError}
+          className={`px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-all active:scale-[0.98] ${ (isPending || !!fileError) ? 'opacity-50 cursor-not-allowed' : '' }`}
         >
           {isPending ? 'Guardando...' : (isEdit ? 'Actualizar' : 'Crear')} Academia
         </button>
