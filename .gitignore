@@ -38,3 +38,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CLAUDE
+CLAUDE.md
+
+# ARCHIVOS DE ENTORNO
+.env*
+!.env.example

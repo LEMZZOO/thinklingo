@@ -30,7 +30,7 @@ export default function Home() {
       </header>
 
       <div className="w-full flex-1 flex flex-col justify-center">
-        <h1 className="text-4xl font-extrabold mb-4 text-center text-blue-600 dark:text-blue-400 tracking-tight">ThinkLingo</h1>
+        <h1 className="text-4xl font-extrabold mb-4 text-center text-blue-600 dark:text-blue-400 tracking-tight">Academy Core</h1>
         <p className="text-lg text-center mb-10 text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
           Aprende a pensar en inglés con el vocabulario que de verdad vas a necesitar
         </p>

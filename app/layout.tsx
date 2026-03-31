@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ThinkLingo",
+  title: "Academy Core",
   description: "Aprende vocabulario en contexto",
 };
 
