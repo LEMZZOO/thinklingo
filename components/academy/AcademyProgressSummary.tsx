@@ -22,8 +22,8 @@ export function AcademyProgressSummary({
 }: AcademyProgressSummaryProps) {
   const cards = [
     { label: 'Favoritos', value: favoritesCount, color: 'text-amber-500', bg: 'bg-amber-50 dark:bg-amber-950/20' },
-    { label: 'Seen', value: seenCount, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-950/20' },
-    { label: 'Learned', value: learnedCount, color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-950/20' },
+    { label: 'Vistas', value: seenCount, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-950/20' },
+    { label: 'Aprendidas', value: learnedCount, color: 'text-green-500', bg: 'bg-green-50 dark:bg-green-950/20' },
     { label: 'Total vocabulario', value: totalVocabulary, color: 'text-slate-500', bg: 'bg-slate-50 dark:bg-slate-800' },
     { label: 'Quiz correctas', value: quizCorrect, color: 'text-emerald-500', bg: 'bg-emerald-50 dark:bg-emerald-950/20' },
     { label: 'Quiz total', value: quizTotal, color: 'text-slate-700 dark:text-slate-300', bg: 'bg-slate-100 dark:bg-slate-800' },

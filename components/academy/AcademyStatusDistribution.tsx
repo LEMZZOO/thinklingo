@@ -23,9 +23,9 @@ export function AcademyStatusDistribution({
   const pLearned = (learnedCount / safeTotal) * 100;
 
   const barData = [
-    { label: 'Learned', count: learnedCount, pct: pLearned, color: 'bg-green-500', textColor: 'text-green-500' },
-    { label: 'Seen', count: seenCount, pct: pSeen, color: 'bg-blue-500', textColor: 'text-blue-500' },
-    { label: 'New', count: newCount, pct: pNew, color: 'bg-slate-200 dark:bg-slate-700', textColor: 'text-slate-400' },
+    { label: 'Aprendidas', count: learnedCount, pct: pLearned, color: 'bg-green-500', textColor: 'text-green-500' },
+    { label: 'Vistas', count: seenCount, pct: pSeen, color: 'bg-blue-500', textColor: 'text-blue-500' },
+    { label: 'Nuevas', count: newCount, pct: pNew, color: 'bg-slate-200 dark:bg-slate-700', textColor: 'text-slate-400' },
   ];
 
   return (

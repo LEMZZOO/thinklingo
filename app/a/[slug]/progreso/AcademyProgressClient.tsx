@@ -1,9 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState, useCallback } from 'react';
 import { useAcademyProgress } from '@/components/academy/AcademyProgressProvider';
 import { Academy } from '@/types/academy';
 import { InlineConfirm } from '@/components/InlineConfirm';
+import { AcademyAnalyticsDateRangeForm } from '@/components/academy/AcademyAnalyticsDateRangeForm';
+import { AcademyAnalyticsBarChart } from '@/components/academy/AcademyAnalyticsBarChart';
+import { getOwnAnalyticsSummaryAction } from './actions';
+import { StudentAnalyticsSummary } from '@/types/academy-analytics';
 
 interface AcademyProgressClientProps {
   academy: Academy;
@@ -13,11 +17,132 @@ interface AcademyProgressClientProps {
 import { AcademyProgressSummary } from '@/components/academy/AcademyProgressSummary';
 import { AcademyStatusDistribution } from '@/components/academy/AcademyStatusDistribution';
 
+const isValidIsoInputDate = (value: string): boolean => /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+const toSpanishDate = (isoDate: string): string => {
+  if (!isoDate) return '';
+  const [y, m, d] = isoDate.split('-');
+  return `${d}/${m}/${y}`;
+};
+
+const toIsoDate = (date: Date | number | string): string => {
+  if (!date) return '';
+  const d = new Date(date);
+  if (isNaN(d.getTime())) return '';
+  return d.toISOString().split('T')[0];
+};
+
+const getPastDate = (days: number): string => {
+  const d = new Date();
+  d.setDate(d.getDate() - days);
+  return toIsoDate(d);
+};
+
+const mapAnalyticsErrorMessage = (error: string): string => {
+  const low = error.toLowerCase();
+  if (low.includes('no autorizado') || low.includes('permisos')) {
+    return 'No tienes permisos para consultar esta analítica.';
+  }
+  const genericErrors = ['schema cache', 'could not find the table', 'formato de fecha inválido', 'invalid', 'error al consultar'];
+  if (genericErrors.some(ge => low.includes(ge))) {
+    return 'La analítica no está disponible temporalmente.';
+  }
+  return 'No se pudo cargar la analítica.';
+};
+
 export default function AcademyProgressClient({ academy, totalVocabulary }: AcademyProgressClientProps) {
   const { favorites, status: statusMap, quizStats, resetData } = useAcademyProgress();
   const [pendingReset, setPendingReset] = useState<'quiz' | 'status' | 'favorites' | 'all' | null>(null);
+  const [showAnalyticsModal, setShowAnalyticsModal] = useState(false);
 
-  const totalFavorites = favorites.length;
+  const today = useMemo(() => toIsoDate(new Date()), []);
+  const [draftRange, setDraftRange] = useState({ from: getPastDate(30), to: today });
+  const [appliedRange, setAppliedRange] = useState({ from: getPastDate(30), to: today });
+  const [analyticsLoading, setAnalyticsLoading] = useState(false);
+  const [analyticsError, setAnalyticsError] = useState('');
+  const [localAnalyticsValidationError, setLocalAnalyticsValidationError] = useState('');
+  const [analyticsSummary, setAnalyticsSummary] = useState<StudentAnalyticsSummary | null>(null);
+
+  const minAllowedDate = analyticsSummary?.membershipStartedAt ? toIsoDate(analyticsSummary.membershipStartedAt) : '';
+
+  const fetchAnalytics = useCallback(async (rangeToUse: { from: string; to: string }) => {
+    setAnalyticsError('');
+    setLocalAnalyticsValidationError('');
+    setAnalyticsLoading(true);
+
+    try {
+      const data = await getOwnAnalyticsSummaryAction(
+        academy.id, 
+        toSpanishDate(rangeToUse.from), 
+        toSpanishDate(rangeToUse.to)
+      );
+      
+      setAnalyticsSummary(data);
+
+      const actualMin = toIsoDate(data.membershipStartedAt);
+      if (actualMin) {
+        let correctedFrom = rangeToUse.from;
+        let correctedTo = rangeToUse.to;
+        let needsUpdate = false;
+
+        if (correctedFrom < actualMin) {
+          correctedFrom = actualMin;
+          needsUpdate = true;
+        }
+        if (correctedTo < actualMin) {
+          correctedTo = actualMin;
+          needsUpdate = true;
+        }
+        if (correctedTo < correctedFrom) {
+          correctedTo = correctedFrom;
+          needsUpdate = true;
+        }
+
+        if (needsUpdate) {
+          const newRange = { from: correctedFrom, to: correctedTo };
+          setDraftRange(newRange);
+          setAppliedRange(newRange);
+        }
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setAnalyticsError(mapAnalyticsErrorMessage(message));
+    } finally {
+      setAnalyticsLoading(false);
+    }
+  }, [academy.id]);
+
+  useEffect(() => {
+    fetchAnalytics(appliedRange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchAnalytics]);
+
+  const handleApplyAnalytics = () => {
+    if (!isValidIsoInputDate(draftRange.from) || !isValidIsoInputDate(draftRange.to)) {
+      setAnalyticsError('');
+      setLocalAnalyticsValidationError('Revisa el rango de fechas.');
+      return;
+    }
+
+    let from = draftRange.from;
+    let to = draftRange.to;
+
+    if (minAllowedDate) {
+      if (from < minAllowedDate) from = minAllowedDate;
+      if (to < minAllowedDate) to = minAllowedDate;
+    }
+    
+    if (to > today) to = today;
+    if (from > today) from = today;
+    if (to < from) to = from;
+
+    const newRange = { from, to };
+    setDraftRange(newRange);
+    setAppliedRange(newRange);
+    setLocalAnalyticsValidationError('');
+    fetchAnalytics(newRange);
+  };
+
   const statCounts = {
     new: Object.values(statusMap).filter(s => s === 'new').length,
     seen: Object.values(statusMap).filter(s => s === 'seen').length,
@@ -70,6 +195,19 @@ export default function AcademyProgressClient({ academy, totalVocabulary }: Acad
           quizTotal={quizStats.total}
         />
 
+        <button 
+          onClick={() => setShowAnalyticsModal(true)}
+          className="w-full p-6 bg-white dark:bg-slate-800 rounded-[2rem] shadow-sm border border-gray-100 dark:border-slate-700 flex items-center justify-between group active:scale-[0.98] transition-all hover:bg-gray-50 dark:hover:bg-slate-700/50"
+        >
+          <div className="text-left">
+            <h2 className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1 mb-1">Analítica Avanzada</h2>
+            <p className="text-xs font-bold text-gray-500 dark:text-gray-400 pl-1">Actividad y progreso por rango de fechas</p>
+          </div>
+          <div className="p-2 bg-gray-50 dark:bg-slate-900 rounded-2xl text-gray-400 group-hover:text-[var(--academy-primary)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </button>
+
         <AcademyStatusDistribution 
           newCount={Math.max(0, totalVocabulary - statCounts.seen - statCounts.learned)}
           seenCount={statCounts.seen}
@@ -77,30 +215,6 @@ export default function AcademyProgressClient({ academy, totalVocabulary }: Acad
           totalVocabulary={totalVocabulary}
         />
 
-        <section>
-          <h2 className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1 mb-3">Resumen de Vocabulario</h2>
-          <div className="grid grid-cols-2 gap-3">
-             <div className="p-4 rounded-[2rem] shadow-sm flex flex-col items-center justify-center text-center text-white" style={primaryBg}>
-              <span className="text-3xl font-black mb-1">{totalFavorites}</span>
-              <span className="text-xs font-bold text-white/80">Favoritas</span>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-[2rem] border border-gray-100 dark:border-slate-700 flex flex-col items-center justify-center text-center">
-              <span className="text-3xl font-black text-gray-600 dark:text-gray-400 mb-1">{statCounts.new}</span>
-              <span className="text-xs font-bold text-gray-500">Marcadas como nuevas</span>
-            </div>
-
-            <div className="bg-blue-50 dark:bg-slate-800/60 p-4 rounded-[2rem] border border-blue-100 dark:border-slate-700/80 flex flex-col items-center justify-center text-center">
-              <span className="text-3xl font-black text-blue-600 dark:text-blue-400 mb-1">{statCounts.seen}</span>
-              <span className="text-xs font-bold text-blue-500 dark:text-blue-500">Vistas</span>
-            </div>
-
-            <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-[2rem] border border-green-100 dark:border-green-900/30 flex flex-col items-center justify-center text-center">
-              <span className="text-3xl font-black text-green-600 dark:text-green-400 mb-1">{statCounts.learned}</span>
-              <span className="text-xs font-bold text-green-500 dark:text-green-600">Aprendidas</span>
-            </div>
-          </div>
-        </section>
 
         <section>
           <h2 className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1 mb-3">Estadísticas de Quiz</h2>
@@ -194,6 +308,102 @@ export default function AcademyProgressClient({ academy, totalVocabulary }: Acad
           </div>
         </section>
       </div>
+
+      {showAnalyticsModal && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm animate-in fade-in duration-300" onClick={() => setShowAnalyticsModal(false)} />
+          <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in zoom-in-95 fade-in duration-300">
+            {/* Modal Header */}
+            <div className="p-6 border-b border-gray-100 dark:border-slate-800 flex justify-between items-start bg-slate-50/50 dark:bg-slate-800/20">
+              <div>
+                <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight">Analítica Avanzada</h3>
+                <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Actividad por rango de fechas</p>
+              </div>
+              <button 
+                onClick={() => setShowAnalyticsModal(false)}
+                className="p-2.5 bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-2xl shadow-sm hover:text-rose-500 transition-all active:scale-95"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </div>
+            {/* Modal Body */}
+            <div className="p-6 overflow-y-auto space-y-8 custom-scrollbar">
+              {/* Range Selector */}
+              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-100 dark:border-slate-800 shadow-sm space-y-4">
+                <AcademyAnalyticsDateRangeForm
+                  from={draftRange.from}
+                  to={draftRange.to}
+                  minFrom={minAllowedDate}
+                  maxTo={today}
+                  applyDisabled={analyticsLoading}
+                  onChange={(range) => {
+                    setLocalAnalyticsValidationError('');
+                    setDraftRange(range);
+                  }}
+                  onApply={handleApplyAnalytics}
+                />
+                {minAllowedDate && (
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 pl-1 uppercase tracking-tight">
+                    Disponible desde: {toSpanishDate(minAllowedDate)}
+                  </p>
+                )}
+                {localAnalyticsValidationError && (
+                  <p className="text-xs font-bold text-rose-500 pl-1">{localAnalyticsValidationError}</p>
+                )}
+              </div>
+
+              {analyticsLoading ? (
+                <div className="h-64 flex flex-col items-center justify-center gap-4">
+                  <div className="w-10 h-10 border-4 border-slate-200 border-t-[var(--academy-primary)] rounded-full animate-spin shadow-inner"></div>
+                  <span className="text-[10px] font-black uppercase text-slate-400 animate-pulse">Consultando analítica...</span>
+                </div>
+              ) : analyticsError ? (
+                <div className="p-8 bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 text-sm font-bold rounded-2xl border border-rose-100 dark:border-rose-900/50 flex flex-col items-center gap-4 text-center">
+                  <p className="max-w-[280px]">{analyticsError}</p>
+                  <button 
+                    onClick={() => fetchAnalytics(appliedRange)}
+                    className="px-6 py-2.5 bg-white dark:bg-slate-800 border border-rose-200 dark:border-rose-900/50 rounded-xl text-xs font-black shadow-sm hover:bg-rose-100 dark:hover:bg-rose-900/40 transition-all active:scale-95"
+                  >
+                    Reintentar
+                  </button>
+                </div>
+              ) : analyticsSummary && (
+                <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    {[
+                      { label: 'Vistas', value: analyticsSummary.wordsSeenInRange, color: 'text-blue-500' },
+                      { label: 'Aprendidas', value: analyticsSummary.wordsLearnedInRange, color: 'text-emerald-500' },
+                      { label: 'Correctas', value: analyticsSummary.quizCorrect, color: 'text-green-500' },
+                      { label: 'Incorrectas', value: analyticsSummary.quizIncorrect, color: 'text-rose-500' },
+                    ].map((stat, i) => (
+                      <div key={i} className="p-5 rounded-3xl border border-gray-100 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-800/20 shadow-sm">
+                        <div className="text-[10px] font-black uppercase text-slate-400 mb-1 tracking-wider">{stat.label}</div>
+                        <div className={`text-3xl font-black tabular-nums ${stat.color}`}>{stat.value}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <AcademyAnalyticsBarChart 
+                    favoritesAdded={analyticsSummary.favoritesAdded}
+                    favoritesRemoved={analyticsSummary.favoritesRemoved}
+                    wordsSeenInRange={analyticsSummary.wordsSeenInRange}
+                    wordsLearnedInRange={analyticsSummary.wordsLearnedInRange}
+                    quizAnswered={analyticsSummary.quizAnswered}
+                    quizCorrect={analyticsSummary.quizCorrect}
+                    quizIncorrect={analyticsSummary.quizIncorrect}
+                  />
+
+                  <div className="bg-gray-50/50 dark:bg-slate-900/50 p-4 rounded-2xl border border-gray-100 dark:border-slate-800 text-center">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+                      Basado en eventos de aprendizaje ({toSpanishDate(appliedRange.from)} - {toSpanishDate(appliedRange.to)})
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
