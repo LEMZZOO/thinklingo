@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'Visualiza tu progreso de aprendizaje en esta academia',
 };
 
+import { getActiveAcademyVocabulary } from '@/services/academyVocabulary';
+
 export default async function AcademyProgressPage({
   params,
 }: {
@@ -20,5 +22,11 @@ export default async function AcademyProgressPage({
     notFound();
   }
 
-  return <AcademyProgressClient academy={academy} />;
+  let totalVocabulary = 486; // Default JSON count
+  if (academy.uses_custom_vocabulary) {
+    const customVocab = await getActiveAcademyVocabulary(academy.id);
+    totalVocabulary = customVocab.length;
+  }
+
+  return <AcademyProgressClient academy={academy} totalVocabulary={totalVocabulary} />;
 }

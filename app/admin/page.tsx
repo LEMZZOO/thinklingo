@@ -5,11 +5,12 @@ import Link from 'next/link';
 export default async function AdminPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-
-  // Re-verify on server just in case
   if (!user || user.app_metadata?.is_superadmin !== true) {
     redirect('/');
   }
+
+  const { data: profile } = await supabase.from('profiles').select('full_name').eq('id', user.id).single();
+  const displayName = profile?.full_name?.trim() || user.email;
 
   return (
     <main className="flex-1 flex flex-col items-center justify-center p-6 min-h-[calc(100vh-64px)] pb-16">
@@ -26,14 +27,19 @@ export default async function AdminPage() {
           </h1>
           
           <p className="text-slate-500 dark:text-slate-400 font-medium">
-            ¡Hola administrador! Estás en la base del panel principal.
+            ¡Hola {profile?.full_name?.trim() ? displayName.split(' ')[0] : 'Admin'}! Estás en la base del panel principal.
           </p>
         </div>
 
         <div className="p-4 bg-slate-50 dark:bg-slate-950/50 border border-slate-100 dark:border-slate-800 rounded-xl space-y-3">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-slate-400 dark:text-slate-500 uppercase text-[10px] font-bold tracking-wider">Usuario</span>
-            <span className="text-slate-700 dark:text-slate-300 font-mono text-xs">{user.email}</span>
+            <span className="text-slate-400 dark:text-slate-500 uppercase text-[10px] font-bold tracking-wider">Superadmin</span>
+            <div className="text-right">
+              <div className="text-slate-900 dark:text-slate-100 font-black text-[11px]">{displayName}</div>
+              {profile?.full_name?.trim() && (
+                <div className="text-slate-400 dark:text-slate-500 font-mono text-[9px]">{user.email}</div>
+              )}
+            </div>
           </div>
           <div className="flex justify-between items-center text-sm">
             <span className="text-slate-400 dark:text-slate-500 uppercase text-[10px] font-bold tracking-wider">Estado</span>

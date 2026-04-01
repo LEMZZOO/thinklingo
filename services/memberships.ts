@@ -5,7 +5,8 @@ export interface MembershipRecord {
   id: string;
   user_id: string;
   academy_id: string;
-  role: 'student' | 'teacher' | 'admin';
+  role: 'student' | 'teacher' | 'academy_admin';
+  is_active: boolean;
   created_at: string;
   academies?: Academy;
 }
@@ -41,4 +42,21 @@ export async function hasAccessToAcademy(userId: string, academyId: string): Pro
   }
 
   return (count || 0) > 0;
+}
+
+export async function getMembership(userId: string, academyId: string): Promise<MembershipRecord | null> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from('academy_memberships')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('academy_id', academyId)
+    .maybeSingle();
+
+  if (error || !data) {
+    return null;
+  }
+
+  return data as MembershipRecord;
 }

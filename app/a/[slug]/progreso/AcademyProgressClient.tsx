@@ -7,9 +7,13 @@ import { InlineConfirm } from '@/components/InlineConfirm';
 
 interface AcademyProgressClientProps {
   academy: Academy;
+  totalVocabulary: number;
 }
 
-export default function AcademyProgressClient({ academy }: AcademyProgressClientProps) {
+import { AcademyProgressSummary } from '@/components/academy/AcademyProgressSummary';
+import { AcademyStatusDistribution } from '@/components/academy/AcademyStatusDistribution';
+
+export default function AcademyProgressClient({ academy, totalVocabulary }: AcademyProgressClientProps) {
   const { favorites, status: statusMap, quizStats, resetData } = useAcademyProgress();
   const [pendingReset, setPendingReset] = useState<'quiz' | 'status' | 'favorites' | 'all' | null>(null);
 
@@ -56,6 +60,23 @@ export default function AcademyProgressClient({ academy }: AcademyProgressClient
       </header>
 
       <div className="flex-1 p-4 space-y-6">
+        <AcademyProgressSummary 
+          favoritesCount={favorites.length}
+          seenCount={statCounts.seen}
+          learnedCount={statCounts.learned}
+          totalVocabulary={totalVocabulary}
+          quizCorrect={quizStats.correct}
+          quizIncorrect={quizStats.incorrect}
+          quizTotal={quizStats.total}
+        />
+
+        <AcademyStatusDistribution 
+          newCount={Math.max(0, totalVocabulary - statCounts.seen - statCounts.learned)}
+          seenCount={statCounts.seen}
+          learnedCount={statCounts.learned}
+          totalVocabulary={totalVocabulary}
+        />
+
         <section>
           <h2 className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1 mb-3">Resumen de Vocabulario</h2>
           <div className="grid grid-cols-2 gap-3">

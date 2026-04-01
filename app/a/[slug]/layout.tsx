@@ -4,7 +4,7 @@ import { AcademyNav } from '@/components/academy/AcademyNav';
 import { AcademyProgressProvider } from '@/components/academy/AcademyProgressProvider';
 import React from 'react';
 import { createClient } from '@/lib/supabase/server';
-import { hasAccessToAcademy } from '@/services/memberships';
+import { hasAccessToAcademy, getMembership } from '@/services/memberships';
 import { getCloudProgress } from '@/services/progress';
 import { getAcademyVocabularySource } from '@/services/academyVocabulary';
 
@@ -30,9 +30,9 @@ export default async function AcademyLayout({
     redirect('/login');
   }
 
-  const hasAccess = await hasAccessToAcademy(user.id, academy.id);
+  const membership = await getMembership(user.id, academy.id);
 
-  if (!hasAccess) {
+  if (!membership || !membership.is_active) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-slate-950 p-6 text-center">
         <div className="w-16 h-16 bg-rose-50 dark:bg-rose-950/20 text-rose-500 rounded-full flex items-center justify-center mb-6">
@@ -69,7 +69,7 @@ export default async function AcademyLayout({
       initialState={initialState}
     >
       <div style={brandingStyles} className="min-h-full border-t-4">
-        <AcademyNav slug={slug} />
+        <AcademyNav slug={slug} userRole={membership.role} />
         {children}
       </div>
     </AcademyProgressProvider>

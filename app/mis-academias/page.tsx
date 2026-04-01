@@ -17,6 +17,14 @@ export default async function MisAcademiasPage() {
   }
 
   const memberships = await getUserMemberships(user.id);
+  const { data: profile } = await supabase.from('profiles').select('full_name').eq('id', user.id).single();
+  const displayName = profile?.full_name?.trim() || user.email;
+
+  const roleLabels: Record<string, string> = {
+    student: 'Alumno',
+    teacher: 'Profesor',
+    academy_admin: 'Admin academia',
+  };
 
   const primaryBg = { backgroundColor: 'var(--academy-primary, #2563EB)' };
 
@@ -29,7 +37,7 @@ export default async function MisAcademiasPage() {
         
         {/* Usamos form action limpio para hacer signout con Supabase si lo hay o simplemente link a logout si tuviéramos endpoint */}
         <div className="flex items-center gap-4 text-sm font-bold text-slate-500 dark:text-slate-400">
-           Hola, {user.email}
+           Hola, {displayName}
         </div>
       </div>
 
@@ -77,9 +85,14 @@ export default async function MisAcademiasPage() {
                     <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight group-hover:text-blue-500 transition-colors">
                       {aca.name}
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">
-                      Acceder a tu zona
-                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                        {roleLabels[m.role] || m.role}
+                      </span>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        • Acceder
+                      </p>
+                    </div>
                   </div>
                   <div className="text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>

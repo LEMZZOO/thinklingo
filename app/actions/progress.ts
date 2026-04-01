@@ -2,6 +2,23 @@
 
 import { createClient } from '@/lib/supabase/server';
 import type { ProgressSource } from '@/services/progress';
+import { UserLearningEvent, LearningEventType } from '@/types/academy-events';
+import { SupabaseClient } from '@supabase/supabase-js';
+
+/**
+ * Helper para logging histórico que no rompa el flujo principal si falla.
+ */
+async function insertLearningEventSafe(
+  supabase: SupabaseClient,
+  event: Partial<UserLearningEvent> & { event_type: LearningEventType; user_id: string; academy_id: string }
+) {
+  try {
+    const { error } = await supabase.from('user_learning_events').insert(event);
+    if (error) console.error('[LearningEvents] Error:', error.message);
+  } catch (err) {
+    console.error('[LearningEvents] Critical failure:', err);
+  }
+}
 
 async function getCurrentUserOrThrow() {
   const supabase = await createClient();
@@ -34,6 +51,15 @@ export async function toggleFavoriteAction(args: {
       .delete()
       .eq('id', exist.id);
     if (deleteError) throw deleteError;
+
+    // Registro histórico SEGURO
+    await insertLearningEventSafe(supabase, {
+      user_id: user.id,
+      academy_id: args.academyId,
+      event_type: 'favorite_removed',
+      source: args.source,
+      entry_key: args.entryKey
+    });
   } else {
     const { error: insertError } = await supabase
       .from('user_favorites')
@@ -44,6 +70,15 @@ export async function toggleFavoriteAction(args: {
         entry_key: args.entryKey,
       });
     if (insertError) throw insertError;
+
+    // Registro histórico SEGURO
+    await insertLearningEventSafe(supabase, {
+      user_id: user.id,
+      academy_id: args.academyId,
+      event_type: 'favorite_added',
+      source: args.source,
+      entry_key: args.entryKey
+    });
   }
 }
 
@@ -54,6 +89,20 @@ export async function setStatusAction(args: {
   status: 'new' | 'seen' | 'learned';
 }) {
   const { supabase, user } = await getCurrentUserOrThrow();
+
+  // Obtener estado previo para el historial
+  const { data: prevProgress } = await supabase
+    .from('user_progress')
+    .select('status')
+    .match({ 
+      user_id: user.id, 
+      academy_id: args.academyId, 
+      source: args.source, 
+      entry_key: args.entryKey 
+    })
+    .maybeSingle();
+
+  const statusFrom = (prevProgress?.status as string) || 'new';
 
   const { error } = await supabase.from('user_progress').upsert(
     {
@@ -67,13 +116,26 @@ export async function setStatusAction(args: {
   );
 
   if (error) throw error;
+
+  // Registro histórico SEGURO
+  if (statusFrom !== args.status) {
+    await insertLearningEventSafe(supabase, {
+      user_id: user.id,
+      academy_id: args.academyId,
+      event_type: 'status_changed',
+      source: args.source,
+      entry_key: args.entryKey,
+      status_from: statusFrom,
+      status_to: args.status
+    });
+  }
 }
 
 export async function updateQuizStatsAction(args: {
   academyId: string;
   isCorrect: boolean;
 }) {
-  const { supabase } = await getCurrentUserOrThrow();
+  const { supabase, user } = await getCurrentUserOrThrow();
 
   const { error } = await supabase.rpc('increment_quiz_stats', {
     p_academy_id: args.academyId,
@@ -81,6 +143,17 @@ export async function updateQuizStatsAction(args: {
   });
 
   if (error) throw error;
+
+  // Registro histórico SEGURO con deltas
+  await insertLearningEventSafe(supabase, {
+    user_id: user.id,
+    academy_id: args.academyId,
+    event_type: 'quiz_answered',
+    quiz_correct_delta: args.isCorrect ? 1 : 0,
+    quiz_incorrect_delta: args.isCorrect ? 0 : 1,
+    quiz_total_delta: 1,
+    metadata: { correct: args.isCorrect }
+  });
 }
 
 export async function resetAcademyDataAction(args: {
@@ -118,4 +191,13 @@ export async function resetAcademyDataAction(args: {
       .eq('academy_id', args.academyId);
     if (error) throw error;
   }
+
+  // Registro histórico SEGURO de reset
+  await insertLearningEventSafe(supabase, {
+    user_id: user.id,
+    academy_id: args.academyId,
+    event_type: args.type === 'quiz' ? 'quiz_reset' : 'academy_reset',
+    source: args.source,
+    metadata: { reset_type: args.type }
+  });
 }

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 interface AcademyNavProps {
   slug: string;
+  userRole?: 'student' | 'teacher' | 'academy_admin';
 }
 
 const NAV_ITEMS = [
@@ -49,8 +50,22 @@ const NAV_ITEMS = [
   },
 ];
 
-export function AcademyNav({ slug }: AcademyNavProps) {
+export function AcademyNav({ slug, userRole }: AcademyNavProps) {
   const pathname = usePathname();
+
+  const items = [...NAV_ITEMS];
+
+  if (userRole === 'teacher' || userRole === 'academy_admin') {
+    items.push({
+      label: 'Miembros',
+      segment: 'miembros',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      ),
+    });
+  }
 
   return (
     <nav
@@ -58,7 +73,7 @@ export function AcademyNav({ slug }: AcademyNavProps) {
       aria-label="Navegación de academia"
     >
       <div className="max-w-5xl mx-auto px-4 flex items-center gap-1 h-12">
-        {NAV_ITEMS.map(({ label, segment, icon }) => {
+        {items.map(({ label, segment, icon }) => {
           const href = `/a/${slug}/${segment}`;
 
           // Exacto o subruta — `href + '/'` evita falsos positivos
