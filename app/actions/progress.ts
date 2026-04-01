@@ -69,6 +69,20 @@ export async function setStatusAction(args: {
   if (error) throw error;
 }
 
+export async function updateQuizStatsAction(args: {
+  academyId: string;
+  isCorrect: boolean;
+}) {
+  const { supabase } = await getCurrentUserOrThrow();
+
+  const { error } = await supabase.rpc('increment_quiz_stats', {
+    p_academy_id: args.academyId,
+    p_is_correct: args.isCorrect,
+  });
+
+  if (error) throw error;
+}
+
 export async function resetAcademyDataAction(args: {
   academyId: string;
   source: ProgressSource;

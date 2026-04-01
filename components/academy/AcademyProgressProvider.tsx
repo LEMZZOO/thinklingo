@@ -12,12 +12,14 @@ import {
   toggleFavoriteAction,
   setStatusAction,
   resetAcademyDataAction,
+  updateQuizStatsAction,
 } from '@/app/actions/progress';
 
 interface AcademyProgressContextValue extends UserAcademyCloudState {
   isPending: boolean;
   toggleFavorite: (entryId: string) => void;
   setStatus: (entryId: string, status: 'new' | 'seen' | 'learned') => void;
+  updateQuizStats: (isCorrect: boolean) => void;
   resetData: (type: 'all' | 'quiz' | 'favorites' | 'status') => void;
 }
 
@@ -73,6 +75,23 @@ export function AcademyProgressProvider({
     });
   }, [status, academyId, source]);
 
+  const updateQuizStats = useCallback((isCorrect: boolean) => {
+    const snapQuiz = { ...quizStats };
+    setQuizStats(prev => ({
+      correct: prev.correct + (isCorrect ? 1 : 0),
+      incorrect: prev.incorrect + (!isCorrect ? 1 : 0),
+      total: prev.total + 1
+    }));
+    
+    startTransition(async () => {
+      try {
+        await updateQuizStatsAction({ academyId, isCorrect });
+      } catch {
+        setQuizStats(snapQuiz);
+      }
+    });
+  }, [quizStats, academyId]);
+
   const resetData = useCallback((type: 'all' | 'quiz' | 'favorites' | 'status') => {
     const snapFavs = favorites;
     const snapStatus = { ...status };
@@ -97,7 +116,7 @@ export function AcademyProgressProvider({
 
   return (
     <AcademyProgressContext.Provider
-      value={{ favorites, status, quizStats, isPending, toggleFavorite, setStatus, resetData }}
+      value={{ favorites, status, quizStats, isPending, toggleFavorite, setStatus, updateQuizStats, resetData }}
     >
       {children}
     </AcademyProgressContext.Provider>

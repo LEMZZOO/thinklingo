@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useAppContext } from '@/components/AppProvider';
+import { useAcademyProgress } from '@/components/academy/AcademyProgressProvider';
 import { VocabularyEntry } from '@/types';
 import { FitText } from '@/components/FitText';
 import { Academy } from '@/types/academy';
@@ -50,8 +50,7 @@ interface AcademyQuizClientProps {
 }
 
 export default function AcademyQuizClient({ academy, entries }: AcademyQuizClientProps) {
-  const { getProgress, updateQuizStats, isMounted } = useAppContext();
-  const progress = getProgress(academy.slug);
+  const { favorites, updateQuizStats } = useAcademyProgress();
 
   const [hasStarted, setHasStarted] = useState(false);
   const [mode, setMode] = useState<QuizMode>('en-es');
@@ -112,7 +111,7 @@ export default function AcademyQuizClient({ academy, entries }: AcademyQuizClien
       const itemTargetCat = v.category?.trim() ? v.category.trim() : '_uncategorized';
       if (category && itemTargetCat !== category) return false;
       if (difficulty && v.difficulty !== difficulty) return false;
-      if (onlyFavs && (!isMounted || !progress.favorites.includes(v.id))) return false;
+      if (onlyFavs && (!favorites.includes(v.id))) return false;
       return true;
     });
 
@@ -140,7 +139,7 @@ export default function AcademyQuizClient({ academy, entries }: AcademyQuizClien
     setIsAnswered(true);
 
     const isCorrect = id === currentCard.id;
-    updateQuizStats(academy.slug, isCorrect);
+    updateQuizStats(isCorrect);
   };
 
   const handleNext = () => {
@@ -158,8 +157,6 @@ export default function AcademyQuizClient({ academy, entries }: AcademyQuizClien
   // Dynamic Styles
   const primaryBg = { backgroundColor: 'var(--academy-primary)' };
   const primaryText = { color: 'var(--academy-primary)' };
-
-  if (!isMounted) return null;
 
   return (
     <main className="min-h-screen flex flex-col bg-gray-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors pb-16">
