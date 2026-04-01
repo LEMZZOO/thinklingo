@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useAppContext } from '@/components/AppProvider';
+import { useAcademyProgress } from '@/components/academy/AcademyProgressProvider';
 import { Academy } from '@/types/academy';
 import { InlineConfirm } from '@/components/InlineConfirm';
 
@@ -10,21 +10,17 @@ interface AcademyProgressClientProps {
 }
 
 export default function AcademyProgressClient({ academy }: AcademyProgressClientProps) {
-  const { getProgress, resetData, isMounted } = useAppContext();
+  const { favorites, status: statusMap, quizStats, resetData } = useAcademyProgress();
   const [pendingReset, setPendingReset] = useState<'quiz' | 'status' | 'favorites' | 'all' | null>(null);
-  
-  if (!isMounted) return null;
 
-  const progress = getProgress(academy.slug);
-
-  const totalFavorites = progress.favorites.length;
+  const totalFavorites = favorites.length;
   const statCounts = {
-    new: Object.values(progress.status).filter(s => s === 'new').length,
-    seen: Object.values(progress.status).filter(s => s === 'seen').length,
-    learned: Object.values(progress.status).filter(s => s === 'learned').length,
+    new: Object.values(statusMap).filter(s => s === 'new').length,
+    seen: Object.values(statusMap).filter(s => s === 'seen').length,
+    learned: Object.values(statusMap).filter(s => s === 'learned').length,
   };
 
-  const { correct, incorrect, total } = progress.quizStats;
+  const { correct, incorrect, total } = quizStats;
   const winRate = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const handleReset = (type: 'all' | 'quiz' | 'favorites' | 'status') => {
@@ -33,7 +29,7 @@ export default function AcademyProgressClient({ academy }: AcademyProgressClient
 
   const confirmReset = () => {
     if (pendingReset) {
-      resetData(academy.slug, pendingReset);
+      resetData(pendingReset);
       setPendingReset(null);
     }
   };

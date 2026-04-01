@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
-import { useAppContext } from '@/components/AppProvider';
+import { useAcademyProgress } from '@/components/academy/AcademyProgressProvider';
 import { Academy } from '@/types/academy';
 import { VocabularyEntry } from '@/types';
 
@@ -50,8 +50,7 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { getProgress, toggleFavorite, isMounted } = useAppContext();
-  const progress = getProgress(academy.slug);
+  const { favorites, toggleFavorite } = useAcademyProgress();
 
   const [search, setSearch] = useState(searchParams.get('q') || '');
   const [category, setCategory] = useState(searchParams.get('category') || '');
@@ -150,15 +149,15 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
       <header className="sticky top-12 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-6 pb-6">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div 
+            <div
               style={{ backgroundColor: 'var(--academy-primary)' }}
               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30"
             >
-               {academy.logo_url ? (
-                  <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
-               ) : (
-                  <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
-               )}
+              {academy.logo_url ? (
+                <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
+              ) : (
+                <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
+              )}
             </div>
             <div>
               <h1 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-none">
@@ -187,90 +186,90 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
           </div>
 
           <div className="flex flex-col md:flex-row gap-3">
-             {/* Filtro de Categoría */}
-             <div ref={categoryDropdownRef} className="relative flex-1">
-                <button
-                  type="button"
-                  onClick={() => setCategoryOpen((prev) => !prev)}
-                  className="flex h-12 w-full items-center justify-between rounded-xl border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 shadow-sm transition hover:bg-gray-50 dark:hover:bg-slate-800"
+            {/* Filtro de Categoría */}
+            <div ref={categoryDropdownRef} className="relative flex-1">
+              <button
+                type="button"
+                onClick={() => setCategoryOpen((prev) => !prev)}
+                className="flex h-12 w-full items-center justify-between rounded-xl border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 shadow-sm transition hover:bg-gray-50 dark:hover:bg-slate-800"
+              >
+                <span className="truncate">
+                  {category ? getCategoryLabel(category) : 'Todas las categorías'}
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12" height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className={`ml-3 transition-transform ${categoryOpen ? 'rotate-180' : ''}`}
                 >
-                  <span className="truncate">
-                    {category ? getCategoryLabel(category) : 'Todas las categorías'}
-                  </span>
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="12" height="12" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="3" 
-                    className={`ml-3 transition-transform ${categoryOpen ? 'rotate-180' : ''}`}
-                  >
-                    <path d="m6 9 6 6 6-6"/>
-                  </svg>
-                </button>
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
 
-                {categoryOpen && (
-                  <div className="absolute left-0 right-0 z-[60] mt-2 max-h-72 overflow-y-auto rounded-2xl border border-gray-100 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 p-2 shadow-2xl backdrop-blur-xl animate-in zoom-in-95 duration-200">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setCategory('');
-                        setCategoryOpen(false);
-                      }}
-                      className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-bold uppercase transition ${category === ''
+              {categoryOpen && (
+                <div className="absolute left-0 right-0 z-[60] mt-2 max-h-72 overflow-y-auto rounded-2xl border border-gray-100 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 p-2 shadow-2xl backdrop-blur-xl animate-in zoom-in-95 duration-200">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setCategory('');
+                      setCategoryOpen(false);
+                    }}
+                    className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-bold uppercase transition ${category === ''
+                      ? 'text-white shadow-lg'
+                      : 'text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-white/5'
+                      }`}
+                    style={category === '' ? { backgroundColor: 'var(--academy-primary)' } : {}}
+                  >
+                    <span>Todas las categorías</span>
+                  </button>
+
+                  {allCategories.map((item) => {
+                    const active = category === item;
+                    return (
+                      <button
+                        key={item}
+                        type="button"
+                        onClick={() => {
+                          setCategory(item);
+                          setCategoryOpen(false);
+                        }}
+                        className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-bold uppercase transition ${active
                           ? 'text-white shadow-lg'
                           : 'text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-white/5'
-                        }`}
-                      style={category === '' ? { backgroundColor: 'var(--academy-primary)' } : {}}
-                    >
-                      <span>Todas las categorías</span>
-                    </button>
-
-                    {allCategories.map((item) => {
-                      const active = category === item;
-                      return (
-                        <button
-                          key={item}
-                          type="button"
-                          onClick={() => {
-                            setCategory(item);
-                            setCategoryOpen(false);
-                          }}
-                          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-xs font-bold uppercase transition ${active
-                              ? 'text-white shadow-lg'
-                              : 'text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-white/5'
-                            }`}
-                          style={active ? { backgroundColor: 'var(--academy-primary)' } : {}}
-                        >
-                          <span>{getCategoryLabel(item)}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-             </div>
-
-             {/* Filtro de Dificultad */}
-             <div className="flex gap-2">
-                {DIFFICULTY_OPTIONS.map((option) => {
-                  const active = difficulty === option.value;
-                  return (
-                    <button
-                      key={option.value || 'all'}
-                      type="button"
-                      onClick={() => setDifficulty(option.value)}
-                      className={`h-12 rounded-xl px-4 text-[10px] font-black uppercase tracking-widest transition flex-1 md:flex-none ${active
-                          ? 'text-white shadow-lg'
-                          : 'border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800'
-                        }`}
+                          }`}
                         style={active ? { backgroundColor: 'var(--academy-primary)' } : {}}
-                    >
-                      {option.label}
-                    </button>
-                  );
-                })}
-             </div>
+                      >
+                        <span>{getCategoryLabel(item)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Filtro de Dificultad */}
+            <div className="flex gap-2">
+              {DIFFICULTY_OPTIONS.map((option) => {
+                const active = difficulty === option.value;
+                return (
+                  <button
+                    key={option.value || 'all'}
+                    type="button"
+                    onClick={() => setDifficulty(option.value)}
+                    className={`h-12 rounded-xl px-4 text-[10px] font-black uppercase tracking-widest transition flex-1 md:flex-none ${active
+                      ? 'text-white shadow-lg'
+                      : 'border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800'
+                      }`}
+                    style={active ? { backgroundColor: 'var(--academy-primary)' } : {}}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </header>
@@ -289,7 +288,7 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((v) => {
-              const isFav = isMounted && progress.favorites.includes(v.id);
+              const isFav = favorites.includes(v.id);
               const queryString = searchParams.toString();
               const hrefWithParams = `/a/${academy.slug}/vocabulario/${v.id}${queryString ? '?' + queryString : ''}`;
 
@@ -297,21 +296,21 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
                 <Link key={v.id} href={hrefWithParams} className="block relative group focus:outline-none focus:ring-4 focus:ring-slate-300 dark:focus:ring-slate-700/50 rounded-3xl">
                   <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-800/80 group-hover:border-[var(--academy-primary)] transition-all duration-300">
                     <div className="flex justify-between items-start mb-2">
-                       <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight group-hover:text-[var(--academy-primary)] transition-colors">
-                         {v.english_word}
-                       </h3>
-                       <button
-                          type="button"
-                          aria-label={isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            toggleFavorite(academy.slug, v.id);
-                          }}
-                          className={`p-2 rounded-xl transition-colors ${isFav ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-500' : 'text-slate-300 dark:text-slate-700 hover:text-amber-400'}`}
-                        >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={isFav ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </button>
+                      <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight group-hover:text-[var(--academy-primary)] transition-colors">
+                        {v.english_word}
+                      </h3>
+                      <button
+                        type="button"
+                        aria-label={isFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggleFavorite(v.id);
+                        }}
+                        className={`p-2 rounded-xl transition-colors ${isFav ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-500' : 'text-slate-300 dark:text-slate-700 hover:text-amber-400'}`}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={isFav ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                      </button>
                     </div>
 
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-400 mb-4">
@@ -319,18 +318,17 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
                     </p>
 
                     <div className="flex items-center justify-between pt-4 border-t border-gray-50 dark:border-slate-800/50">
-                       <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 truncate pr-2">
-                         {getCategoryLabel(v.category)}
-                       </span>
-                       <span 
-                         className={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-md shrink-0 ${
-                           v.difficulty === 'easy' ? 'bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600' :
-                           v.difficulty === 'medium' ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-600' :
-                           'bg-rose-50 dark:bg-rose-950/20 text-rose-600'
-                         }`}
-                       >
-                         {v.difficulty === 'easy' ? '● Easy' : v.difficulty === 'medium' ? '●● Medium' : '●●● Advanced'}
-                       </span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 truncate pr-2">
+                        {getCategoryLabel(v.category)}
+                      </span>
+                      <span
+                        className={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-md shrink-0 ${v.difficulty === 'easy' ? 'bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600' :
+                          v.difficulty === 'medium' ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-600' :
+                            'bg-rose-50 dark:bg-rose-950/20 text-rose-600'
+                          }`}
+                      >
+                        {v.difficulty === 'easy' ? '● Easy' : v.difficulty === 'medium' ? '●● Medium' : '●●● Advanced'}
+                      </span>
                     </div>
                   </div>
                 </Link>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useAppContext } from '@/components/AppProvider';
+import { useAcademyProgress } from '@/components/academy/AcademyProgressProvider';
 import { Academy } from '@/types/academy';
 import { VocabularyEntry } from '@/types';
 import Link from 'next/link';
@@ -39,14 +39,11 @@ interface Props {
 }
 
 export default function AcademyVocabDetailClient({ academy, entry }: Props) {
-  const { getProgress, setStatus, toggleFavorite, isMounted } = useAppContext();
+  const { favorites, status: statusMap, toggleFavorite, setStatus } = useAcademyProgress();
   const searchParams = useSearchParams();
-  
-  if (!isMounted) return null;
 
-  const progress = getProgress(academy.slug);
-  const isFav = progress.favorites.includes(entry.id);
-  const status = progress.status[entry.id] || 'new';
+  const isFav = favorites.includes(entry.id);
+  const status = statusMap[entry.id] || 'new';
 
   const primaryBg = { backgroundColor: 'var(--academy-primary, #6366f1)' };
   const primaryText = { color: 'var(--academy-primary, #6366f1)' };
@@ -92,7 +89,8 @@ export default function AcademyVocabDetailClient({ academy, entry }: Props) {
 
           <div className="mt-8 pt-8 border-t border-gray-100 dark:border-slate-800/50 flex flex-col sm:flex-row gap-3 justify-center">
              <button
-               onClick={() => toggleFavorite(academy.slug, entry.id)}
+               type="button"
+               onClick={() => toggleFavorite(entry.id)}
                className={`flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold transition-all ${
                  isFav 
                    ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-500 shadow-sm border border-amber-200 dark:border-amber-800'
@@ -105,7 +103,8 @@ export default function AcademyVocabDetailClient({ academy, entry }: Props) {
              
              <div className="flex bg-gray-50 dark:bg-slate-800 p-1.5 rounded-2xl border border-gray-100 dark:border-slate-700">
                <button
-                 onClick={() => setStatus(academy.slug, entry.id, 'new')}
+                 type="button"
+                 onClick={() => setStatus(entry.id, 'new')}
                  className={`flex-1 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
                    status === 'new' ? 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
                  }`}
@@ -113,7 +112,8 @@ export default function AcademyVocabDetailClient({ academy, entry }: Props) {
                  Nueva
                </button>
                <button
-                 onClick={() => setStatus(academy.slug, entry.id, 'seen')}
+                 type="button"
+                 onClick={() => setStatus(entry.id, 'seen')}
                  className={`flex-1 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
                    status === 'seen' ? 'bg-blue-500 text-white shadow-sm' : 'text-slate-500 hover:text-blue-500'
                  }`}
@@ -121,7 +121,8 @@ export default function AcademyVocabDetailClient({ academy, entry }: Props) {
                  Vista
                </button>
                <button
-                 onClick={() => setStatus(academy.slug, entry.id, 'learned')}
+                 type="button"
+                 onClick={() => setStatus(entry.id, 'learned')}
                  className={`flex-1 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
                    status === 'learned' ? 'bg-green-500 text-white shadow-sm' : 'text-slate-500 hover:text-green-500'
                  }`}

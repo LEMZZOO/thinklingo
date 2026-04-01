@@ -1,99 +1,110 @@
 'use client';
 
-import React, { createContext, useContext, useState, startTransition } from 'react';
-import { DBUserProgress } from '@/services/progress';
-import { WordStatus } from '@/lib/hooks';
-import { 
-  toggleFavoriteAction, 
-  setStatusAction, 
-  updateQuizStatsAction, 
-  resetDataAction 
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useTransition,
+  useCallback,
+} from 'react';
+import type { UserAcademyCloudState, ProgressSource } from '@/services/progress';
+import {
+  toggleFavoriteAction,
+  setStatusAction,
+  resetAcademyDataAction,
 } from '@/app/actions/progress';
 
-interface AcademyProgressContextType extends DBUserProgress {
-  toggleFavorite: (id: string) => void;
-  setStatus: (id: string, st: WordStatus) => void;
-  updateQuizStats: (isCorrect: boolean) => void;
+interface AcademyProgressContextValue extends UserAcademyCloudState {
+  isPending: boolean;
+  toggleFavorite: (entryId: string) => void;
+  setStatus: (entryId: string, status: 'new' | 'seen' | 'learned') => void;
   resetData: (type: 'all' | 'quiz' | 'favorites' | 'status') => void;
 }
 
-const AcademyProgressContext = createContext<AcademyProgressContextType | null>(null);
+const AcademyProgressContext = createContext<AcademyProgressContextValue | null>(null);
 
-export function AcademyProgressProvider({ 
-  children,
-  initialData,
-  academyId,
-  source
-}: { 
-  children: React.ReactNode;
-  initialData: DBUserProgress;
+interface Props {
   academyId: string;
-  source: 'json' | 'academy_db';
-}) {
-  const [favorites, setFavorites] = useState<string[]>(initialData.favorites);
-  const [status, setStatusMap] = useState<Record<string, WordStatus>>(initialData.status);
-  const [quizStats, setQuizStats] = useState(initialData.quizStats);
+  academySlug: string;
+  source: ProgressSource;
+  initialState: UserAcademyCloudState;
+  children: React.ReactNode;
+}
 
-  const toggleFavorite = (id: string) => {
-    // 1. Mutar UI de forma optimista instántanea
-    const isFav = favorites.includes(id);
-    if (isFav) {
-      setFavorites(prev => prev.filter(fid => fid !== id));
-    } else {
-      setFavorites(prev => [...prev, id]);
-    }
+export function AcademyProgressProvider({
+  academyId,
+  source,
+  initialState,
+  children,
+}: Props) {
+  const [favorites, setFavorites] = useState<string[]>(initialState.favorites);
+  const [status, setStatusMap] = useState<Record<string, 'new' | 'seen' | 'learned'>>(
+    initialState.status
+  );
+  const [quizStats, setQuizStats] = useState(initialState.quizStats);
+  const [isPending, startTransition] = useTransition();
 
-    // 2. Ejecutar Action en background server side
-    startTransition(() => {
-      toggleFavoriteAction(academyId, source, id);
+  const toggleFavorite = useCallback((entryId: string) => {
+    // Optimistic update
+    const snapshot = favorites;
+    const isFav = favorites.includes(entryId);
+    setFavorites(isFav ? favorites.filter((id) => id !== entryId) : [...favorites, entryId]);
+
+    startTransition(async () => {
+      try {
+        await toggleFavoriteAction({ academyId, source, entryKey: entryId });
+      } catch {
+        // Rollback on failure
+        setFavorites(snapshot);
+      }
     });
-  };
+  }, [favorites, academyId, source]);
 
-  const setStatus = (id: string, st: WordStatus) => {
-    setStatusMap(prev => ({ ...prev, [id]: st }));
-    startTransition(() => {
-      setStatusAction(academyId, source, id, st);
+  const setStatus = useCallback((entryId: string, st: 'new' | 'seen' | 'learned') => {
+    const snapshot = { ...status };
+    setStatusMap((prev) => ({ ...prev, [entryId]: st }));
+
+    startTransition(async () => {
+      try {
+        await setStatusAction({ academyId, source, entryKey: entryId, status: st });
+      } catch {
+        setStatusMap(snapshot);
+      }
     });
-  };
+  }, [status, academyId, source]);
 
-  const updateQuizStats = (isCorrect: boolean) => {
-    setQuizStats(prev => ({
-      correct: prev.correct + (isCorrect ? 1 : 0),
-      incorrect: prev.incorrect + (!isCorrect ? 1 : 0),
-      total: prev.total + 1
-    }));
+  const resetData = useCallback((type: 'all' | 'quiz' | 'favorites' | 'status') => {
+    const snapFavs = favorites;
+    const snapStatus = { ...status };
+    const snapQuiz = { ...quizStats };
 
-    startTransition(() => {
-      updateQuizStatsAction(academyId, isCorrect);
-    });
-  };
-
-  const resetData = (type: 'all' | 'quiz' | 'favorites' | 'status') => {
     if (type === 'all' || type === 'favorites') setFavorites([]);
     if (type === 'all' || type === 'status') setStatusMap({});
-    if (type === 'all' || type === 'quiz') setQuizStats({ correct: 0, incorrect: 0, total: 0 });
+    if (type === 'all' || type === 'quiz')
+      setQuizStats({ correct: 0, incorrect: 0, total: 0 });
 
-    startTransition(() => {
-      resetDataAction(academyId, type);
+    startTransition(async () => {
+      try {
+        await resetAcademyDataAction({ academyId, source, type });
+      } catch {
+        // Rollback
+        if (type === 'all' || type === 'favorites') setFavorites(snapFavs);
+        if (type === 'all' || type === 'status') setStatusMap(snapStatus);
+        if (type === 'all' || type === 'quiz') setQuizStats(snapQuiz);
+      }
     });
-  };
+  }, [favorites, status, quizStats, academyId, source]);
 
   return (
-    <AcademyProgressContext.Provider value={{ 
-      favorites, 
-      status, 
-      quizStats, 
-      toggleFavorite, 
-      setStatus, 
-      updateQuizStats, 
-      resetData 
-    }}>
+    <AcademyProgressContext.Provider
+      value={{ favorites, status, quizStats, isPending, toggleFavorite, setStatus, resetData }}
+    >
       {children}
     </AcademyProgressContext.Provider>
   );
 }
 
-export function useAcademyProgress() {
+export function useAcademyProgress(): AcademyProgressContextValue {
   const ctx = useContext(AcademyProgressContext);
   if (!ctx) throw new Error('useAcademyProgress must be used within AcademyProgressProvider');
   return ctx;

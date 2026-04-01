@@ -1,9 +1,20 @@
 import { createClient } from '@/lib/supabase/server';
-import { WordStatus } from '@/lib/hooks'; // Assuming WordStatus is defined there, or we can move it
 
-export interface DBUserProgress {
+export type ProgressSource = 'json' | 'academy_db';
+
+export function buildProgressIdentity(
+  entry: { id: string },
+  source: ProgressSource
+): { source: ProgressSource; entry_key: string } {
+  return {
+    source,
+    entry_key: entry.id, // Direct mapping from ID to ensure stability
+  };
+}
+
+export interface UserAcademyCloudState {
   favorites: string[];
-  status: Record<string, WordStatus>;
+  status: Record<string, 'new' | 'seen' | 'learned'>;
   quizStats: {
     correct: number;
     incorrect: number;
@@ -12,23 +23,23 @@ export interface DBUserProgress {
 }
 
 /**
- * Obtiene el progreso consolidado de un alumno para una academia específica y fuente.
- * Ideal para hidratar el estado inicial en Server Components.
+ * Lee el progreso consolidado desde SQL de manera segura en el servidor.
+ * Solo extrae data correspondiente al usuario de la sesión actual (auth.uid()).
  */
-export async function getUserAcademyProgress(
+export async function getCloudProgress(
   academyId: string,
-  source: 'json' | 'academy_db'
-): Promise<DBUserProgress> {
+  source: ProgressSource
+): Promise<UserAcademyCloudState> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  const emptyProgress: DBUserProgress = {
+  const fallback: UserAcademyCloudState = {
     favorites: [],
     status: {},
     quizStats: { correct: 0, incorrect: 0, total: 0 }
   };
 
-  if (!user) return emptyProgress;
+  if (!user) return fallback;
 
   // 1. Fetch Favorites
   const { data: favs } = await supabase
@@ -38,8 +49,8 @@ export async function getUserAcademyProgress(
     .eq('academy_id', academyId)
     .eq('source', source);
 
-  // 2. Fetch Progress (Status)
-  const { data: prog } = await supabase
+  // 2. Fetch Status
+  const { data: stps } = await supabase
     .from('user_progress')
     .select('entry_key, status')
     .eq('user_id', user.id)
@@ -49,26 +60,25 @@ export async function getUserAcademyProgress(
   // 3. Fetch Quiz Stats
   const { data: stats } = await supabase
     .from('user_academy_stats')
-    .select('quiz_correct_count, quiz_incorrect_count, quiz_total_count')
+    .select('quiz_correct, quiz_incorrect, quiz_total')
     .eq('user_id', user.id)
     .eq('academy_id', academyId)
     .single();
 
-  // Consolidar formato para el cliente
-  const favorites = favs ? favs.map(f => f.entry_key) : [];
-  
-  const statusRecord: Record<string, WordStatus> = {};
-  if (prog) {
-    prog.forEach(p => {
-      statusRecord[p.entry_key] = p.status as WordStatus;
+  const statusRecord: Record<string, 'new' | 'seen' | 'learned'> = {};
+  if (stps) {
+    stps.forEach(p => {
+      statusRecord[p.entry_key] = p.status as 'new' | 'seen' | 'learned';
     });
   }
 
-  const quizStats = {
-    correct: stats?.quiz_correct_count || 0,
-    incorrect: stats?.quiz_incorrect_count || 0,
-    total: stats?.quiz_total_count || 0,
+  return {
+    favorites: favs ? favs.map(f => f.entry_key) : [],
+    status: statusRecord,
+    quizStats: {
+      correct: stats?.quiz_correct || 0,
+      incorrect: stats?.quiz_incorrect || 0,
+      total: stats?.quiz_total || 0,
+    }
   };
-
-  return { favorites, status: statusRecord, quizStats };
 }
