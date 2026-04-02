@@ -47,7 +47,7 @@ export function AcademyMembersClient({
   const [successMsg, setSuccessMsg] = useState('');
 
   const [newEmail, setNewEmail] = useState('');
-  const [newRole, setNewRole] = useState<MemberRole>('student');
+  const [newRole, setNewRole] = useState<'student' | 'teacher'>('student');
 
   const [adding, setAdding] = useState(false);
   const [updatingRoleId, setUpdatingRoleId] = useState<string | null>(null);
@@ -84,7 +84,7 @@ export function AcademyMembersClient({
     setAdding(true);
 
     try {
-      await addMemberAction(academyId, academySlug, email, newRole as 'student' | 'teacher');
+      await addMemberAction(academyId, academySlug, email, newRole);
       setNewEmail('');
       setNewRole('student');
       showSuccess('Miembro añadido correctamente.');
@@ -96,7 +96,7 @@ export function AcademyMembersClient({
     }
   };
 
-  const handleRoleChange = async (id: string, role: MemberRole) => {
+  const handleRoleChange = async (id: string, role: 'student' | 'teacher') => {
     if (updatingRoleId || deletingMemberId || confirmDeleteMember) return;
 
     clearMessages();
@@ -106,7 +106,7 @@ export function AcademyMembersClient({
     setMembers((prev) => prev.map((m) => (m.id === id ? { ...m, role } : m)));
 
     try {
-      await updateMemberRoleAction(academyId, academySlug, id, role as 'student' | 'teacher');
+      await updateMemberRoleAction(academyId, academySlug, id, role);
       router.refresh();
     } catch (err: unknown) {
       setMembers(previousMembers);
@@ -196,7 +196,7 @@ export function AcademyMembersClient({
               <label className="block text-[10px] font-black uppercase text-slate-400 mb-1">Rol</label>
               <select
                 value={newRole}
-                onChange={(e) => setNewRole(e.target.value as MemberRole)}
+                onChange={(e) => setNewRole(e.target.value as 'student' | 'teacher')}
                 disabled={uiLocked}
                 className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 text-sm focus:ring-2 focus:ring-[var(--academy-primary)] transition-colors disabled:opacity-70"
               >
@@ -297,7 +297,7 @@ export function AcademyMembersClient({
                         ) : (
                           <select
                             value={m.role}
-                            onChange={(e) => handleRoleChange(m.id, e.target.value as MemberRole)}
+                            onChange={(e) => handleRoleChange(m.id, e.target.value as 'student' | 'teacher')}
                             disabled={rowBusy || actorRole === 'teacher'}
                             className="bg-transparent border border-gray-200 dark:border-slate-700 rounded-lg px-2 py-1 text-xs font-bold disabled:opacity-50"
                           >

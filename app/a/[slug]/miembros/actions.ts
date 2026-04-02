@@ -40,13 +40,15 @@ export async function addMemberAction(
   role: 'student' | 'teacher'
 ) {
   const actorMembership = await checkAcademyAdminOrTeacher(academyId);
-  
+
+  if (actorMembership.role === 'teacher') {
+    throw new Error('Un profesor no tiene permisos para añadir miembros.');
+  }
+
   if (role !== 'student' && role !== 'teacher') {
     throw new Error('Solo se puede añadir miembros con rol Alumno o Profesor.');
   }
-  // Profesor solo puede añadir alumnos
-  const effectiveRole = actorMembership.role === 'teacher' ? 'student' as const : role;
-  
+
   const adminClient = createAdminClient();
 
   // 1. Obtener ID del usuario vía RPC
@@ -61,24 +63,22 @@ export async function addMemberAction(
     throw new Error('El usuario existe pero no tiene perfil asociado.');
   }
 
-  // 3. Comprobar membresía existente para evitar degradación involuntaria por profesor
-  if (actorMembership.role === 'teacher') {
-    const { data: target } = await adminClient
-      .from('academy_memberships')
-      .select('role')
-      .match({ user_id: userId, academy_id: academyId })
-      .maybeSingle();
+  // 3. Proteger admins existentes antes del upsert
+  const { data: existingMembership } = await adminClient
+    .from('academy_memberships')
+    .select('role')
+    .match({ user_id: userId, academy_id: academyId })
+    .maybeSingle();
 
-    if (target && target.role !== 'student') {
-      throw new Error('Un profesor solo puede gestionar alumnos.');
-    }
+  if (existingMembership?.role === 'academy_admin') {
+    throw new Error('No puedes modificar a otro administrador de la academia.');
   }
 
   // 4. Upsert
   const { error: upsertErr } = await adminClient.from('academy_memberships').upsert({
     user_id: userId,
     academy_id: academyId,
-    role: effectiveRole,
+    role: role,
     is_active: true
   }, { onConflict: 'user_id,academy_id' });
 
@@ -110,11 +110,6 @@ export async function updateMemberRoleAction(
 
   if (currentTarget?.role === 'academy_admin') {
     throw new Error('No puedes cambiar el rol de otro administrador de la academia.');
-  }
-
-  const allowedRoles: Array<'student' | 'teacher'> = ['student', 'teacher'];
-  if (!allowedRoles.includes(role)) {
-    throw new Error('Solo se permite cambiar entre los roles de Alumno y Profesor.');
   }
   
   const { data, error } = await adminClient
