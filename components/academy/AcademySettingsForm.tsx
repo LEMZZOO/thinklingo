@@ -18,6 +18,7 @@ export function AcademySettingsForm({ academy }: AcademySettingsFormProps) {
   const [primaryColor, setPrimaryColor] = useState(academy.color_primary);
   const [secondaryColor, setSecondaryColor] = useState(academy.color_secondary);
   const [accentColor, setAccentColor] = useState(academy.color_accent);
+  const [imageType, setImageType] = useState<'logo' | 'photo'>(academy.image_type || 'logo');
 
   const [state, formAction, isPending] = useActionState(
     async (prev: any, formData: FormData) => {
@@ -122,11 +123,17 @@ export function AcademySettingsForm({ academy }: AcademySettingsFormProps) {
                 Logo de Academia
               </label>
               <div className="flex items-center gap-4 p-4 bg-gray-50/50 dark:bg-slate-950/50 border border-gray-100 dark:border-slate-800 rounded-3xl">
-                <div className="w-20 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 flex items-center justify-center overflow-hidden shrink-0 shadow-sm">
+                <div className={`w-20 h-20 rounded-2xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 flex items-center justify-center overflow-hidden shrink-0 shadow-sm ${imageType === 'logo' ? 'p-2' : ''}`}>
                   {logoPreview ? (
-                    <img src={logoPreview} alt="Preview" className="w-full h-full object-contain p-2" />
+                    <img 
+                      src={logoPreview} 
+                      alt="Preview" 
+                      className={`w-full h-full ${imageType === 'logo' ? 'object-contain' : 'object-cover'} object-center`} 
+                    />
                   ) : (
-                    <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">Logo</div>
+                    <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">
+                      {imageType === 'logo' ? 'Logo' : 'Foto'}
+                    </div>
                   )}
                 </div>
                 <div className="flex flex-col gap-2 flex-1">
@@ -153,6 +160,23 @@ export function AcademySettingsForm({ academy }: AcademySettingsFormProps) {
                     </button>
                   )}
                   <input type="hidden" name="remove_logo" value={logoRemoved ? 'true' : 'false'} />
+                  
+                  <div className="space-y-2 mt-4">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 ml-1">
+                      Tipo de Imagen
+                    </label>
+                    <div className="flex gap-2 p-1 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-xl">
+                      <label className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg cursor-pointer transition-all ${imageType === 'logo' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-400 hover:text-slate-500'}`}>
+                        <input type="radio" name="image_type" value="logo" checked={imageType === 'logo'} onChange={() => setImageType('logo')} className="hidden" />
+                        <span className="text-[10px] font-black uppercase tracking-tight">Logo</span>
+                      </label>
+                      <label className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg cursor-pointer transition-all ${imageType === 'photo' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-400 hover:text-slate-500'}`}>
+                        <input type="radio" name="image_type" value="photo" checked={imageType === 'photo'} onChange={() => setImageType('photo')} className="hidden" />
+                        <span className="text-[10px] font-black uppercase tracking-tight">Foto</span>
+                      </label>
+                    </div>
+                  </div>
+
                   <div className="space-y-2 mt-4">
                     <label htmlFor="logo_url" className="text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 ml-1">
                       O usa una URL directa

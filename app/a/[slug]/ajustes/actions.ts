@@ -35,6 +35,7 @@ export async function updateAcademySettings(
   const color_primary = formData.get('color_primary') as string;
   const color_secondary = formData.get('color_secondary') as string;
   const color_accent = formData.get('color_accent') as string;
+  const image_type = (formData.get('image_type') as 'logo' | 'photo') || 'logo';
 
   if (!name || !color_primary || !color_secondary || !color_accent) {
     return { error: 'El nombre y los colores son obligatorios.' };
@@ -88,6 +89,7 @@ export async function updateAcademySettings(
     color_primary,
     color_secondary,
     color_accent,
+    image_type,
   };
 
   // 3. Update real con Admin Client para persistir cambios de verdad

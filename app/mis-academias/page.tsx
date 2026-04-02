@@ -45,13 +45,12 @@ export default async function MisAcademiasPage({
             className="group flex items-center gap-3 p-1.5 pr-4 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-200 dark:hover:border-blue-900 transition-all active:scale-95"
             title="Ver mi perfil"
           >
-            <div className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-gray-100 dark:border-slate-700 group-hover:border-blue-300 transition-colors">
+            <div className="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-gray-100 dark:border-slate-700 group-hover:border-blue-300 transition-colors shrink-0">
               {profile?.avatar_url ? (
                 <img
                   src={profile.avatar_url}
                   alt="Avatar"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 25%' }}
+                  className="w-full h-full object-cover object-center"
                 />
               ) : (
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 group-hover:text-blue-500 transition-colors"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
@@ -99,6 +98,7 @@ export default async function MisAcademiasPage({
             {memberships.map((m) => {
               if (!m.academies) return null;
               const aca = m.academies;
+              const acaImageType = aca.image_type ?? 'logo';
 
               return (
                 <Link
@@ -107,11 +107,15 @@ export default async function MisAcademiasPage({
                   className="group flex items-center bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-100 dark:border-slate-800/80 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-black/10 shrink-0 mr-5"
-                    style={{ backgroundColor: aca.color_primary || '#2563EB' }}
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-black/10 shrink-0 mr-5 overflow-hidden ${acaImageType === 'logo' ? 'p-2' : ''}`}
+                    style={acaImageType === 'logo' || !aca.logo_url ? { backgroundColor: aca.color_primary || '#2563EB' } : {}}
                   >
                     {aca.logo_url ? (
-                      <img src={aca.logo_url} alt={aca.name} className="w-full h-full object-cover object-center" />
+                      <img 
+                        src={aca.logo_url} 
+                        alt={aca.name} 
+                        className={`w-full h-full ${acaImageType === 'logo' ? 'object-contain' : 'object-cover'} object-center`} 
+                      />
                     ) : (
                       <span className="text-white font-black text-xl uppercase italic">{aca.name.slice(0, 2)}</span>
                     )}

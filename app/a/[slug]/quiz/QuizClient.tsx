@@ -158,17 +158,23 @@ export default function AcademyQuizClient({ academy, entries }: AcademyQuizClien
   const primaryBg = { backgroundColor: 'var(--academy-primary)' };
   const primaryText = { color: 'var(--academy-primary)' };
 
+  const academyImageType = academy.image_type ?? 'logo';
+
   return (
     <main className="min-h-screen flex flex-col bg-gray-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors pb-16">
       <header className="sticky top-12 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-4 pb-4">
         <div className="flex justify-between items-center mb-4">
           <Link href={`/a/${academy.slug}`} className="group flex items-center gap-3">
              <div 
-               style={primaryBg}
-               className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform"
+               style={academyImageType === 'logo' || !academy.logo_url ? primaryBg : {}}
+               className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform overflow-hidden ${academyImageType === 'logo' ? 'p-1.5' : ''}`}
              >
                 {academy.logo_url ? (
-                   <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
+                   <img 
+                    src={academy.logo_url} 
+                    alt={academy.name} 
+                    className={`w-full h-full ${academyImageType === 'logo' ? 'object-contain' : 'object-cover'} object-center`} 
+                  />
                 ) : (
                    <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
                 )}

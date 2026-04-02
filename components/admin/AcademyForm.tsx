@@ -36,8 +36,10 @@ export function AcademyForm({ academy }: AcademyFormProps) {
     color_accent: academy?.color_accent || '#8b5cf6',
     is_active: academy?.is_active ?? true,
     uses_custom_vocabulary: academy?.uses_custom_vocabulary ?? false,
+    image_type: academy?.image_type || 'logo',
   };
- 
+
+  const [imageType, setImageType] = useState<'logo' | 'photo'>(currentData.image_type as 'logo' | 'photo');
   const [logoPreview, setLogoPreview] = useState<string | null>(currentData.logo_url || null);
   const [logoRemoved, setLogoRemoved] = useState(false);
   const logoFileRef = useRef<HTMLInputElement>(null);
@@ -147,46 +149,76 @@ export function AcademyForm({ academy }: AcademyFormProps) {
 
             <div className="space-y-4">
                <div className="space-y-2">
-                 <label 
-                   htmlFor="logo_file" 
-                   className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
-                 >
-                   Subir Logo
-                 </label>
-                 <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-xl bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
-                      {logoPreview ? (
-                        <img src={logoPreview} alt="Preview" className="w-full h-full object-contain" />
-                      ) : (
-                        <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">Logo</div>
-                      )}
-                    </div>
-                    <div className="flex flex-col gap-2 flex-1">
-                      <input
-                        id="logo_file"
-                        name="logo_file"
-                        type="file"
-                        accept="image/*"
-                        ref={logoFileRef}
-                        onChange={handleLogoChange}
-                        className={`w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-slate-800 dark:file:text-slate-300 border border-dashed rounded-xl p-1 transition-colors ${fileError ? 'border-rose-500 bg-rose-50/10' : 'border-gray-200 dark:border-slate-800'}`}
-                      />
-                      {logoPreview && (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setLogoPreview(null);
-                            setLogoRemoved(true);
-                            if (logoFileRef.current) {
-                              logoFileRef.current.value = '';
-                            }
-                          }}
-                          className="text-[10px] font-black uppercase tracking-widest text-rose-500 hover:text-rose-600 self-start px-2 py-1 rounded hover:bg-rose-50 transition-colors"
-                        >
-                          Quitar logo
-                        </button>
-                      )}
-                    </div>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 ml-1">
+                    Logo o Foto de Portada
+                  </label>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-4 bg-gray-50/50 dark:bg-slate-950/50 border border-gray-100 dark:border-slate-800 rounded-3xl">
+                     <div className="w-16 h-16 rounded-xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 flex items-center justify-center overflow-hidden shrink-0 shadow-sm relative">
+                       {logoPreview ? (
+                         <img 
+                            src={logoPreview} 
+                            alt="Preview" 
+                            className={`w-full h-full object-center ${imageType === 'logo' ? 'object-contain p-2' : 'object-cover'}`} 
+                         />
+                       ) : (
+                         <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">
+                            {imageType === 'logo' ? 'Logo' : 'Foto'}
+                         </div>
+                       )}
+                     </div>
+
+                     <div className="flex-1 space-y-3">
+                        <div className="flex flex-wrap gap-2">
+                           <label className={`flex-1 min-w-[100px] cursor-pointer flex items-center justify-center gap-2 px-4 py-2 rounded-xl border-2 transition-all ${imageType === 'logo' ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' : 'border-gray-100 dark:border-slate-800 text-slate-400 opacity-60 hover:opacity-100'}`}>
+                              <input 
+                                type="radio" 
+                                name="image_type" 
+                                value="logo" 
+                                checked={imageType === 'logo'} 
+                                onChange={() => setImageType('logo')} 
+                                className="hidden" 
+                              />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Es un Logo</span>
+                           </label>
+                           <label className={`flex-1 min-w-[100px] cursor-pointer flex items-center justify-center gap-2 px-4 py-2 rounded-xl border-2 transition-all ${imageType === 'photo' ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' : 'border-gray-100 dark:border-slate-800 text-slate-400 opacity-60 hover:opacity-100'}`}>
+                              <input 
+                                type="radio" 
+                                name="image_type" 
+                                value="photo" 
+                                checked={imageType === 'photo'} 
+                                onChange={() => setImageType('photo')} 
+                                className="hidden" 
+                              />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Es una Foto</span>
+                           </label>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <input
+                            id="logo_file"
+                            name="logo_file"
+                            type="file"
+                            accept="image/*"
+                            ref={logoFileRef}
+                            onChange={handleLogoChange}
+                            className={`w-full text-[10px] text-slate-400 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-[10px] file:font-black file:uppercase file:bg-blue-50 file:text-blue-600 dark:file:bg-blue-950 dark:file:text-blue-400 hover:file:bg-blue-100 cursor-pointer p-1 border border-dashed rounded-xl transition-colors ${fileError ? 'border-rose-500 bg-rose-50/10' : 'border-gray-200 dark:border-slate-800'}`}
+                          />
+                          {logoPreview && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setLogoPreview(null);
+                                setLogoRemoved(true);
+                                if (logoFileRef.current) {
+                                  logoFileRef.current.value = '';
+                                }
+                              }}
+                              className="text-[10px] font-black uppercase tracking-widest text-rose-500 hover:text-rose-600 self-start px-2 py-1 rounded hover:bg-rose-50 transition-colors"
+                            >
+                              Quitar logo
+                            </button>
+                          )}
+                        </div>
+                     </div>
                   </div>
                   <input type="hidden" name="remove_logo" value={logoRemoved ? 'true' : 'false'} />
                  {fileError && (
@@ -197,24 +229,24 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                </div>
 
                <div className="space-y-2">
-                 <label 
-                   htmlFor="logo_url" 
-                   className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
-                 >
-                   O usar URL directa
-                 </label>
-                 <input
-                   id="logo_url"
-                   name="logo_url"
-                   type="text"
-                   key={logoRemoved ? 'removed' : `logo_url-${currentData.logo_url}`}
-                   defaultValue={logoRemoved ? '' : currentData.logo_url}
-                   className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
-                   placeholder="https://ejemplo.com/logo.png"
-                 />
-                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter px-1">Prioridad: Archivo seleccionado &gt; URL manual.</p>
-               </div>
-            </div>
+                  <label 
+                    htmlFor="logo_url" 
+                    className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1"
+                  >
+                    O usar URL directa
+                  </label>
+                  <input
+                    id="logo_url"
+                    name="logo_url"
+                    type="text"
+                    key={logoRemoved ? 'removed' : `logo_url-${currentData.logo_url}`}
+                    defaultValue={logoRemoved ? '' : currentData.logo_url}
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
+                    placeholder="https://ejemplo.com/logo.png"
+                  />
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter px-1">Prioridad: Archivo seleccionado &gt; URL manual.</p>
+                </div>
+              </div>
 
             {/* Configuración */}
             <div className="flex flex-col gap-3 pt-1">

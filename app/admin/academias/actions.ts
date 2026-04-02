@@ -37,6 +37,7 @@ export type AcademyFormState = {
     color_accent?: string;
     is_active?: boolean;
     uses_custom_vocabulary?: boolean;
+    image_type?: 'logo' | 'photo';
   };
 };
 
@@ -57,6 +58,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
   const color_primary = formData.get('color_primary') as string;
   const color_secondary = formData.get('color_secondary') as string;
   const color_accent = formData.get('color_accent') as string;
+  const image_type = (formData.get('image_type') as 'logo' | 'photo') || 'logo';
   const is_active = formData.get('is_active') === 'on';
   // checkbox ausente en formData cuando está desmarcado → false
   const uses_custom_vocabulary = formData.get('uses_custom_vocabulary') === 'on';
@@ -73,6 +75,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     color_accent,
     is_active,
     uses_custom_vocabulary,
+    image_type,
   };
 
   // 1. Validaciones básicas
@@ -153,6 +156,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     color_accent,
     is_active,
     uses_custom_vocabulary,
+    image_type,
   };
 
   const adminSupabase = createAdminClient();

@@ -10,6 +10,7 @@ export interface Academy {
   color_accent: string;
   is_active: boolean;
   uses_custom_vocabulary: boolean;
+  image_type: 'logo' | 'photo';
   created_at: string;
   updated_at: string;
 }

@@ -143,22 +143,28 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
     };
   }, []);
 
+  const academyImageType = academy.image_type ?? 'logo';
+
   return (
     <main className="min-h-screen flex flex-col bg-gray-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors pb-16">
       {/* Academy Header */}
       <header className="sticky top-12 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-800/50 px-6 pt-6 pb-6">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div
-              style={{ backgroundColor: 'var(--academy-primary)' }}
-              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30"
-            >
-              {academy.logo_url ? (
-                <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
-              ) : (
-                <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
-              )}
-            </div>
+             <div 
+                style={academyImageType === 'logo' || !academy.logo_url ? { backgroundColor: 'var(--academy-primary)' } : {}}
+                className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 overflow-hidden ${academyImageType === 'logo' ? 'p-1.5' : ''}`}
+              >
+                 {academy.logo_url ? (
+                    <img 
+                      src={academy.logo_url} 
+                      alt={academy.name} 
+                      className={`w-full h-full ${academyImageType === 'logo' ? 'object-contain' : 'object-cover'} object-center`} 
+                    />
+                 ) : (
+                    <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
+                 )}
+              </div>
             <div>
               <h1 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-none">
                 {academy.name}

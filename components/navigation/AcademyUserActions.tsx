@@ -33,13 +33,12 @@ export function AcademyUserActions({ avatarUrl, fullName }: AcademyUserActionsPr
           className="group flex items-center gap-2 p-1 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-900/30 hover:bg-white dark:hover:bg-slate-800 transition-all active:scale-95 shadow-sm"
           title="Ver mi perfil"
         >
-          <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-gray-100 dark:border-slate-600">
+          <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-gray-100 dark:border-slate-600 shrink-0">
             {avatarUrl ? (
               <img 
                 src={avatarUrl} 
                 alt="Avatar" 
-                className="w-full h-full object-cover" 
-                style={{ objectPosition: 'center 20%' }}
+                className="w-full h-full object-cover object-center" 
               />
             ) : (
               <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 italic uppercase tracking-tighter">
