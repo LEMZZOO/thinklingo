@@ -2,11 +2,25 @@
 
 import { revalidatePath } from 'next/cache';
 import { createAcademyVocabulary, updateAcademyVocabularyStatus } from '@/services/academyVocabulary';
+import { createClient } from '@/lib/supabase/server';
+
+async function checkSuperAdmin() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user || user.app_metadata?.is_superadmin !== true) {
+    throw new Error('Sin autorización: requiere permisos de superadmin.');
+  }
+}
 
 export async function addVocabEntry(
   academyId: string,
   formData: FormData
 ): Promise<{ ok: boolean; error: string | undefined }> {
+  try {
+    await checkSuperAdmin();
+  } catch (e: any) {
+    return { ok: false, error: e.message };
+  }
   const english_word = (formData.get('english_word') as string)?.trim();
   const spanish_translation = (formData.get('spanish_translation') as string)?.trim();
 
@@ -34,10 +48,10 @@ export async function addVocabEntry(
 export async function toggleVocabularyStatus(
   formData: FormData
 ): Promise<void> {
+  await checkSuperAdmin();
   const id = formData.get('id') as string;
   const academyId = formData.get('academyId') as string;
 
-  const { createClient } = await import('@/lib/supabase/server');
   const supabase = await createClient();
   const { data, error } = await supabase
     .from('academy_vocabulary')
@@ -54,6 +68,7 @@ export async function toggleVocabularyStatus(
 export async function updateAcademyVocabularyWord(
   formData: FormData
 ): Promise<void> {
+  await checkSuperAdmin();
   const id = formData.get('id') as string;
   const academyId = formData.get('academyId') as string;
   const english_word = (formData.get('english_word') as string)?.trim();
@@ -63,7 +78,6 @@ export async function updateAcademyVocabularyWord(
     throw new Error('Ambos campos son obligatorios.');
   }
 
-  const { createClient } = await import('@/lib/supabase/server');
   const supabase = await createClient();
 
   const { error } = await supabase
@@ -79,13 +93,13 @@ export async function updateAcademyVocabularyWord(
 export async function moveVocabularyItem(
   formData: FormData
 ): Promise<void> {
+  await checkSuperAdmin();
   const id = formData.get('id') as string;
   const academyId = formData.get('academyId') as string;
   const direction = formData.get('direction') as 'up' | 'down';
 
   if (!id || !academyId || !direction) return;
 
-  const { createClient } = await import('@/lib/supabase/server');
   const supabase = await createClient();
 
   // 1. Obtener todos los items ordenador por order_index

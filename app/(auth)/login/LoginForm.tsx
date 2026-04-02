@@ -1,9 +1,11 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import { login } from './actions';
+import Link from 'next/link';
 
 export function LoginForm() {
+  const [email, setEmail] = useState('');
   const [state, formAction, isPending] = useActionState(
     async (prev: { error?: string } | undefined, formData: FormData) => {
       return await login(formData);
@@ -36,6 +38,8 @@ export function LoginForm() {
             type="email"
             placeholder="tu@email.com"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600"
           />
         </div>
@@ -73,6 +77,21 @@ export function LoginForm() {
           {isPending ? 'Iniciando sesión...' : 'Iniciar Sesión'}
         </button>
       </form>
+
+      <div className="pt-2 space-y-4 text-center">
+        <p className="text-xs text-slate-500">
+          ¿No tienes una cuenta?{' '}
+          <Link href="/register" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">
+            Regístrate
+          </Link>
+        </p>
+        <Link 
+          href="/forgot-password" 
+          className="block text-[10px] font-bold text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-colors"
+        >
+          ¿Olvidaste tu contraseña?
+        </Link>
+      </div>
     </div>
   );
 }

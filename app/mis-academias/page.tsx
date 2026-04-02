@@ -9,7 +9,12 @@ export const metadata = {
   description: 'Elige tu academia para comenzar a estudiar',
 };
 
-export default async function MisAcademiasPage() {
+export default async function MisAcademiasPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const isConfirmed = (await searchParams).confirmed === '1';
   const supabase = await createClient();
   const { data: { user }, error } = await supabase.auth.getUser();
 
@@ -67,6 +72,17 @@ export default async function MisAcademiasPage() {
             Escoge la academia a la que quieres acceder
           </p>
         </div>
+        
+        {isConfirmed && (
+          <div className="mb-8 p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4">
+            <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <p className="text-sm font-bold text-green-700 dark:text-green-400">
+              ¡Cuenta confirmada con éxito! Ahora tu profesor o administrador debe darte acceso usando este mismo correo.
+            </p>
+          </div>
+        )}
 
         {memberships.length === 0 ? (
           <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-gray-100 dark:border-slate-800 text-center shadow-lg shadow-black/5">
@@ -75,7 +91,7 @@ export default async function MisAcademiasPage() {
             </div>
             <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-2">Aún no tienes acceso</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              No figuras en ninguna academia. Por favor, pide a tu profesor o a tu academia que te envíen la invitación usando el correo <strong className="text-slate-700 dark:text-slate-300">{user.email}</strong>.
+              No figuras en ninguna academia todavía. Pide a tu profesor o administrador que te añada desde el panel de miembros usando este correo: <strong className="text-slate-700 dark:text-slate-300">{user.email}</strong>.
             </p>
           </div>
         ) : (

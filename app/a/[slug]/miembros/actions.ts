@@ -6,12 +6,25 @@ import { revalidatePath } from 'next/cache';
 import { getMembership } from '@/services/memberships';
 import { getManagedStudentAnalyticsSummary } from '@/services/academyAnalytics';
 
-async function checkAcademyAdminOrTeacher(academyId: string) {
+async function checkAcademyAdminOrTeacher(academyId: string, slug?: string) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) {
     throw new Error('No estás autenticado.');
+  }
+
+  // 1. Verificar consistencia de ámbito (slug vs academyId) para prevenir bypass
+  if (slug) {
+    const { data: academy } = await supabase
+      .from('academies')
+      .select('id')
+      .eq('slug', slug)
+      .maybeSingle();
+    
+    if (!academy || academy.id !== academyId) {
+      throw new Error('Inconsistencia de seguridad: el ID de academia no coincide con el slug.');
+    }
   }
 
   const membership = await getMembership(user.id, academyId);
@@ -39,7 +52,7 @@ export async function addMemberAction(
   email: string,
   role: 'student' | 'teacher'
 ) {
-  const actorMembership = await checkAcademyAdminOrTeacher(academyId);
+  const actorMembership = await checkAcademyAdminOrTeacher(academyId, slug);
 
   if (actorMembership.role === 'teacher') {
     throw new Error('Un profesor no tiene permisos para añadir miembros.');
@@ -63,15 +76,19 @@ export async function addMemberAction(
     throw new Error('El usuario existe pero no tiene perfil asociado.');
   }
 
-  // 3. Proteger admins existentes antes del upsert
+  // 3. Comprobar membresía existente
   const { data: existingMembership } = await adminClient
     .from('academy_memberships')
-    .select('role')
+    .select('role, is_active')
     .match({ user_id: userId, academy_id: academyId })
     .maybeSingle();
 
   if (existingMembership?.role === 'academy_admin') {
     throw new Error('No puedes modificar a otro administrador de la academia.');
+  }
+
+  if (existingMembership?.is_active) {
+    throw new Error('Este usuario ya es un miembro activo de esta academia.');
   }
 
   // 4. Upsert
@@ -93,7 +110,7 @@ export async function updateMemberRoleAction(
   membershipId: string,
   role: 'student' | 'teacher'
 ) {
-  const actorMembership = await checkAcademyAdminOrTeacher(academyId);
+  const actorMembership = await checkAcademyAdminOrTeacher(academyId, slug);
   const adminClient = createAdminClient();
 
   // REGLA: Solo un academy_admin puede gestionar roles, el profesor es modo lectura
@@ -110,6 +127,10 @@ export async function updateMemberRoleAction(
 
   if (currentTarget?.role === 'academy_admin') {
     throw new Error('No puedes cambiar el rol de otro administrador de la academia.');
+  }
+
+  if (currentTarget?.role === role) {
+    throw new Error(`El miembro ya tiene el rol de ${role === 'student' ? 'Alumno' : 'Profesor'}.`);
   }
   
   const { data, error } = await adminClient
@@ -131,7 +152,7 @@ export async function toggleMemberActiveAction(
   membershipId: string, 
   is_active: boolean
 ) {
-  const actorMembership = await checkAcademyAdminOrTeacher(academyId);
+  const actorMembership = await checkAcademyAdminOrTeacher(academyId, slug);
   const adminClient = createAdminClient();
 
   // REGLA: Solo un academy_admin puede gestionar el estado (activo/inactivo)
@@ -142,12 +163,16 @@ export async function toggleMemberActiveAction(
   // REGLA: academy_admin no puede desactivar a otro academy_admin
   const { data: currentTarget } = await adminClient
     .from('academy_memberships')
-    .select('role')
+    .select('role, is_active')
     .match({ id: membershipId, academy_id: academyId })
     .maybeSingle();
 
   if (currentTarget?.role === 'academy_admin') {
     throw new Error('No puedes cambiar el estado de otro administrador de la academia.');
+  }
+
+  if (currentTarget?.is_active === is_active) {
+    throw new Error(`Esta membresía ya se encuentra ${is_active ? 'activa' : 'inactiva'}.`);
   }
   
   const { data, error } = await adminClient
@@ -168,7 +193,7 @@ export async function deleteMemberAction(
   slug: string, 
   membershipId: string
 ) {
-  const actorMembership = await checkAcademyAdminOrTeacher(academyId);
+  const actorMembership = await checkAcademyAdminOrTeacher(academyId, slug);
   const adminClient = createAdminClient();
 
   // REGLA: Solo un academy_admin puede eliminar miembros

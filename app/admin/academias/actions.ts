@@ -141,7 +141,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     return { error: `La URL (slug) "${slug}" ya está siendo usada por otra academia.`, data: currentData };
   }
 
-  // 5. Upsert (Create or Update)
+  // 5. Upsert (Create or Update) con Admin Client (salta RLS tras verificar superadmin)
   const academyData = {
     name,
     slug,
@@ -155,9 +155,11 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     uses_custom_vocabulary,
   };
 
+  const adminSupabase = createAdminClient();
+
   if (id) {
     // Modo Edición
-    const { error: updateError } = await supabase
+    const { error: updateError } = await adminSupabase
       .from('academies')
       .update(academyData)
       .eq('id', id);
@@ -165,7 +167,7 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
     if (updateError) return { error: updateError.message, data: currentData };
   } else {
     // Modo Creación
-    const { error: insertError } = await supabase
+    const { error: insertError } = await adminSupabase
       .from('academies')
       .insert([academyData]);
 

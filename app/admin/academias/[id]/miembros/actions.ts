@@ -40,7 +40,18 @@ export async function addMemberAction(
     throw new Error('El usuario existe pero no tiene perfil asociado (registro incompleto).');
   }
 
-  // 3. Upsert en academy_memberships
+  // 3. Comprobar membresía existente
+  const { data: existingMembership } = await adminClient
+    .from('academy_memberships')
+    .select('role, is_active')
+    .match({ user_id: userId, academy_id: academyId })
+    .maybeSingle();
+
+  if (existingMembership?.is_active) {
+    throw new Error('Este usuario ya es un miembro activo de esta academia.');
+  }
+
+  // 4. Upsert (Reactivar o Crear)
   const { error: upsertErr } = await adminClient.from('academy_memberships').upsert({
     user_id: userId,
     academy_id: academyId,
@@ -61,6 +72,21 @@ export async function updateMemberRoleAction(
   await checkAdmin();
   const adminClient = createAdminClient();
   
+  const { data: currentTarget } = await adminClient
+    .from('academy_memberships')
+    .select('role')
+    .match({ id: membershipId, academy_id: academyId })
+    .maybeSingle();
+
+  if (!currentTarget) throw new Error('Membresía no encontrada.');
+  if (currentTarget?.role === 'academy_admin') {
+    throw new Error('No puedes cambiar el rol de otro administrador de la academia.');
+  }
+
+  if (currentTarget?.role === role) {
+    throw new Error(`El miembro ya tiene el rol de ${role === 'student' ? 'Alumno' : 'Profesor'}.`);
+  }
+  
   const { data, error } = await adminClient
     .from('academy_memberships')
     .update({ role })
@@ -78,6 +104,21 @@ export async function toggleMemberActiveAction(academyId: string, membershipId: 
   await checkAdmin();
   const adminClient = createAdminClient();
   
+  const { data: currentTarget } = await adminClient
+    .from('academy_memberships')
+    .select('role, is_active')
+    .match({ id: membershipId, academy_id: academyId })
+    .maybeSingle();
+
+  if (!currentTarget) throw new Error('Membresía no encontrada.');
+  if (currentTarget?.role === 'academy_admin') {
+    throw new Error('No puedes cambiar el estado de otro administrador de la academia.');
+  }
+
+  if (currentTarget?.is_active === is_active) {
+    throw new Error(`Esta membresía ya se encuentra ${is_active ? 'activa' : 'inactiva'}.`);
+  }
+
   const { data, error } = await adminClient
     .from('academy_memberships')
     .update({ is_active })
