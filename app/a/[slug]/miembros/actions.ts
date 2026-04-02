@@ -37,10 +37,13 @@ export async function addMemberAction(
   academyId: string,
   slug: string,
   email: string,
-  role: 'student' | 'teacher' | 'academy_admin'
+  role: 'student' | 'teacher'
 ) {
   const actorMembership = await checkAcademyAdminOrTeacher(academyId);
   
+  if (role !== 'student' && role !== 'teacher') {
+    throw new Error('Solo se puede añadir miembros con rol Alumno o Profesor.');
+  }
   // Profesor solo puede añadir alumnos
   const effectiveRole = actorMembership.role === 'teacher' ? 'student' as const : role;
   
@@ -88,26 +91,30 @@ export async function updateMemberRoleAction(
   academyId: string,
   slug: string,
   membershipId: string,
-  role: 'student' | 'teacher' | 'academy_admin'
+  role: 'student' | 'teacher'
 ) {
   const actorMembership = await checkAcademyAdminOrTeacher(academyId);
   const adminClient = createAdminClient();
 
-  // Si es profesor, solo puede actuar sobre alumnos y solo puede asignar rol alumno
+  // REGLA: Solo un academy_admin puede gestionar roles, el profesor es modo lectura
   if (actorMembership.role === 'teacher') {
-    if (role !== 'student') {
-      throw new Error('Un profesor solo puede asignar el rol de alumno.');
-    }
-    
-    const { data: target } = await adminClient
-      .from('academy_memberships')
-      .select('role')
-      .match({ id: membershipId, academy_id: academyId })
-      .maybeSingle();
+    throw new Error('Un profesor no tiene permisos para cambiar roles.');
+  }
 
-    if (target?.role !== 'student') {
-      throw new Error('Un profesor solo puede gestionar alumnos.');
-    }
+  // REGLA: academy_admin no puede modificar a otro academy_admin ni promocionar a admin
+  const { data: currentTarget } = await adminClient
+    .from('academy_memberships')
+    .select('role')
+    .match({ id: membershipId, academy_id: academyId })
+    .maybeSingle();
+
+  if (currentTarget?.role === 'academy_admin') {
+    throw new Error('No puedes cambiar el rol de otro administrador de la academia.');
+  }
+
+  const allowedRoles: Array<'student' | 'teacher'> = ['student', 'teacher'];
+  if (!allowedRoles.includes(role)) {
+    throw new Error('Solo se permite cambiar entre los roles de Alumno y Profesor.');
   }
   
   const { data, error } = await adminClient
@@ -132,16 +139,20 @@ export async function toggleMemberActiveAction(
   const actorMembership = await checkAcademyAdminOrTeacher(academyId);
   const adminClient = createAdminClient();
 
+  // REGLA: Solo un academy_admin puede gestionar el estado (activo/inactivo)
   if (actorMembership.role === 'teacher') {
-    const { data: target } = await adminClient
-      .from('academy_memberships')
-      .select('role')
-      .match({ id: membershipId, academy_id: academyId })
-      .maybeSingle();
+    throw new Error('Un profesor no tiene permisos para cambiar el estado de membresía.');
+  }
 
-    if (target?.role !== 'student') {
-      throw new Error('Un profesor solo puede gestionar alumnos.');
-    }
+  // REGLA: academy_admin no puede desactivar a otro academy_admin
+  const { data: currentTarget } = await adminClient
+    .from('academy_memberships')
+    .select('role')
+    .match({ id: membershipId, academy_id: academyId })
+    .maybeSingle();
+
+  if (currentTarget?.role === 'academy_admin') {
+    throw new Error('No puedes cambiar el estado de otro administrador de la academia.');
   }
   
   const { data, error } = await adminClient
@@ -165,16 +176,20 @@ export async function deleteMemberAction(
   const actorMembership = await checkAcademyAdminOrTeacher(academyId);
   const adminClient = createAdminClient();
 
+  // REGLA: Solo un academy_admin puede eliminar miembros
   if (actorMembership.role === 'teacher') {
-    const { data: target } = await adminClient
-      .from('academy_memberships')
-      .select('role')
-      .match({ id: membershipId, academy_id: academyId })
-      .maybeSingle();
+    throw new Error('Un profesor no tiene permisos para eliminar miembros.');
+  }
 
-    if (target?.role !== 'student') {
-      throw new Error('Un profesor solo puede gestionar alumnos.');
-    }
+  // REGLA: academy_admin no puede eliminar a otro academy_admin
+  const { data: currentTarget } = await adminClient
+    .from('academy_memberships')
+    .select('role')
+    .match({ id: membershipId, academy_id: academyId })
+    .maybeSingle();
+
+  if (currentTarget?.role === 'academy_admin') {
+    throw new Error('No puedes eliminar a otro administrador de la academia.');
   }
   
   const { data, error } = await adminClient

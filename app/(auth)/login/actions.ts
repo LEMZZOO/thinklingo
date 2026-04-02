@@ -1,29 +1,34 @@
 'use server';
 
 import { createClient } from '@/lib/supabase/server';
-import { redirect } from 'next/navigation';
 import { smartLoginRedirect } from '@/lib/auth/redirects';
+import { redirect } from 'next/navigation';
 
 export async function login(formData: FormData) {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
+
+  if (!email || !password) {
+    return { error: 'Email y contraseña son obligatorios' };
+  }
+
   const supabase = await createClient();
 
-  const { error } = await supabase.auth.signInWithPassword({
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
   if (error) {
-    return { error: error.message };
+    return { error: 'Credenciales inválidas' };
   }
-
-  const { data: { user } } = await supabase.auth.getUser();
 
   if (user) {
-    await smartLoginRedirect(user.id);
+    await smartLoginRedirect(user.id, user.app_metadata?.is_superadmin === true);
   }
 
-  // Fallback genérico
   redirect('/');
 }

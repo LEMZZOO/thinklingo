@@ -84,7 +84,7 @@ export function AcademyMembersClient({
     setAdding(true);
 
     try {
-      await addMemberAction(academyId, academySlug, email, newRole);
+      await addMemberAction(academyId, academySlug, email, newRole as 'student' | 'teacher');
       setNewEmail('');
       setNewRole('student');
       showSuccess('Miembro añadido correctamente.');
@@ -106,7 +106,7 @@ export function AcademyMembersClient({
     setMembers((prev) => prev.map((m) => (m.id === id ? { ...m, role } : m)));
 
     try {
-      await updateMemberRoleAction(academyId, academySlug, id, role);
+      await updateMemberRoleAction(academyId, academySlug, id, role as 'student' | 'teacher');
       router.refresh();
     } catch (err: unknown) {
       setMembers(previousMembers);
@@ -172,51 +172,48 @@ export function AcademyMembersClient({
 
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-8">
-      <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-        <h2 className="font-black text-slate-800 dark:text-slate-100 mb-4 text-xl">Añadir Miembro</h2>
+      {actorRole !== 'teacher' && (
+        <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+          <h2 className="font-black text-slate-800 dark:text-slate-100 mb-4 text-xl">Añadir Miembro</h2>
 
-        {error && <div className="mb-4 text-xs font-bold text-rose-500 bg-rose-50 dark:bg-rose-950/20 p-3 rounded-xl">{error}</div>}
-        {successMsg && <div className="mb-4 text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/20 p-3 rounded-xl">{successMsg}</div>}
+          {error && <div className="mb-4 text-xs font-bold text-rose-500 bg-rose-50 dark:bg-rose-950/20 p-3 rounded-xl">{error}</div>}
+          {successMsg && <div className="mb-4 text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/20 p-3 rounded-xl">{successMsg}</div>}
 
-        <form onSubmit={handleAdd} className="flex flex-col sm:flex-row gap-4 items-end">
-          <div className="flex-1 w-full">
-            <label className="block text-[10px] font-black uppercase text-slate-400 mb-1">Email del usuario</label>
-            <input
-              type="email"
-              required
-              value={newEmail}
-              onChange={(e) => setNewEmail(e.target.value)}
-              disabled={uiLocked}
-              className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 text-sm focus:ring-2 focus:ring-[var(--academy-primary)] transition-colors"
-              placeholder="alumno@ejemplo.com"
-            />
-          </div>
-          <div className="w-full sm:w-48">
-            <label className="block text-[10px] font-black uppercase text-slate-400 mb-1">Rol</label>
-            <select
-              value={newRole}
-              onChange={(e) => setNewRole(e.target.value as MemberRole)}
-              disabled={uiLocked || actorRole === 'teacher'}
-              className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 text-sm focus:ring-2 focus:ring-[var(--academy-primary)] transition-colors disabled:opacity-70"
+          <form onSubmit={handleAdd} className="flex flex-col sm:flex-row gap-4 items-end">
+            <div className="flex-1 w-full">
+              <label className="block text-[10px] font-black uppercase text-slate-400 mb-1">Email del usuario</label>
+              <input
+                type="email"
+                required
+                value={newEmail}
+                onChange={(e) => setNewEmail(e.target.value)}
+                disabled={uiLocked}
+                className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 text-sm focus:ring-2 focus:ring-[var(--academy-primary)] transition-colors"
+                placeholder="alumno@ejemplo.com"
+              />
+            </div>
+            <div className="w-full sm:w-48">
+              <label className="block text-[10px] font-black uppercase text-slate-400 mb-1">Rol</label>
+              <select
+                value={newRole}
+                onChange={(e) => setNewRole(e.target.value as MemberRole)}
+                disabled={uiLocked}
+                className="w-full h-11 px-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 text-sm focus:ring-2 focus:ring-[var(--academy-primary)] transition-colors disabled:opacity-70"
+              >
+                <option value="student">Alumno</option>
+                <option value="teacher">Profesor</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              disabled={uiLocked || !newEmail.trim()}
+              className="h-11 w-full sm:w-auto px-6 bg-[var(--academy-primary)] text-white font-bold rounded-xl shadow-lg hover:opacity-90 disabled:opacity-50 transition min-w-[120px]"
             >
-              <option value="student">Alumno</option>
-              {actorRole === 'academy_admin' && (
-                <>
-                  <option value="teacher">Profesor</option>
-                  <option value="academy_admin">Admin Academia</option>
-                </>
-              )}
-            </select>
-          </div>
-          <button
-            type="submit"
-            disabled={uiLocked || !newEmail.trim()}
-            className="h-11 w-full sm:w-auto px-6 bg-[var(--academy-primary)] text-white font-bold rounded-xl shadow-lg hover:opacity-90 disabled:opacity-50 transition min-w-[120px]"
-          >
-            {adding ? 'Guardando...' : 'Añadir'}
-          </button>
-        </form>
-      </div>
+              {adding ? 'Guardando...' : 'Añadir'}
+            </button>
+          </form>
+        </div>
+      )}
 
       <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <div className="p-4 border-b border-gray-100 dark:border-slate-800 flex flex-col md:flex-row gap-4 items-center justify-between">
@@ -276,8 +273,16 @@ export function AcademyMembersClient({
                 <tr><td colSpan={8} className="px-6 py-8 text-center text-slate-400 font-bold">No hay resultados con los filtros.</td></tr>
               ) : (
                 filteredMembers.map((m) => {
+                  const isTargetAdmin = m.role === 'academy_admin';
                   const isRestrictedForTeacher = actorRole === 'teacher' && m.role !== 'student';
-                  const rowBusy = uiLocked || updatingRoleId === m.id || togglingMemberId === m.id || deletingMemberId === m.id || isRestrictedForTeacher;
+                  
+                  // REGLA: academy_admin no puede tocar a otro academy_admin
+                  const isRestrictedForAdmin = actorRole === 'academy_admin' && isTargetAdmin;
+                  
+                  const canManage = !isRestrictedForTeacher && !isRestrictedForAdmin;
+                  
+                  const rowBusy = uiLocked || updatingRoleId === m.id || togglingMemberId === m.id || deletingMemberId === m.id;
+                  
                   return (
                     <tr key={m.id} className={!m.is_active ? 'opacity-50' : ''}>
                       <td className="px-6 py-4">
@@ -285,20 +290,21 @@ export function AcademyMembersClient({
                         <div className="text-xs text-slate-500">{m.email}</div>
                       </td>
                       <td className="px-6 py-4">
-                        <select
-                          value={m.role}
-                          onChange={(e) => handleRoleChange(m.id, e.target.value as MemberRole)}
-                          disabled={rowBusy || actorRole === 'teacher'}
-                          className="bg-transparent border border-gray-200 dark:border-slate-700 rounded-lg px-2 py-1 text-xs font-bold disabled:opacity-70"
-                        >
-                          <option value="student">Alumno</option>
-                          {actorRole === 'academy_admin' && (
-                            <>
-                              <option value="teacher">Profesor</option>
-                              <option value="academy_admin">Admin</option>
-                            </>
-                          )}
-                        </select>
+                        {isTargetAdmin ? (
+                          <span className="text-[10px] font-black uppercase bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-slate-500">
+                            Admin academia
+                          </span>
+                        ) : (
+                          <select
+                            value={m.role}
+                            onChange={(e) => handleRoleChange(m.id, e.target.value as MemberRole)}
+                            disabled={rowBusy || actorRole === 'teacher'}
+                            className="bg-transparent border border-gray-200 dark:border-slate-700 rounded-lg px-2 py-1 text-xs font-bold disabled:opacity-50"
+                          >
+                            <option value="student">Alumno</option>
+                            <option value="teacher">Profesor</option>
+                          </select>
+                        )}
                       </td>
                       <td className="px-6 py-4 text-center font-medium text-slate-500 dark:text-slate-400">
                         {m.role === 'student' ? m.stats_favorites_count : '—'}
@@ -313,13 +319,19 @@ export function AcademyMembersClient({
                         {m.role === 'student' ? `${m.stats_quiz_correct}/${m.stats_quiz_total}` : '—'}
                       </td>
                       <td className="px-6 py-4">
-                        <button 
-                          onClick={() => handleToggleActive(m.id, !m.is_active)}
-                          disabled={rowBusy}
-                          className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase ${m.is_active ? 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400' : 'bg-slate-100 text-slate-500'}`}
-                        >
-                          {togglingMemberId === m.id ? '...' : m.is_active ? 'Activo' : 'Inactivo'}
-                        </button>
+                        {actorRole === 'academy_admin' ? (
+                          <button 
+                            onClick={() => handleToggleActive(m.id, !m.is_active)}
+                            disabled={rowBusy || isTargetAdmin}
+                            className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase ${m.is_active ? 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400' : 'bg-slate-100 text-slate-500'} disabled:opacity-50`}
+                          >
+                            {togglingMemberId === m.id ? '...' : m.is_active ? 'Activo' : 'Inactivo'}
+                          </button>
+                        ) : (
+                          <span className={`text-[10px] font-black uppercase ${m.is_active ? 'text-green-600' : 'text-slate-400'}`}>
+                            {m.is_active ? 'Activo' : 'Inactivo'}
+                          </span>
+                        )}
                       </td>
                       <td className="px-6 py-4 text-right whitespace-nowrap">
                         {m.role === 'student' && (
@@ -332,16 +344,18 @@ export function AcademyMembersClient({
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
                           </button>
                         )}
-                        <button 
-                          onClick={() => setConfirmDeleteMember(m)}
-                          disabled={rowBusy}
-                          className="p-2 text-slate-400 hover:text-rose-500 transition-colors"
-                          title="Eliminar Miembro"
-                        >
-                          {deletingMemberId === m.id ? '...' : (
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                          )}
-                        </button>
+                        {actorRole === 'academy_admin' && !isTargetAdmin && (
+                          <button 
+                            onClick={() => setConfirmDeleteMember(m)}
+                            disabled={rowBusy}
+                            className="p-2 text-slate-400 hover:text-rose-500 transition-colors disabled:opacity-30"
+                            title="Eliminar Miembro"
+                          >
+                            {deletingMemberId === m.id ? '...' : (
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                            )}
+                          </button>
+                        )}
                       </td>
                     </tr>
                   )

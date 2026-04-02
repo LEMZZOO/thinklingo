@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/server';
 import { hasAccessToAcademy, getMembership } from '@/services/memberships';
 import { getCloudProgress } from '@/services/progress';
 import { getAcademyVocabularySource } from '@/services/academyVocabulary';
+import { AcademyUserActions } from '@/components/navigation/AcademyUserActions';
 
 export default async function AcademyLayout({
   children,
@@ -53,6 +54,13 @@ export default async function AcademyLayout({
   const source = (rawSource === 'db' ? 'academy_db' : 'json') satisfies import('@/services/progress').ProgressSource;
   const initialState = await getCloudProgress(academy.id, source);
 
+  // Cargamos perfil para el avatar del header
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('full_name, avatar_url')
+    .eq('id', user.id)
+    .single();
+
   // Estilo dinámico inyectado como variables CSS de branding
   const brandingStyles = {
     '--academy-primary': academy.color_primary,
@@ -69,7 +77,13 @@ export default async function AcademyLayout({
       initialState={initialState}
     >
       <div style={brandingStyles} className="min-h-full border-t-4">
-        <AcademyNav slug={slug} userRole={membership.role} />
+        <header className="sticky top-0 z-40 shadow-sm">
+          <AcademyUserActions 
+            avatarUrl={profile?.avatar_url} 
+            fullName={profile?.full_name} 
+          />
+          <AcademyNav slug={slug} userRole={membership.role} />
+        </header>
         {children}
       </div>
     </AcademyProgressProvider>

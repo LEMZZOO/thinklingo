@@ -60,9 +60,22 @@ export default async function AcademiasListPage() {
                     <td className="px-6 py-4">
                       <Link href={`/admin/academias/${academy.id}`} className="flex items-center gap-3 min-w-0">
                         <div 
-                          className="w-3 h-3 rounded-full shrink-0" 
-                          style={{ backgroundColor: academy.color_primary }}
-                        />
+                          className="w-8 h-8 rounded-lg shrink-0 overflow-hidden border border-gray-100 dark:border-slate-800 flex items-center justify-center bg-white dark:bg-slate-900 shadow-sm"
+                        >
+                          {academy.logo_url ? (
+                            <img 
+                              src={academy.logo_url} 
+                              alt={academy.name} 
+                              className="w-full h-full object-cover"
+                              style={{ objectPosition: 'center 25%' }}
+                            />
+                          ) : (
+                            <div 
+                              className="w-full h-full opacity-20"
+                              style={{ backgroundColor: academy.color_primary || '#2563EB' }}
+                            />
+                          )}
+                        </div>
                         <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{academy.name}</span>
                       </Link>
                     </td>

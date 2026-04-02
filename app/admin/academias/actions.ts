@@ -81,7 +81,13 @@ export async function saveAcademy(prev: any, formData: FormData): Promise<Academ
   }
 
   const logo_file = formData.get('logo_file') as File | null;
+  const remove_logo = formData.get('remove_logo') === 'true';
   let final_logo_url = formData.get('logo_url') as string;
+
+  // Si el usuario pidió quitar el logo explícitamente, empezamos con null
+  if (remove_logo) {
+    final_logo_url = '';
+  }
 
   // 2. Normalización de slug
   const slug = normalizeSlug(rawSlug);

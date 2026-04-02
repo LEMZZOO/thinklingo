@@ -1,12 +1,11 @@
 import { redirect } from 'next/navigation';
 import { getUserMemberships } from '@/services/memberships';
 
-/**
- * Resuelve hacia dónde debe ir un usuario logeado:
- * - A su academia directa si solo tiene 1.
- * - Al lobby /mis-academias si tiene varias (o ninguna).
- */
-export async function smartLoginRedirect(userId: string) {
+export async function smartLoginRedirect(userId: string, isSuperadmin = false) {
+  if (isSuperadmin) {
+    redirect('/admin/academias');
+  }
+
   const memberships = await getUserMemberships(userId);
 
   if (memberships.length === 1 && memberships[0].academies) {

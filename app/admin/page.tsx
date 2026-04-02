@@ -1,13 +1,12 @@
-import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 
 export default async function AdminPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user || user.app_metadata?.is_superadmin !== true) {
-    redirect('/');
-  }
+
+  if (!user) return null;
 
   const { data: profile } = await supabase.from('profiles').select('full_name').eq('id', user.id).single();
   const displayName = profile?.full_name?.trim() || user.email;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useState, ChangeEvent } from 'react';
+import { useActionState, useState, ChangeEvent, useRef } from 'react';
 import { saveAcademy } from '@/app/admin/academias/actions';
 import { Academy } from '@/types/academy';
 import Link from 'next/link';
@@ -37,13 +37,16 @@ export function AcademyForm({ academy }: AcademyFormProps) {
     is_active: academy?.is_active ?? true,
     uses_custom_vocabulary: academy?.uses_custom_vocabulary ?? false,
   };
-
+ 
   const [logoPreview, setLogoPreview] = useState<string | null>(currentData.logo_url || null);
-
+  const [logoRemoved, setLogoRemoved] = useState(false);
+  const logoFileRef = useRef<HTMLInputElement>(null);
+ 
   const handleLogoChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     setFileError(null);
-
+    setLogoRemoved(false);
+ 
     if (file) {
       // Validar tipo de archivo
       if (!file.type.startsWith('image/')) {
@@ -158,15 +161,34 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                         <div className="text-[10px] font-black text-slate-300 dark:text-slate-700 uppercase italic">Logo</div>
                       )}
                     </div>
-                    <input
-                      id="logo_file"
-                      name="logo_file"
-                      type="file"
-                      accept="image/*"
-                      onChange={handleLogoChange}
-                      className={`flex-1 text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-slate-800 dark:file:text-slate-300 border border-dashed rounded-xl p-1 transition-colors ${fileError ? 'border-rose-500 bg-rose-50/10' : 'border-gray-200 dark:border-slate-800'}`}
-                    />
-                 </div>
+                    <div className="flex flex-col gap-2 flex-1">
+                      <input
+                        id="logo_file"
+                        name="logo_file"
+                        type="file"
+                        accept="image/*"
+                        ref={logoFileRef}
+                        onChange={handleLogoChange}
+                        className={`w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-slate-800 dark:file:text-slate-300 border border-dashed rounded-xl p-1 transition-colors ${fileError ? 'border-rose-500 bg-rose-50/10' : 'border-gray-200 dark:border-slate-800'}`}
+                      />
+                      {logoPreview && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setLogoPreview(null);
+                            setLogoRemoved(true);
+                            if (logoFileRef.current) {
+                              logoFileRef.current.value = '';
+                            }
+                          }}
+                          className="text-[10px] font-black uppercase tracking-widest text-rose-500 hover:text-rose-600 self-start px-2 py-1 rounded hover:bg-rose-50 transition-colors"
+                        >
+                          Quitar logo
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  <input type="hidden" name="remove_logo" value={logoRemoved ? 'true' : 'false'} />
                  {fileError && (
                     <p className="text-[10px] font-black text-rose-500 uppercase tracking-tight px-1 animate-in slide-in-from-top-1">
                       ⚠️ {fileError}
@@ -185,8 +207,8 @@ export function AcademyForm({ academy }: AcademyFormProps) {
                    id="logo_url"
                    name="logo_url"
                    type="text"
-                   key={`logo_url-${currentData.logo_url}`}
-                   defaultValue={currentData.logo_url}
+                   key={logoRemoved ? 'removed' : `logo_url-${currentData.logo_url}`}
+                   defaultValue={logoRemoved ? '' : currentData.logo_url}
                    className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 dark:text-slate-100"
                    placeholder="https://ejemplo.com/logo.png"
                  />
