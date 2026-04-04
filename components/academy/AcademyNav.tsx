@@ -90,7 +90,7 @@ export function AcademyNav({ slug, userRole }: AcademyNavProps) {
 
   return (
     <nav
-      className="w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 sticky top-0 z-30"
+      className="w-full bg-white dark:bg-slate-950 z-30"
       aria-label="Navegación de academia"
     >
       <div className="max-w-5xl mx-auto px-4 flex items-center gap-1 h-12">

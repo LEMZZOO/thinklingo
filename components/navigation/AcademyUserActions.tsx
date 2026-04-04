@@ -18,7 +18,7 @@ export function AcademyUserActions({ avatarUrl, fullName }: AcademyUserActionsPr
     : 'U';
 
   return (
-    <div className="w-full bg-slate-50/50 dark:bg-slate-900/50 border-b border-gray-100 dark:border-slate-800 px-4 py-1.5 flex items-center justify-between">
+    <div className="w-full bg-white dark:bg-slate-950 border-b border-gray-100 dark:border-slate-800 px-4 py-1.5 flex items-center justify-between">
       <div className="flex items-center gap-1.5">
         <Link
           href="/mis-academias"

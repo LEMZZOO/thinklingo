@@ -77,7 +77,7 @@ export default async function AcademyLayout({
       initialState={initialState}
     >
       <div style={brandingStyles} className="min-h-full border-t-4">
-        <header className="sticky top-0 z-40 shadow-sm">
+        <header className="sticky top-0 z-40 bg-white dark:bg-slate-950 border-b border-gray-100 dark:border-slate-800">
           <AcademyUserActions 
             avatarUrl={profile?.avatar_url} 
             fullName={profile?.full_name} 
