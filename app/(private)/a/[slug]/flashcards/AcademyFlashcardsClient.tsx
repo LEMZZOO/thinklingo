@@ -138,11 +138,15 @@ export function AcademyFlashcardsClient({ academy, entries }: AcademyFlashcardsC
         <div className="flex justify-between items-center mb-4">
           <Link href={`/a/${academy.slug}`} className="group flex items-center gap-3">
             <div
-              style={primaryBg}
-              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform"
+              style={academy.image_type === 'photo' ? {} : primaryBg}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-black/10 dark:shadow-black/30 group-hover:scale-105 transition-transform overflow-hidden ${academy.image_type === 'photo' ? '' : 'p-1.5'}`}
             >
               {academy.logo_url ? (
-                <img src={academy.logo_url} alt={academy.name} className="w-6 h-6 object-contain" />
+                <img 
+                  src={academy.logo_url} 
+                  alt={academy.name} 
+                  className={`w-full h-full ${academy.image_type === 'photo' ? 'object-cover' : 'object-contain'}`} 
+                />
               ) : (
                 <span className="text-white font-black text-sm uppercase italic">{academy.name.slice(0, 2)}</span>
               )}

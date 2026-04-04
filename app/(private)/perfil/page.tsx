@@ -59,12 +59,9 @@ export default async function PerfilPage({
           />
 
           <div className="text-center">
-            <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-1 leading-tight">
+            <h2 className="text-2xl font-black text-slate-900 dark:text-white leading-tight">
               {profile?.full_name || 'Sin nombre'}
             </h2>
-            <p className="text-sm font-bold text-slate-400 dark:text-slate-500 italic">
-              {user.email}
-            </p>
           </div>
         </section>
 
