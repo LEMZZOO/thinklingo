@@ -13,8 +13,8 @@ export function BottomNav() {
   const isQuiz = pathname?.startsWith('/quiz');
   const isProgreso = pathname?.startsWith('/progreso');
 
-  // Solución pragmática temporal: ocultamos la navegación pública en rutas de academia
-  if (pathname?.startsWith('/a/')) return null;
+  // Ocultamos la navegación global en la pantalla de selección de academia o dentro de una
+  if (pathname === '/mis-academias' || pathname?.startsWith('/a/')) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-slate-800 z-50 pb-safe">

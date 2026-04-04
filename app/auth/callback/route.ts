@@ -17,8 +17,9 @@ export async function GET(request: Request) {
     if (!error) {
       // Si el destino es mis-academias, añadimos flag para mostrar mensaje de éxito
       const finalNext = next === '/mis-academias' ? '/mis-academias?confirmed=1' : next;
-      // Use full URL to avoid relative redirect issues
-      return NextResponse.redirect(`${origin}${finalNext}`);
+      const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || origin).replace(/\/$/, '');
+      // Use full URL with SITE_URL to avoid relative redirect issues and fix localhost links
+      return NextResponse.redirect(`${siteUrl}${finalNext}`);
     } else {
       console.error('Error exchanging code for session:', error.message);
     }

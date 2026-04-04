@@ -23,6 +23,9 @@ export async function login(formData: FormData) {
   });
 
   if (error) {
+    if (error.message.toLowerCase().includes('email not confirmed')) {
+      return { error: 'Tu cuenta existe, pero aún no has confirmado tu correo electrónico.' };
+    }
     return { error: 'Credenciales inválidas' };
   }
 

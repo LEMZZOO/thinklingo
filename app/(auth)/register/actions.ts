@@ -24,6 +24,8 @@ export async function register(formData: FormData) {
 
   const supabase = await createClient();
 
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+  
   // 1. Sign up
   const { data: { user }, error } = await supabase.auth.signUp({
     email,
@@ -32,7 +34,7 @@ export async function register(formData: FormData) {
       data: {
         full_name: fullName,
       },
-      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/callback?next=/mis-academias`
+      emailRedirectTo: `${siteUrl}/auth/callback?next=/mis-academias`
     },
   });
 

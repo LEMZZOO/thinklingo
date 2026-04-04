@@ -29,7 +29,14 @@ export async function proxy(request: NextRequest) {
   )
 
   // IMPORTANT: DO NOT remove getUser() call for security and session refreshing
-  const { data: { user } } = await supabase.auth.getUser()
+  // We handle it gracefully to avoid "Invalid Refresh Token" breaking the request
+  let user = null;
+  try {
+    const { data: { user: authUser } } = await supabase.auth.getUser();
+    user = authUser;
+  } catch (e) {
+    console.error('Middleware auth error (graceful):', e);
+  }
 
   const pathname = request.nextUrl.pathname
 

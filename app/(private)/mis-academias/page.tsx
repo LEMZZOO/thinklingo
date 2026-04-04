@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { getUserMemberships } from '@/services/memberships';
 import { redirect } from 'next/navigation';
 import { LogoutButton } from '@/components/auth/LogoutButton';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import Link from 'next/link';
 
 export const metadata = {
@@ -39,7 +40,8 @@ export default async function MisAcademiasPage({
           Thinklingo<span className="text-blue-600 dark:text-blue-400">Academy</span>
         </h1>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Link
             href={{ pathname: '/perfil', query: { returnTo: '/mis-academias' } }}
             className="group flex items-center gap-3 p-1.5 pr-4 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-200 dark:hover:border-blue-900 transition-all active:scale-95"

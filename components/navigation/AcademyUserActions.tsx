@@ -2,6 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { LogoutButton } from '@/components/auth/LogoutButton';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface AcademyUserActionsProps {
   avatarUrl?: string | null;
@@ -27,7 +29,8 @@ export function AcademyUserActions({ avatarUrl, fullName }: AcademyUserActionsPr
         </Link>
       </div>
 
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2">
+        <ThemeToggle />
         <Link
           href={`/perfil?returnTo=${pathname}`}
           className="group flex items-center gap-2 p-1 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-gray-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-900/30 hover:bg-white dark:hover:bg-slate-800 transition-all active:scale-95 shadow-sm"
