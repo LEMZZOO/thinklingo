@@ -33,10 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-gray-50 dark:bg-[#0f172a] transition-colors duration-300">
         <AppProvider>
-          <div className="flex-1 flex flex-col pb-16">
-            {children}
-          </div>
-          <BottomNav />
+          {children}
         </AppProvider>
       </body>
     </html>
