@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState, useState, ChangeEvent, useRef, useEffect } from 'react';
-import { updateAcademySettings } from '@/app/a/[slug]/ajustes/actions';
+import { updateAcademySettings } from '@/app/(private)/a/[slug]/ajustes/actions';
 import { Academy } from '@/types/academy';
 import { useRouter } from 'next/navigation';
 

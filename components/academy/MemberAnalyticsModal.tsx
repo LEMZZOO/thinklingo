@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { AcademyAnalyticsBarChart } from './AcademyAnalyticsBarChart';
 import { AcademyAnalyticsDateRangeForm } from './AcademyAnalyticsDateRangeForm';
-import { getMemberAnalyticsSummaryAction } from '@/app/a/[slug]/miembros/actions';
+import { getMemberAnalyticsSummaryAction } from '@/app/(private)/a/[slug]/miembros/actions';
 import { StudentAnalyticsSummary } from '@/types/academy-analytics';
 
 interface Props {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState, useState, ChangeEvent, useRef } from 'react';
-import { saveAcademy } from '@/app/admin/academias/actions';
+import { saveAcademy } from '@/app/(private)/admin/academias/actions';
 import { Academy } from '@/types/academy';
 import Link from 'next/link';
 import { AcademyVocabularyToggle } from '@/components/admin/AcademyVocabularyToggle';
