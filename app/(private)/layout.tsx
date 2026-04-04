@@ -8,10 +8,9 @@ export default function PrivateLayout({
 }) {
   return (
     <>
-    <div className="flex-1 flex flex-col pb-16">
+    <div className="flex-1 flex flex-col">
       {children}
     </div>
-      <BottomNav />
     </>
   );
 }

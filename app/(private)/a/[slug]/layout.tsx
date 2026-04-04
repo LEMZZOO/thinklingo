@@ -8,6 +8,7 @@ import { hasAccessToAcademy, getMembership } from '@/services/memberships';
 import { getCloudProgress } from '@/services/progress';
 import { getAcademyVocabularySource } from '@/services/academyVocabulary';
 import { AcademyUserActions } from '@/components/navigation/AcademyUserActions';
+import { BottomNav } from '@/components/BottomNav';
 
 export default async function AcademyLayout({
   children,
@@ -76,7 +77,7 @@ export default async function AcademyLayout({
       source={source}
       initialState={initialState}
     >
-      <div style={brandingStyles} className="min-h-full border-t-4">
+      <div style={brandingStyles} className="min-h-full border-t-4 pb-16">
         <header className="sticky top-0 z-40 shadow-sm">
           <AcademyUserActions 
             avatarUrl={profile?.avatar_url} 
@@ -85,6 +86,7 @@ export default async function AcademyLayout({
           <AcademyNav slug={slug} userRole={membership.role} />
         </header>
         {children}
+        <BottomNav />
       </div>
     </AcademyProgressProvider>
   );
