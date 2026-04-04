@@ -122,11 +122,16 @@ export default async function MisAcademiasPage({
                       <span className="text-white font-black text-xl uppercase italic">{aca.name.slice(0, 2)}</span>
                     )}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight group-hover:text-blue-500 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-tight group-hover:text-blue-500 transition-colors truncate">
                       {aca.name}
                     </h3>
-                    <div className="flex items-center gap-2 mt-1">
+                    {aca.tagline && (
+                      <p className="text-xs font-medium text-slate-400 dark:text-slate-500 truncate mt-0.5">
+                        {aca.tagline}
+                      </p>
+                    )}
+                    <div className="flex items-center gap-2 mt-2">
                       <span className="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
                         {roleLabels[m.role] || m.role}
                       </span>
