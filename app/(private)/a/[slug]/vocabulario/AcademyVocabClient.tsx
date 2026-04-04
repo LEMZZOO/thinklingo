@@ -44,9 +44,10 @@ function getCategoryLabel(category?: string | null) {
 interface AcademyVocabClientProps {
   academy: Academy;
   entries: VocabularyEntry[];
+  favoritesOnly?: boolean;
 }
 
-export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps) {
+export function AcademyVocabClient({ academy, entries, favoritesOnly = false }: AcademyVocabClientProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -85,11 +86,19 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
 
   const categoryDropdownRef = useRef<HTMLDivElement | null>(null);
 
-  // Detectar y normalizar categorías únicas
+  // Orden de Filtros: 1. Favoritos (si aplica), 2. Búsqueda, 3. Categoría, 4. Dificultad
+  const entriesToFilter = useMemo(() => {
+    if (favoritesOnly) {
+      return entries.filter(v => favorites.includes(v.id));
+    }
+    return entries;
+  }, [entries, favoritesOnly, favorites]);
+
+  // Detectar y normalizar categorías únicas basándose en las entradas disponibles
   const allCategories = useMemo(() => {
     return Array.from(
       new Set(
-        entries.map((v) => {
+        entriesToFilter.map((v) => {
           const c = v.category?.trim();
           return c ? c : '_uncategorized';
         })
@@ -100,11 +109,10 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
       if (b === '_uncategorized') return -1;
       return a.localeCompare(b);
     });
-  }, [entries]);
+  }, [entriesToFilter]);
 
-  // Orden de Filtros: 1. Búsqueda, 2. Categoría, 3. Dificultad
   const filtered = useMemo(() => {
-    return entries.filter((v) => {
+    return entriesToFilter.filter((v) => {
       // 1. Filtro de búsqueda por texto
       if (search.trim()) {
         const q = search.trim().toLowerCase();
@@ -125,7 +133,7 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
 
       return true;
     });
-  }, [entries, search, category, difficulty]);
+  }, [entriesToFilter, search, category, difficulty]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -167,10 +175,10 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
               </div>
             <div>
               <h1 className="text-xl font-black text-slate-800 dark:text-slate-100 leading-none">
-                {academy.name}
+                {favoritesOnly ? 'Mis Favoritos' : academy.name}
               </h1>
               <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">
-                Vocabulario Exclusivo
+                {favoritesOnly ? academy.name : 'Vocabulario Exclusivo'}
               </p>
             </div>
           </div>
@@ -184,7 +192,7 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
 
             <input
               type="text"
-              placeholder="Buscar palabra, traducción..."
+              placeholder={favoritesOnly ? "Buscar en tus favoritos..." : "Buscar palabra, traducción..."}
               className="w-full pl-12 pr-10 py-4 rounded-2xl bg-gray-50 dark:bg-slate-950 border border-gray-100 dark:border-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-800 focus:border-[var(--academy-primary)] transition-all font-bold text-slate-700 dark:text-slate-200 placeholder:text-slate-400"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -289,7 +297,11 @@ export function AcademyVocabClient({ academy, entries }: AcademyVocabClientProps
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-center opacity-50 grayscale">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 text-slate-400"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
-            <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Sin resultados</p>
+            <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+              {favoritesOnly && !search && !category && !difficulty 
+                ? "Aún no tienes favoritos en esta academia" 
+                : "Sin resultados"}
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 import { AppProvider } from "@/components/AppProvider";
-import { BottomNav } from "@/components/BottomNav";
 
 export default function RootLayout({
   children,
